@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as QaFocusRouteImport } from './routes/qa.focus'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminInboxRouteImport } from './routes/admin.inbox'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +24,48 @@ const QaFocusRoute = QaFocusRouteImport.update({
   path: '/qa/focus',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminInboxRoute = AdminInboxRouteImport.update({
+  id: '/admin/inbox',
+  path: '/admin/inbox',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin/inbox': typeof AdminInboxRoute
+  '/admin/login': typeof AdminLoginRoute
   '/qa/focus': typeof QaFocusRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin/inbox': typeof AdminInboxRoute
+  '/admin/login': typeof AdminLoginRoute
   '/qa/focus': typeof QaFocusRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin/inbox': typeof AdminInboxRoute
+  '/admin/login': typeof AdminLoginRoute
   '/qa/focus': typeof QaFocusRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/qa/focus'
+  fullPaths: '/' | '/admin/inbox' | '/admin/login' | '/qa/focus'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/qa/focus'
-  id: '__root__' | '/' | '/qa/focus'
+  to: '/' | '/admin/inbox' | '/admin/login' | '/qa/focus'
+  id: '__root__' | '/' | '/admin/inbox' | '/admin/login' | '/qa/focus'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminInboxRoute: typeof AdminInboxRoute
+  AdminLoginRoute: typeof AdminLoginRoute
   QaFocusRoute: typeof QaFocusRoute
 }
 
@@ -65,13 +85,38 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QaFocusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/inbox': {
+      id: '/admin/inbox'
+      path: '/admin/inbox'
+      fullPath: '/admin/inbox'
+      preLoaderRoute: typeof AdminInboxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminInboxRoute: AdminInboxRoute,
+  AdminLoginRoute: AdminLoginRoute,
   QaFocusRoute: QaFocusRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
