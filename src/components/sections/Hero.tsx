@@ -63,18 +63,55 @@ export function Hero() {
           <motion.h1
             {...reveal}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-orbitron leading-[0.92] tracking-[-0.04em] mb-7 flicker-on"
-            style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)" }}
+            className="font-orbitron mb-7 flicker-on"
+            style={{ lineHeight: 0.92, letterSpacing: "-0.04em" }}
           >
-            <span className="block font-black text-[var(--text-primary)]">
-              <GlitchText text="WE BUILD" />
-            </span>
-            <span className="block font-black gradient-text-anim">
-              <GlitchText text="THE FUTURE." />
-            </span>
+            {/* Line 1 */}
             <span
-              className="block font-bold text-[var(--cyan)] mt-2"
-              style={{ fontSize: "clamp(1.2rem, 2.8vw, 2.6rem)", textShadow: "0 0 20px rgba(0,212,232,0.4)" }}
+              className="block font-black"
+              style={{
+                color: "#FFFFFF",
+                fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
+                lineHeight: 0.9,
+                letterSpacing: "-0.04em",
+              }}
+            >
+              <GlitchText text="WE BUILD" intensity="low" />
+            </span>
+
+            {/* Line 2 — gradient, same size, drop-shadow glow */}
+            <span
+              className="block font-black"
+              style={{
+                fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
+                lineHeight: 0.9,
+                letterSpacing: "-0.04em",
+                filter: "drop-shadow(0 0 20px rgba(245,166,35,0.5))",
+              }}
+            >
+              <GlitchText
+                text="THE FUTURE."
+                intensity="medium"
+                useDropShadow
+                className="gradient-text-anim"
+                style={{
+                  fontWeight: 900,
+                }}
+              />
+            </span>
+
+            {/* Line 3 — cyan accent */}
+            <span
+              className="block font-bold"
+              style={{
+                color: "#00D4E8",
+                fontFamily: "var(--font-orbitron)",
+                fontWeight: 700,
+                fontSize: "clamp(1rem, 2.5vw, 1.6rem)",
+                letterSpacing: "0.15em",
+                textShadow: "0 0 20px rgba(0,212,232,0.5)",
+                marginTop: 12,
+              }}
             >
               <GlitchText text="EMPOWERING GROWTH" intensity="low" />
             </span>
