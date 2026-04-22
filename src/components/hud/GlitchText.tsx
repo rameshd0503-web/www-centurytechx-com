@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, CSSProperties } from "react";
 
 interface GlitchTextProps {
   text: string;
   className?: string;
   intensity?: "low" | "medium" | "high";
   as?: "span" | "h1" | "h2" | "h3" | "div";
+  /** When true, glitch uses filter drop-shadow instead of text-shadow (works with background-clip:text) */
+  useDropShadow?: boolean;
+  style?: CSSProperties;
 }
 
 const GLITCH_CHARS = ["░", "▓", "█", "▒"];
 
-export function GlitchText({ text, className = "", intensity = "medium", as: Tag = "span" }: GlitchTextProps) {
+export function GlitchText({ text, className = "", intensity = "medium", as: Tag = "span", useDropShadow = false, style }: GlitchTextProps) {
   const [glitching, setGlitching] = useState(false);
   const [displayText, setDisplayText] = useState(text);
   const [shift, setShift] = useState(0);
@@ -49,8 +52,12 @@ export function GlitchText({ text, className = "", intensity = "medium", as: Tag
       style={{
         display: "inline-block",
         transform: `translateX(${shift}px)`,
-        textShadow: glitching ? "3px 0 #FF2D55, -3px 0 #00D4E8" : undefined,
+        textShadow: glitching && !useDropShadow ? "3px 0 #FF2D55, -3px 0 #00D4E8" : undefined,
+        filter: glitching && useDropShadow
+          ? "drop-shadow(3px 0 0 #FF2D55) drop-shadow(-3px 0 0 #00D4E8)"
+          : undefined,
         transition: "transform 20ms linear",
+        ...style,
       }}
     >
       {displayText}

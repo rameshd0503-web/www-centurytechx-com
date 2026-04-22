@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ScanlineOverlay } from "@/components/effects/ScanlineOverlay";
 import { CircuitBackground } from "@/components/effects/CircuitBackground";
 import { CursorReticle } from "@/components/effects/CursorReticle";
+import { BootSequence } from "@/components/effects/BootSequence";
+import { SectionFlash } from "@/components/effects/SectionFlash";
 import { Navigation } from "@/components/site/Navigation";
 import { Hero } from "@/components/sections/Hero";
 import { Divisions } from "@/components/sections/Divisions";
@@ -47,18 +49,19 @@ function Index() {
       <CircuitBackground />
       <ScanlineOverlay />
       <CursorReticle />
+      <BootSequence />
 
       <div className="relative" style={{ zIndex: 2 }}>
         <Navigation />
         <main>
           <Hero />
-          <Divisions />
-          <Products />
-          <Services />
-          <Collaboration />
-          <Clients />
-          <Stack />
-          <Contact />
+          <SectionFlash><Divisions /></SectionFlash>
+          <SectionFlash><Products /></SectionFlash>
+          <SectionFlash><Services /></SectionFlash>
+          <SectionFlash><Collaboration /></SectionFlash>
+          <SectionFlash><Clients /></SectionFlash>
+          <SectionFlash><Stack /></SectionFlash>
+          <SectionFlash><Contact /></SectionFlash>
         </main>
         <Footer />
       </div>

@@ -9,8 +9,9 @@ const PRODUCTS = [
     tagline: "AI-Powered Exam Management for K-12 Schools",
     description:
       "A complete exam management operating system for Indian K-12 schools — from AI question paper generation to real-time analytics, powered by a flexible credit-based pricing model.",
+    betaNotice: "// Currently in Beta — Early access for select schools",
     features: [
-      "AI question paper generation",
+      "[BETA] AI question paper generation — testing phase",
       "Credit-based flexible pricing",
       "School subdomain system (school.examos.in)",
       "Real-time analytics dashboard",
@@ -24,7 +25,9 @@ const PRODUCTS = [
     tagline: "Complete Student Management OS",
     description:
       "A full-featured student management operating system for Indian schools and coaching centres — attendance, fees, performance tracking, and parent communication.",
+    betaNotice: "// Currently in Beta — Onboarding coaching centres",
     features: [
+      "[BETA] Core modules active — full release coming soon",
       "Attendance & performance tracking",
       "Parent communication portal",
       "Fee management system",
@@ -71,21 +74,33 @@ export function Products() {
               <CornerBrackets size={16} color={p.accent} />
 
               <div className="relative">
+                {/* Badges + product number */}
                 <div className="flex items-center justify-between mb-8 flex-wrap gap-3">
-                  <span
-                    className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] px-3 py-[6px] rounded-[2px]"
-                    style={{
-                      color: p.accent,
-                      background: `${p.accent}1A`,
-                      border: `1px solid ${p.accent}50`,
-                    }}
-                  >
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {/* Badge 1 — category */}
                     <span
-                      className="w-[6px] h-[6px] rounded-full"
-                      style={{ background: p.accent, boxShadow: `0 0 6px ${p.accent}`, animation: "blink 1.5s steps(2) infinite" }}
-                    />
-                    EDTECH · LIVE
-                  </span>
+                      className="inline-flex items-center font-mono text-[10px] tracking-[0.18em] px-3 py-[6px] rounded-[2px]"
+                      style={{
+                        color: p.accent,
+                        background: `${p.accent}1A`,
+                        border: `1px solid ${p.accent}4D`,
+                      }}
+                    >
+                      EDTECH
+                    </span>
+                    {/* Badge 2 — BETA pulse */}
+                    <span
+                      className="inline-flex items-center gap-1 font-mono text-[10px] tracking-[0.18em] px-3 py-[6px] rounded-[2px]"
+                      style={{
+                        color: "#FFA500",
+                        background: "rgba(255,165,0,0.12)",
+                        border: "1px solid rgba(255,165,0,0.40)",
+                        animation: "beta-pulse 2s ease-in-out infinite",
+                      }}
+                    >
+                      ⚠ BETA
+                    </span>
+                  </div>
                   <span className="font-mono text-[10px] tracking-[0.15em] text-[var(--text-dim)]">
                     {p.code}
                   </span>
@@ -103,6 +118,22 @@ export function Products() {
                   {p.name}
                 </h3>
 
+                {/* Beta notice strip */}
+                <div
+                  className="font-mono text-[10px] mb-4"
+                  style={{
+                    color: "#FFA500",
+                    borderLeft: `2px solid ${p.accent}`,
+                    background: p.accent === "#F5A623"
+                      ? "rgba(255,165,0,0.04)"
+                      : "rgba(0,212,232,0.04)",
+                    padding: "8px 12px 8px 10px",
+                    borderRadius: 2,
+                  }}
+                >
+                  {p.betaNotice}
+                </div>
+
                 <p className="font-rajdhani font-semibold text-[1.1rem] text-[var(--text-secondary)] mb-5">
                   {p.tagline}
                 </p>
@@ -112,15 +143,29 @@ export function Products() {
                 </p>
 
                 <ul className="mb-10">
-                  {p.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-start gap-3 py-2 border-b border-[var(--border-dark)] last:border-0"
-                    >
-                      <span className="font-mono text-[14px]" style={{ color: p.accent }}>&gt;</span>
-                      <span className="font-inter text-[14px] text-[var(--text-primary)]">{f}</span>
-                    </li>
-                  ))}
+                  {p.features.map((f, idx) => {
+                    const isBeta = f.startsWith("[BETA]");
+                    return (
+                      <li
+                        key={f}
+                        className="flex items-start gap-3 py-2 border-b border-[var(--border-dark)] last:border-0"
+                        style={{ opacity: isBeta ? 1 : 0.7 }}
+                      >
+                        <span
+                          className="font-mono text-[14px]"
+                          style={{ color: isBeta ? "#FFA500" : p.accent }}
+                        >
+                          &gt;
+                        </span>
+                        <span
+                          className="font-inter text-[14px]"
+                          style={{ color: isBeta ? "#FFA500" : "var(--text-primary)" }}
+                        >
+                          {f}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <button
