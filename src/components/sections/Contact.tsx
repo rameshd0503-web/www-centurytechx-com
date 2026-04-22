@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { z } from "zod";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { CornerBrackets } from "@/components/hud/CornerBrackets";
 import { Phone, Mail, MapPin, Globe } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const CONTACTS = [
   {
@@ -28,26 +30,51 @@ const CONTACTS = [
   },
 ];
 
+// Mirrors the database CHECK constraints
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Operative name is required").max(100, "Name must be 100 characters or fewer"),
+  email: z.string().trim().email("Enter a valid email address").max(255, "Email must be 255 characters or fewer"),
+  message: z.string().trim().min(1, "Mission payload is required").max(2000, "Message must be 2000 characters or fewer"),
+});
+
+type FormStatus = "idle" | "loading" | "success" | "error";
+
 export function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim() || !message.trim()) {
+    setErrorMsg("");
+
+    const parsed = contactSchema.safeParse({ name, email, message });
+    if (!parsed.success) {
       setStatus("error");
+      setErrorMsg(parsed.error.issues[0]?.message ?? "Invalid input");
       return;
     }
+
     setStatus("loading");
-    // Placeholder — wire to backend on request
-    await new Promise((r) => setTimeout(r, 1200));
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      message: parsed.data.message,
+    });
+
+    if (error) {
+      setStatus("error");
+      setErrorMsg("Transmission failed — please try again in a moment.");
+      return;
+    }
+
     setStatus("success");
     setName("");
     setEmail("");
     setMessage("");
-    setTimeout(() => setStatus("idle"), 4000);
+    window.setTimeout(() => setStatus("idle"), 4000);
   };
 
   return (
@@ -230,6 +257,34 @@ export function Contact() {
                 {status === "error" && "RETRY TRANSMISSION //"}
                 {status === "idle" && "TRANSMIT MESSAGE //"}
               </button>
+
+              {status === "error" && errorMsg && (
+                <div
+                  role="alert"
+                  className="font-mono text-[11px] tracking-[0.05em] px-4 py-3 rounded-[3px]"
+                  style={{
+                    background: "rgba(255,45,85,0.08)",
+                    border: "1px solid rgba(255,45,85,0.35)",
+                    color: "#FF2D55",
+                  }}
+                >
+                  ⚠ {errorMsg}
+                </div>
+              )}
+
+              {status === "success" && (
+                <div
+                  role="status"
+                  className="font-mono text-[11px] tracking-[0.05em] px-4 py-3 rounded-[3px]"
+                  style={{
+                    background: "rgba(0,255,136,0.06)",
+                    border: "1px solid rgba(0,255,136,0.30)",
+                    color: "#00FF88",
+                  }}
+                >
+                  ✓ Message received. We'll respond within 24 hours.
+                </div>
+              )}
 
               <p className="font-mono text-[9px] tracking-[0.18em] text-[var(--text-dim)] text-center">
                 // ENCRYPTED · BOT-SHIELDED · SECURE TRANSMISSION
