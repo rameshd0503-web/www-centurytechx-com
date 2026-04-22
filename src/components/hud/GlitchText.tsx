@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, CSSProperties } from "react";
 
 interface GlitchTextProps {
   text: string;
   className?: string;
   intensity?: "low" | "medium" | "high";
   as?: "span" | "h1" | "h2" | "h3" | "div";
+  /** When true, glitch uses filter drop-shadow instead of text-shadow (works with background-clip:text) */
+  useDropShadow?: boolean;
+  style?: CSSProperties;
 }
 
 const GLITCH_CHARS = ["░", "▓", "█", "▒"];
