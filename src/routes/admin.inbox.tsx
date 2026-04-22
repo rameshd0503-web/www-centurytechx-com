@@ -153,7 +153,7 @@ function AdminInboxPage() {
                 <Link
                   key={s}
                   from={Route.fullPath}
-                  search={(prev) => ({ ...prev, status: s })}
+                  search={(prev: { status: StatusFilter; q: string }) => ({ ...prev, status: s })}
                   className="ctx-focus-ring font-mono text-[10px] tracking-[0.15em] px-3 py-2 rounded-[3px] transition-all"
                   style={{
                     background: active ? (meta?.color ?? "var(--neon)") : "transparent",
@@ -174,7 +174,7 @@ function AdminInboxPage() {
               type="search"
               value={q}
               onChange={(e) =>
-                navigate({ search: (prev) => ({ ...prev, q: e.target.value }), replace: true })
+                navigate({ search: (prev: { status: StatusFilter; q: string }) => ({ ...prev, q: e.target.value }), replace: true })
               }
               placeholder="Search by name or email…"
               className="ctx-focus-ring w-full font-mono text-[12px]"
