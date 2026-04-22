@@ -258,6 +258,34 @@ export function Contact() {
                 {status === "idle" && "TRANSMIT MESSAGE //"}
               </button>
 
+              {status === "error" && errorMsg && (
+                <div
+                  role="alert"
+                  className="font-mono text-[11px] tracking-[0.05em] px-4 py-3 rounded-[3px]"
+                  style={{
+                    background: "rgba(255,45,85,0.08)",
+                    border: "1px solid rgba(255,45,85,0.35)",
+                    color: "#FF2D55",
+                  }}
+                >
+                  ⚠ {errorMsg}
+                </div>
+              )}
+
+              {status === "success" && (
+                <div
+                  role="status"
+                  className="font-mono text-[11px] tracking-[0.05em] px-4 py-3 rounded-[3px]"
+                  style={{
+                    background: "rgba(0,255,136,0.06)",
+                    border: "1px solid rgba(0,255,136,0.30)",
+                    color: "#00FF88",
+                  }}
+                >
+                  ✓ Message received. We'll respond within 24 hours.
+                </div>
+              )}
+
               <p className="font-mono text-[9px] tracking-[0.18em] text-[var(--text-dim)] text-center">
                 // ENCRYPTED · BOT-SHIELDED · SECURE TRANSMISSION
               </p>
