@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { z } from "zod";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { CornerBrackets } from "@/components/hud/CornerBrackets";
 import { Phone, Mail, MapPin, Globe } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const CONTACTS = [
   {
@@ -28,26 +30,51 @@ const CONTACTS = [
   },
 ];
 
+// Mirrors the database CHECK constraints
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Operative name is required").max(100, "Name must be 100 characters or fewer"),
+  email: z.string().trim().email("Enter a valid email address").max(255, "Email must be 255 characters or fewer"),
+  message: z.string().trim().min(1, "Mission payload is required").max(2000, "Message must be 2000 characters or fewer"),
+});
+
+type FormStatus = "idle" | "loading" | "success" | "error";
+
 export function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim() || !message.trim()) {
+    setErrorMsg("");
+
+    const parsed = contactSchema.safeParse({ name, email, message });
+    if (!parsed.success) {
       setStatus("error");
+      setErrorMsg(parsed.error.issues[0]?.message ?? "Invalid input");
       return;
     }
+
     setStatus("loading");
-    // Placeholder — wire to backend on request
-    await new Promise((r) => setTimeout(r, 1200));
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      message: parsed.data.message,
+    });
+
+    if (error) {
+      setStatus("error");
+      setErrorMsg("Transmission failed — please try again in a moment.");
+      return;
+    }
+
     setStatus("success");
     setName("");
     setEmail("");
     setMessage("");
-    setTimeout(() => setStatus("idle"), 4000);
+    window.setTimeout(() => setStatus("idle"), 4000);
   };
 
   return (
