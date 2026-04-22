@@ -282,6 +282,41 @@
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
 }
 
+/* ============ FOCUS OUTLINES (KEYBOARD A11Y) ============ */
+
+/* Hide focus rings for mouse users, show for keyboard users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 0 12px var(--neon-glow-lg),
+    0 0 24px var(--neon-glow);
+  border-radius: 3px;
+  transition: outline-offset 120ms ease-out, box-shadow 120ms ease-out;
+}
+
+/* Reusable utility for components that need themed focus ring */
+.ctx-focus-ring:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 4px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 0 14px var(--neon-glow-lg),
+    0 0 28px var(--neon-glow);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
