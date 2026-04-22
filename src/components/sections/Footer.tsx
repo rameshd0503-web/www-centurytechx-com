@@ -22,12 +22,23 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10">
           {/* Left */}
           <div>
-            <img
-              src={logoUrl}
-              alt="Century TechX"
-              className="h-11 w-auto object-contain mb-4"
-              style={{ filter: "drop-shadow(0 0 6px rgba(245,166,35,0.4))" }}
-            />
+            <span
+              className="relative inline-flex items-center justify-center rounded-full overflow-hidden mb-5"
+              style={{
+                width: 80,
+                height: 80,
+                background: "#FFFFFF",
+                border: "1px solid rgba(245,166,35,0.5)",
+                boxShadow: "0 0 20px rgba(245,166,35,0.3)",
+              }}
+            >
+              <img
+                src={logoUrl}
+                alt="Century TechX LLP — circuit tree logo"
+                className="block w-full h-full object-cover"
+                style={{ transform: "scale(1.05)" }}
+              />
+            </span>
             <div className="font-rajdhani font-semibold text-white text-[16px] tracking-[0.08em] mb-2">
               CENTURY TECHX LLP
             </div>

@@ -44,19 +44,26 @@ export function Navigation() {
       >
         <div className="h-full max-w-[1440px] mx-auto px-5 md:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#top" className="flex items-center gap-3 group">
-            <img
-              src={logoUrl}
-              alt="Century TechX"
-              className="h-[38px] w-auto object-contain flicker-on"
-              style={{ filter: "drop-shadow(0 0 8px rgba(245,166,35,0.4))" }}
-            />
+          <a href="#top" className="flex items-center gap-3 group" aria-label="Century TechX LLP — Home">
             <span
-              className="hidden sm:inline-block text-[var(--text-primary)] font-rajdhani font-semibold"
-              style={{ fontSize: 15, letterSpacing: "0.1em" }}
+              className="relative inline-flex items-center justify-center rounded-full overflow-hidden flicker-on shrink-0"
+              style={{
+                width: 50,
+                height: 50,
+                background: "#FFFFFF",
+                border: "1px solid rgba(245,166,35,0.45)",
+                boxShadow:
+                  "0 0 14px rgba(245,166,35,0.35), inset 0 0 0 1px rgba(0,0,0,0.05)",
+              }}
             >
-              CENTURY TECHX LLP
+              <img
+                src={logoUrl}
+                alt="Century TechX LLP — circuit tree logo"
+                className="block w-full h-full object-cover"
+                style={{ transform: "scale(1.05)" }}
+              />
             </span>
+            <span className="sr-only">Century TechX LLP</span>
           </a>
 
           {/* Center nav */}
