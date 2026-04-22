@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoUrl from "@/assets/ctx-logo.png";
+import logoUrl from "@/assets/ctx-logo.jpeg";
 
 const NAV_ITEMS = [
   { label: "DIVISIONS", href: "#divisions" },

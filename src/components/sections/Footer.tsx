@@ -1,4 +1,4 @@
-import logoUrl from "@/assets/ctx-logo.png";
+import logoUrl from "@/assets/ctx-logo.jpeg";
 
 const QUICK_LINKS = [
   { label: "Divisions", href: "#divisions" },
