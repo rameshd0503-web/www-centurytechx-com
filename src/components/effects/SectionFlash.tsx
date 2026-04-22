@@ -9,10 +9,11 @@ interface SectionFlashProps {
 
 /**
  * Wraps a section and fires a single 0.4s orange scan-line sweep
- * the first time the section enters the viewport.
+ * the first time the section enters the viewport. Renders a <div>
+ * to avoid nesting <section> tags.
  */
 export function SectionFlash({ children, id, className, style }: SectionFlashProps) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [flash, setFlash] = useState(false);
   const fired = useRef(false);
 
@@ -35,7 +36,7 @@ export function SectionFlash({ children, id, className, style }: SectionFlashPro
   }, []);
 
   return (
-    <section ref={ref} id={id} className={className} style={{ position: "relative", ...style }}>
+    <div ref={ref} id={id} className={className} style={{ position: "relative", ...style }}>
       {flash && (
         <div
           aria-hidden
@@ -57,6 +58,6 @@ export function SectionFlash({ children, id, className, style }: SectionFlashPro
         </div>
       )}
       {children}
-    </section>
+    </div>
   );
 }
