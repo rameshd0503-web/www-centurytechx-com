@@ -44,7 +44,11 @@ export function Navigation() {
       >
         <div className="h-full max-w-[1440px] mx-auto px-5 md:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#top" className="flex items-center gap-3 group" aria-label="Century TechX LLP — Home">
+          <a
+            href="#top"
+            className="flex items-center gap-3 group ctx-focus-ring rounded-full"
+            aria-label="Century TechX LLP — Return to homepage top"
+          >
             <span
               className="relative inline-flex items-center justify-center rounded-full overflow-hidden flicker-on shrink-0"
               style={{
@@ -58,12 +62,12 @@ export function Navigation() {
             >
               <img
                 src={logoUrl}
-                alt="Century TechX LLP — circuit tree logo"
+                alt="Century TechX LLP logo"
                 className="block w-full h-full object-cover"
                 style={{ transform: "scale(1.05)" }}
               />
             </span>
-            <span className="sr-only">Century TechX LLP</span>
+            <span className="sr-only">Century TechX LLP — Home</span>
           </a>
 
           {/* Center nav */}

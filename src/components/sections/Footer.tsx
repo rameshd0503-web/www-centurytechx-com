@@ -22,23 +22,29 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10">
           {/* Left */}
           <div>
-            <span
-              className="relative inline-flex items-center justify-center rounded-full overflow-hidden mb-5"
-              style={{
-                width: 80,
-                height: 80,
-                background: "#FFFFFF",
-                border: "1px solid rgba(245,166,35,0.5)",
-                boxShadow: "0 0 20px rgba(245,166,35,0.3)",
-              }}
+            <a
+              href="#top"
+              aria-label="Century TechX LLP — Return to homepage top"
+              className="ctx-focus-ring inline-block rounded-full mb-5"
             >
-              <img
-                src={logoUrl}
-                alt="Century TechX LLP — circuit tree logo"
-                className="block w-full h-full object-cover"
-                style={{ transform: "scale(1.05)" }}
-              />
-            </span>
+              <span
+                className="relative inline-flex items-center justify-center rounded-full overflow-hidden"
+                style={{
+                  width: 80,
+                  height: 80,
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(245,166,35,0.5)",
+                  boxShadow: "0 0 20px rgba(245,166,35,0.3)",
+                }}
+              >
+                <img
+                  src={logoUrl}
+                  alt="Century TechX LLP logo"
+                  className="block w-full h-full object-cover"
+                  style={{ transform: "scale(1.05)" }}
+                />
+              </span>
+            </a>
             <div className="font-rajdhani font-semibold text-white text-[16px] tracking-[0.08em] mb-2">
               CENTURY TECHX LLP
             </div>
