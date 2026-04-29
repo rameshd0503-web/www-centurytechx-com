@@ -155,7 +155,7 @@ export function Hero() {
               <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
             </a>
             <a
-              href="#products"
+              href="#automations"
               className="inline-flex items-center font-orbitron font-bold text-[12px] tracking-[0.12em] text-[var(--neon)] px-8 py-4 rounded-[3px] transition-all duration-200"
               style={{
                 background: "transparent",

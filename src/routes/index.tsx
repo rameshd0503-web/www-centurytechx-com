@@ -7,7 +7,7 @@ import { SectionFlash } from "@/components/effects/SectionFlash";
 import { Navigation } from "@/components/site/Navigation";
 import { Hero } from "@/components/sections/Hero";
 import { Divisions } from "@/components/sections/Divisions";
-import { Products } from "@/components/sections/Products";
+
 import { Services } from "@/components/sections/Services";
 import { Collaboration } from "@/components/sections/Collaboration";
 import { Automations } from "@/components/sections/Automations";
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "AI automation, EdTech platforms, and SaaS products engineered in India. ExamOS, StudentOS, and custom systems for ambitious teams.",
+          "AI automation, EdTech platforms, and SaaS products engineered in India. Custom systems and workflows for ambitious teams.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -57,7 +57,7 @@ function Index() {
         <main>
           <Hero />
           <SectionFlash><Divisions /></SectionFlash>
-          <SectionFlash><Products /></SectionFlash>
+          
           <SectionFlash><Services /></SectionFlash>
           <SectionFlash><Collaboration /></SectionFlash>
           <SectionFlash><Automations /></SectionFlash>

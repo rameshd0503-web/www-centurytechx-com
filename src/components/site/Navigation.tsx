@@ -4,7 +4,7 @@ import logoUrl from "@/assets/ctx-logo.jpeg";
 
 const NAV_ITEMS = [
   { label: "DIVISIONS", href: "#divisions" },
-  { label: "PRODUCTS", href: "#products" },
+  
   { label: "SERVICES", href: "#services" },
   { label: "STACK", href: "#stack" },
   { label: "CONTACT", href: "#contact" },

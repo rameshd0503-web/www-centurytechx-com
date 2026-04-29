@@ -2,7 +2,7 @@ import logoUrl from "@/assets/ctx-logo.jpeg";
 
 const QUICK_LINKS = [
   { label: "Divisions", href: "#divisions" },
-  { label: "Products", href: "#products" },
+  
   { label: "Services", href: "#services" },
   { label: "Stack", href: "#stack" },
   { label: "Contact", href: "#contact" },

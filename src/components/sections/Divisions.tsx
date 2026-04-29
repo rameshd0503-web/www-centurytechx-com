@@ -7,7 +7,7 @@ const DIVISIONS = [
     badge: "DIV-01",
     icon: "🎓",
     title: "EDTECH DIVISION",
-    products: "ExamOS · StudentOS",
+    products: "Custom School Platforms",
     desc: "Powering Indian Education at scale through AI-driven exam management and complete student performance systems.",
     accent: "#F5A623",
   },
@@ -110,7 +110,7 @@ export function Divisions() {
                   </p>
 
                   <a
-                    href="#products"
+                    href="#services"
                     className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] transition-opacity hover:opacity-70"
                     style={{ color: d.accent }}
                   >
