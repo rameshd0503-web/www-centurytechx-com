@@ -174,6 +174,15 @@ export function Hero() {
             </a>
           </motion.div>
 
+          {/* Social proof */}
+          <motion.div
+            {...reveal}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-5 font-mono text-[11px] tracking-[0.14em] text-[var(--text-dim)]"
+          >
+            <span className="text-[var(--neon)]">//</span> New startup. Serious tech. Building for founders across India 🇮🇳
+          </motion.div>
+
           {/* Stats */}
           <motion.div
             {...reveal}
@@ -185,10 +194,10 @@ export function Hero() {
             }}
           >
             {[
-              { val: <StatCounter target={4} suffix="+" />, label: "ACTIVE PRODUCTS" },
+              { val: <StatCounter target={10} suffix="+" />, label: "ACTIVE PRODUCTS" },
               { val: <StatCounter target={3} />, label: "DIVISIONS" },
               { val: <StatCounter target={100} suffix="%" />, label: "IP OWNERSHIP" },
-              { val: <StatCounter target={0} literal="∞" />, label: "GROWTH POTENTIAL" },
+              { val: <StatCounter target={50} suffix="+" />, label: "WORKFLOWS SHIPPED" },
             ].map((s, i) => (
               <div
                 key={i}
