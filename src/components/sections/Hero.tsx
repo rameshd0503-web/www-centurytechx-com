@@ -76,7 +76,7 @@ export function Hero() {
                 letterSpacing: "-0.04em",
               }}
             >
-              <GlitchText text="WE BUILD" intensity="low" />
+              <GlitchText text="STOP WORKING." intensity="low" />
             </span>
 
             {/* Line 2 — gradient, same size, drop-shadow glow */}
@@ -90,7 +90,7 @@ export function Hero() {
               }}
             >
               <GlitchText
-                text="THE FUTURE."
+                text="START AUTOMATING."
                 intensity="medium"
                 useDropShadow
                 className="gradient-text-anim"
