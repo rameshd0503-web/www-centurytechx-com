@@ -63,7 +63,7 @@ function AdminInboxPage() {
     setLoading(true);
     setError("");
     let query = supabase
-      .from("contact_submissions")
+      .from("enquiries")
       .select("id, name, email, message, status, created_at, updated_at")
       .order("created_at", { ascending: false })
       .limit(200);
@@ -91,7 +91,7 @@ function AdminInboxPage() {
   const updateStatus = async (id: string, next: SubmissionStatus) => {
     const prev = rows;
     setRows((curr) => curr?.map((r) => (r.id === id ? { ...r, status: next } : r)) ?? curr);
-    const { error } = await supabase.from("contact_submissions").update({ status: next }).eq("id", id);
+    const { error } = await supabase.from("enquiries").update({ status: next }).eq("id", id);
     if (error) {
       setError(error.message);
       setRows(prev ?? null);

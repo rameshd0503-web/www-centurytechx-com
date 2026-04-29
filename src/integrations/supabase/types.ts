@@ -14,7 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
-      contact_submissions: {
+      enquiries: {
         Row: {
           created_at: string
           email: string
