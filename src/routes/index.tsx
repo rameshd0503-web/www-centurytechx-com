@@ -11,7 +11,8 @@ import { Divisions } from "@/components/sections/Divisions";
 import { Services } from "@/components/sections/Services";
 import { Collaboration } from "@/components/sections/Collaboration";
 import { Automations } from "@/components/sections/Automations";
-import { Clients } from "@/components/sections/Clients";
+import { Portfolio } from "@/components/sections/Portfolio";
+import { WhyTrust } from "@/components/sections/WhyTrust";
 import { Stack } from "@/components/sections/Stack";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -61,7 +62,8 @@ function Index() {
           <SectionFlash><Services /></SectionFlash>
           <SectionFlash><Collaboration /></SectionFlash>
           <SectionFlash><Automations /></SectionFlash>
-          <SectionFlash><Clients /></SectionFlash>
+          <SectionFlash><Portfolio /></SectionFlash>
+          <SectionFlash><WhyTrust /></SectionFlash>
           <SectionFlash><Stack /></SectionFlash>
           <SectionFlash><Contact /></SectionFlash>
         </main>
