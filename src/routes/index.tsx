@@ -12,6 +12,7 @@ import { Services } from "@/components/sections/Services";
 import { Collaboration } from "@/components/sections/Collaboration";
 import { Automations } from "@/components/sections/Automations";
 import { Portfolio } from "@/components/sections/Portfolio";
+import { Clients } from "@/components/sections/Clients";
 import { WhyTrust } from "@/components/sections/WhyTrust";
 import { Stack } from "@/components/sections/Stack";
 import { Contact } from "@/components/sections/Contact";
@@ -63,6 +64,7 @@ function Index() {
           <SectionFlash><Collaboration /></SectionFlash>
           <SectionFlash><Automations /></SectionFlash>
           <SectionFlash><Portfolio /></SectionFlash>
+          <SectionFlash><Clients /></SectionFlash>
           <SectionFlash><WhyTrust /></SectionFlash>
           <SectionFlash><Stack /></SectionFlash>
           <SectionFlash><Contact /></SectionFlash>
