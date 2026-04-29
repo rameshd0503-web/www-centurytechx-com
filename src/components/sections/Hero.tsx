@@ -55,7 +55,7 @@ export function Hero() {
               style={{ background: "#F5A623", boxShadow: "0 0 6px #F5A623" }}
             />
             <span className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
-              // CTX-2024 · TECHNOLOGY COMPANY · INDIA
+              // CTX-2026 · TECHNOLOGY COMPANY · INDIA
             </span>
           </motion.div>
 
