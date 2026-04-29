@@ -79,7 +79,7 @@ const WORKFLOWS = [
     title: "STUDENT ONBOARDING (EdTech)",
     industry: "Schools · Coaching centres",
     steps: [
-      "Admission form syncs to StudentOS",
+      "Admission form syncs to student database",
       "Fee link + welcome email auto-sent",
       "WhatsApp class schedule dispatched",
       "Parent portal credentials provisioned",

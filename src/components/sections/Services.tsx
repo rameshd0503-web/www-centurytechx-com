@@ -5,7 +5,7 @@ import { HUDCard } from "@/components/hud/HUDCard";
 const SERVICES = [
   { num: "01", icon: "💻", title: "SaaS Product Development", desc: "Full-stack SaaS from concept to deployed product." },
   { num: "02", icon: "🤖", title: "AI & Automation Workflows", desc: "n8n, LLMs, custom agents — automate what slows you." },
-  { num: "03", icon: "🎓", title: "EdTech Solutions", desc: "ExamOS and StudentOS deployments for institutions." },
+  { num: "03", icon: "🎓", title: "EdTech Solutions", desc: "Custom exam management and student platforms for institutions." },
   { num: "04", icon: "⚡", title: "MVP Rapid Build", desc: "Ship a working product in 8–12 weeks. No fluff." },
   { num: "05", icon: "🎬", title: "AI Video Editing (CutX)", desc: "AI-powered video editing at creator speed and scale." },
 ];
