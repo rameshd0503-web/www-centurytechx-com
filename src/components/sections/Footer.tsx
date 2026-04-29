@@ -94,8 +94,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://centurytechx.in" className="text-[var(--text-secondary)] hover:text-[var(--neon)]">
-                  🌐 centurytechx.in
+                <a href="https://centurytechx.com" className="text-[var(--text-secondary)] hover:text-[var(--neon)]">
+                  🌐 centurytechx.com
                 </a>
               </li>
             </ul>
