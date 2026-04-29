@@ -10,6 +10,7 @@ import { Divisions } from "@/components/sections/Divisions";
 import { Products } from "@/components/sections/Products";
 import { Services } from "@/components/sections/Services";
 import { Collaboration } from "@/components/sections/Collaboration";
+import { Automations } from "@/components/sections/Automations";
 import { Clients } from "@/components/sections/Clients";
 import { Stack } from "@/components/sections/Stack";
 import { Contact } from "@/components/sections/Contact";
@@ -59,6 +60,7 @@ function Index() {
           <SectionFlash><Products /></SectionFlash>
           <SectionFlash><Services /></SectionFlash>
           <SectionFlash><Collaboration /></SectionFlash>
+          <SectionFlash><Automations /></SectionFlash>
           <SectionFlash><Clients /></SectionFlash>
           <SectionFlash><Stack /></SectionFlash>
           <SectionFlash><Contact /></SectionFlash>
