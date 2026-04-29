@@ -58,7 +58,7 @@ export function Contact() {
     }
 
     setStatus("loading");
-    const { error } = await supabase.from("contact_submissions").insert({
+    const { error } = await supabase.from("enquiries").insert({
       name: parsed.data.name,
       email: parsed.data.email,
       message: parsed.data.message,
