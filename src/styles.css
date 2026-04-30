@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -6,10 +6,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: 2px;
-  --radius-md: 3px;
-  --radius-lg: 4px;
-  --radius-xl: 6px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 
   --color-background: var(--bg-primary);
   --color-foreground: var(--text-primary);
@@ -17,24 +17,26 @@
   --color-card-foreground: var(--text-primary);
   --color-popover: var(--bg-elevated);
   --color-popover-foreground: var(--text-primary);
-  --color-primary: var(--neon);
-  --color-primary-foreground: #000000;
+  --color-primary: var(--accent);
+  --color-primary-foreground: #FFFFFF;
   --color-secondary: var(--bg-surface);
   --color-secondary-foreground: var(--text-primary);
   --color-muted: var(--bg-surface);
   --color-muted-foreground: var(--text-secondary);
-  --color-accent: var(--cyan);
-  --color-accent-foreground: #000000;
+  --color-accent: var(--accent);
+  --color-accent-foreground: #FFFFFF;
   --color-destructive: var(--red);
-  --color-destructive-foreground: var(--text-primary);
+  --color-destructive-foreground: #FFFFFF;
   --color-border: var(--border-mid);
   --color-input: var(--border-mid);
-  --color-ring: var(--neon);
+  --color-ring: var(--accent);
 
-  --color-neon: var(--neon);
-  --color-neon-bright: var(--neon-bright);
-  --color-neon-dim: var(--neon-dim);
-  --color-cyan: var(--cyan);
+  /* Legacy token aliases — map old "neon" tokens to the new navy/blue palette
+     so existing components re-theme without code changes. */
+  --color-neon: var(--navy);
+  --color-neon-bright: var(--accent);
+  --color-neon-dim: var(--navy-soft);
+  --color-cyan: var(--accent);
   --color-red: var(--red);
   --color-bg-void: var(--bg-void);
   --color-bg-primary: var(--bg-primary);
@@ -43,89 +45,103 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-dim: var(--text-dim);
-  --color-text-neon: var(--neon);
+  --color-text-neon: var(--navy);
 
-  --font-orbitron: 'Orbitron', sans-serif;
-  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-orbitron: 'Plus Jakarta Sans', sans-serif;
+  --font-rajdhani: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-inter: 'Inter', sans-serif;
 }
 
 :root {
-  --radius: 4px;
+  --radius: 12px;
 
-  /* Backgrounds */
-  --bg-void: #000000;
-  --bg-primary: #030506;
-  --bg-surface: #080E10;
-  --bg-elevated: #0D1518;
-  --bg-glass: rgba(8,14,16,0.85);
+  /* Backgrounds — light theme */
+  --bg-void: #FFFFFF;
+  --bg-primary: #FFFFFF;
+  --bg-surface: #F0F4FF;     /* alternating section bg */
+  --bg-elevated: #FFFFFF;     /* cards */
+  --bg-glass: rgba(255,255,255,0.85);
 
-  /* Brand neon */
-  --neon: #F5A623;
-  --neon-bright: #FFB830;
-  --neon-dim: #C47F10;
-  --neon-glow: rgba(245,166,35,0.20);
-  --neon-glow-lg: rgba(245,166,35,0.35);
-  --neon-pale: rgba(245,166,35,0.06);
+  /* Brand — Navy + Vibrant Blue
+     Old "--neon" tokens are repurposed to navy so existing components
+     (which reference --neon) automatically pick up the new primary color. */
+  --navy: #1E3A5F;
+  --navy-soft: #2C4A75;
+  --accent: #2563EB;          /* CTAs, links, highlights */
+  --accent-bright: #3B82F6;
+  --accent-soft: #EFF6FF;
 
-  /* Cyan */
-  --cyan: #00D4E8;
-  --cyan-glow: rgba(0,212,232,0.15);
-  --cyan-pale: rgba(0,212,232,0.05);
+  --neon: #1E3A5F;            /* legacy alias → navy */
+  --neon-bright: #2563EB;     /* legacy alias → accent blue */
+  --neon-dim: #6B7280;        /* legacy alias → muted */
+  --neon-glow: rgba(37,99,235,0.18);
+  --neon-glow-lg: rgba(37,99,235,0.30);
+  --neon-pale: rgba(37,99,235,0.06);
+
+  /* Cyan retained as accent blue for legacy refs */
+  --cyan: #2563EB;
+  --cyan-glow: rgba(37,99,235,0.18);
+  --cyan-pale: rgba(37,99,235,0.06);
 
   /* Red */
-  --red: #FF2D55;
-  --red-glow: rgba(255,45,85,0.15);
+  --red: #EF4444;
+  --red-glow: rgba(239,68,68,0.15);
 
   /* Text */
-  --text-primary: #F0EDE8;
-  --text-secondary: #A09080;
-  --text-dim: #5A5048;
+  --text-primary: #1A1A2E;     /* charcoal body */
+  --text-secondary: #6B7280;   /* muted gray */
+  --text-dim: #9CA3AF;
 
   /* Borders */
-  --border-dark: rgba(245,166,35,0.08);
-  --border-mid: rgba(245,166,35,0.18);
-  --border-bright: rgba(245,166,35,0.40);
-  --border-neutral: rgba(240,237,232,0.06);
+  --border-dark: rgba(30,58,95,0.08);
+  --border-mid: rgba(30,58,95,0.12);
+  --border-bright: rgba(37,99,235,0.45);
+  --border-neutral: rgba(30,58,95,0.08);
 
   /* Special */
-  --scanline: rgba(245,166,35,0.018);
-  --grain-opacity: 0.022;
+  --scanline: rgba(30,58,95,0.012);
+  --grain-opacity: 0;          /* disable grain for clean light theme */
 
   /* shadcn fallbacks */
   --card: var(--bg-elevated);
   --card-foreground: var(--text-primary);
   --popover: var(--bg-elevated);
   --popover-foreground: var(--text-primary);
-  --primary: var(--neon);
-  --primary-foreground: #000000;
+  --primary: var(--accent);
+  --primary-foreground: #FFFFFF;
   --secondary: var(--bg-surface);
   --secondary-foreground: var(--text-primary);
   --muted: var(--bg-surface);
   --muted-foreground: var(--text-secondary);
-  --accent: var(--cyan);
-  --accent-foreground: #000000;
+  --accent-foreground: #FFFFFF;
   --destructive: var(--red);
-  --destructive-foreground: var(--text-primary);
+  --destructive-foreground: #FFFFFF;
   --border: var(--border-mid);
   --input: var(--border-mid);
-  --ring: var(--neon);
+  --ring: var(--accent);
   --background: var(--bg-primary);
   --foreground: var(--text-primary);
-  --sidebar: var(--bg-elevated);
+  --sidebar: #F8F9FA;
   --sidebar-foreground: var(--text-primary);
-  --sidebar-primary: var(--neon);
-  --sidebar-primary-foreground: #000000;
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: var(--bg-surface);
-  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-accent-foreground: var(--navy);
   --sidebar-border: var(--border-mid);
-  --sidebar-ring: var(--neon);
-  --chart-1: var(--neon);
-  --chart-2: var(--cyan);
-  --chart-3: var(--neon-bright);
+  --sidebar-ring: var(--accent);
+  --chart-1: var(--accent);
+  --chart-2: var(--navy);
+  --chart-3: var(--accent-bright);
   --chart-4: var(--red);
-  --chart-5: var(--neon-dim);
+  --chart-5: var(--navy-soft);
+
+  /* Footer */
+  --footer-bg: #F8F9FA;
+
+  /* Card shadow */
+  --shadow-card: 0 1px 3px rgba(30,58,95,0.06), 0 4px 12px rgba(30,58,95,0.05);
+  --shadow-card-hover: 0 8px 24px rgba(30,58,95,0.10), 0 2px 6px rgba(30,58,95,0.06);
 }
 
 @layer base {
@@ -135,46 +151,41 @@
 
   html {
     background: var(--bg-primary);
-    cursor: none;
+    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-inter);
+    line-height: 1.7;
     overflow-x: hidden;
-    cursor: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background: var(--neon);
-    color: #000;
+    background: var(--accent);
+    color: #FFFFFF;
   }
 
-  /* Hide cursor on interactive elements - reticle replaces it */
-  a, button, input, textarea, [role="button"] {
-    cursor: none;
-  }
-
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-orbitron);
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 }
 
 /* ============ KEYFRAMES ============ */
 
 @keyframes flicker-on {
-  0% { opacity: 1; }
-  10% { opacity: 0.3; }
-  20% { opacity: 1; }
-  35% { opacity: 0.6; }
-  50% { opacity: 0.9; }
-  100% { opacity: 1; }
+  0%, 100% { opacity: 1; }
 }
 
 @keyframes neon-pulse {
   0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--neon-glow); }
-  50% { opacity: 0.85; box-shadow: 0 0 20px var(--neon-glow-lg); }
+  50% { opacity: 0.95; box-shadow: 0 0 18px var(--neon-glow-lg); }
 }
 
 @keyframes blink {
@@ -184,7 +195,7 @@
 
 @keyframes blink-slow {
   0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.2; }
+  51%, 100% { opacity: 0.3; }
 }
 
 @keyframes gradient-shift {
@@ -203,8 +214,8 @@
 }
 
 @keyframes node-pulse {
-  0%, 100% { opacity: 0.06; }
-  50% { opacity: 0.18; }
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.10; }
 }
 
 @keyframes data-pulse-travel {
@@ -220,19 +231,19 @@
 }
 
 @keyframes top-bar-pulse {
-  0%, 100% { box-shadow: 0 0 12px var(--neon-glow), 0 0 24px var(--neon-glow); }
-  50% { box-shadow: 0 0 20px var(--neon-glow-lg), 0 0 40px var(--neon-glow); }
+  0%, 100% { box-shadow: 0 0 8px var(--neon-glow); }
+  50% { box-shadow: 0 0 14px var(--neon-glow-lg); }
 }
 
 @keyframes beta-pulse {
-  0%, 100% { box-shadow: 0 0 0px rgba(255,165,0,0); }
-  50% { box-shadow: 0 0 8px rgba(255,165,0,0.4); }
+  0%, 100% { box-shadow: 0 0 0px rgba(37,99,235,0); }
+  50% { box-shadow: 0 0 8px rgba(37,99,235,0.4); }
 }
 
 @keyframes section-flash-sweep {
   0% { transform: translateY(0); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
+  10% { opacity: 0.4; }
+  90% { opacity: 0.4; }
   100% { transform: translateY(100%); opacity: 0; }
 }
 
@@ -243,38 +254,42 @@
 
 @keyframes boot-flash {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .flicker-on {
-  animation: flicker-on 0.8s ease-out 1;
+  animation: fade-in-up 0.6s ease-out 1;
 }
 
 .gradient-text-anim {
-  background: linear-gradient(90deg, #F5A623, #FFB830, #F5A623);
+  background: linear-gradient(90deg, var(--navy), var(--accent), var(--navy));
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: gradient-shift 3s linear infinite;
+  animation: gradient-shift 6s linear infinite;
 }
 
 .text-glow-neon {
-  text-shadow: 0 0 30px rgba(245,166,35,0.4);
+  text-shadow: none;
 }
 
 .text-glow-cyan {
-  text-shadow: 0 0 30px rgba(0,212,232,0.4);
+  text-shadow: none;
 }
 
 .scanline-bg {
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 3px,
-    var(--scanline) 3px,
-    var(--scanline) 4px
-  );
+  background: none;
 }
 
 .marquee-mask {
@@ -284,7 +299,6 @@
 
 /* ============ FOCUS OUTLINES (KEYBOARD A11Y) ============ */
 
-/* Hide focus rings for mouse users, show for keyboard users */
 :focus:not(:focus-visible) {
   outline: none;
 }
@@ -297,24 +311,18 @@ textarea:focus-visible,
 select:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--neon);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 0 12px var(--neon-glow-lg),
-    0 0 24px var(--neon-glow);
-  border-radius: 3px;
+    0 0 0 3px rgba(37,99,235,0.18);
+  border-radius: 8px;
   transition: outline-offset 120ms ease-out, box-shadow 120ms ease-out;
 }
 
-/* Reusable utility for components that need themed focus ring */
 .ctx-focus-ring:focus-visible {
-  outline: 2px solid var(--neon);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 0 14px var(--neon-glow-lg),
-    0 0 28px var(--neon-glow);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.18);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -322,11 +330,12 @@ summary:focus-visible,
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--bg-void); }
-::-webkit-scrollbar-thumb { background: var(--neon-dim); border-radius: 0; }
-::-webkit-scrollbar-thumb:hover { background: var(--neon); }
+::-webkit-scrollbar-track { background: #F0F4FF; }
+::-webkit-scrollbar-thumb { background: #C7D2FE; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
