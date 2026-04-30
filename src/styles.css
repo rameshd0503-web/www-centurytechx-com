@@ -410,3 +410,28 @@ summary:focus-visible,
 ::-webkit-scrollbar-track { background: #F0F4FF; }
 ::-webkit-scrollbar-thumb { background: #C7D2FE; border-radius: 8px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Browser autofill overrides — keep filled text bright on dark form inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #FFFFFF !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(37, 99, 235, 0.08) inset !important;
+  box-shadow: 0 0 0 1000px rgba(37, 99, 235, 0.08) inset !important;
+  caret-color: #3B82F6 !important;
+  border-color: rgba(37, 99, 235, 0.25) !important;
+  transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
+}
+
+/* Firefox autofill */
+input:autofill,
+textarea:autofill {
+  background: rgba(37, 99, 235, 0.08) !important;
+  color: #FFFFFF !important;
+  caret-color: #3B82F6 !important;
+}
