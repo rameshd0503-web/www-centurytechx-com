@@ -5,6 +5,7 @@ import { CircuitTree } from "@/components/hud/CircuitTree";
 import { ProgressBar } from "@/components/hud/ProgressBar";
 import { StatCounter } from "@/components/hud/StatCounter";
 import { CornerBrackets } from "@/components/hud/CornerBrackets";
+import { HeroFX } from "@/components/effects/HeroFX";
 
 const reveal = {
   initial: { opacity: 0, y: 40, filter: "blur(4px)" },
@@ -15,10 +16,11 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen pt-[110px] pb-20 px-5 md:px-8"
+      className="relative min-h-screen pt-[110px] pb-20 px-5 md:px-8 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EFF6FF 100%)" }}
     >
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[58fr_42fr] gap-15 lg:gap-[60px] items-center">
+      <HeroFX />
+      <div className="relative max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[58fr_42fr] gap-15 lg:gap-[60px] items-center" style={{ zIndex: 1 }}>
         {/* LEFT */}
         <div>
           {/* Status bar */}
