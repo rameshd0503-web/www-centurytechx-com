@@ -24,22 +24,20 @@ export function HUDCard({
 }: HUDCardProps) {
   return (
     <div
-      className={`relative bg-[var(--bg-elevated)] border border-[var(--border-dark)] rounded-[4px] overflow-hidden group transition-all duration-300 ${
+      className={`relative bg-[var(--bg-elevated)] border border-[var(--border-dark)] rounded-[12px] overflow-hidden group transition-all duration-300 ${
         hoverable ? "hover:-translate-y-[6px] hover:border-[color:var(--border-bright)]" : ""
       } ${className}`}
       style={{
-        boxShadow: hoverable
-          ? undefined
-          : `0 0 40px rgba(37,99,235,0.06), inset 0 0 40px rgba(37,99,235,0.02)`,
+        boxShadow: "var(--shadow-card)",
         ...style,
       }}
       onMouseEnter={(e) => {
         if (!hoverable) return;
-        e.currentTarget.style.boxShadow = `0 0 0 1px rgba(37,99,235,0.25), 0 16px 48px rgba(37,99,235,0.12), 0 0 80px rgba(37,99,235,0.06)`;
+        e.currentTarget.style.boxShadow = "var(--shadow-card-hover)";
       }}
       onMouseLeave={(e) => {
         if (!hoverable) return;
-        e.currentTarget.style.boxShadow = "";
+        e.currentTarget.style.boxShadow = "var(--shadow-card)";
       }}
     >
       {topBar > 0 && (
