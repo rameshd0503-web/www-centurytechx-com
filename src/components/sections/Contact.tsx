@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { CornerBrackets } from "@/components/hud/CornerBrackets";
 import { Phone, Mail, MapPin, Globe } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const CONTACTS = [
   {
@@ -55,7 +56,9 @@ export function Contact() {
     const parsed = contactSchema.safeParse({ name, email, phone: phone || undefined, message });
     if (!parsed.success) {
       setStatus("error");
-      setErrorMsg(parsed.error.issues[0]?.message ?? "Invalid input");
+      const msg = parsed.error.issues[0]?.message ?? "Invalid input";
+      setErrorMsg(msg);
+      toast.error(msg);
       return;
     }
 
@@ -69,11 +72,14 @@ export function Contact() {
 
     if (error) {
       setStatus("error");
-      setErrorMsg("Transmission failed — please try again in a moment.");
+      const msg = "Transmission failed — please try again in a moment.";
+      setErrorMsg(msg);
+      toast.error(msg);
       return;
     }
 
     setStatus("success");
+    toast.success("Message sent! We'll respond within 24 hours.");
     setName("");
     setEmail("");
     setPhone("");
