@@ -63,16 +63,19 @@ export function Contact() {
     }
 
     setStatus("loading");
-    const { error } = await supabase.from("contacts").insert({
+    const payload = {
       name: parsed.data.name,
       email: parsed.data.email,
       phone: parsed.data.phone ?? null,
       message: parsed.data.message,
-    });
+    };
+    console.log("[Contact] Submitting payload:", payload);
+    const { data, error } = await supabase.from("contacts").insert(payload).select();
+    console.log("[Contact] Supabase response:", { data, error });
 
     if (error) {
       setStatus("error");
-      const msg = "Transmission failed — please try again in a moment.";
+      const msg = `Transmission failed — ${error.message}`;
       setErrorMsg(msg);
       toast.error(msg);
       return;
