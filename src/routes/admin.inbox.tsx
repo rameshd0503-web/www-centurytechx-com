@@ -97,7 +97,8 @@ function AdminInboxPage() {
     setRows((curr) => curr?.map((r) => (r.id === id ? { ...r, status: next } : r)) ?? curr);
     const { error } = await supabase.from("enquiries").update({ status: next }).eq("id", id);
     if (error) {
-      setError(error.message);
+      console.error("Failed to update submission status:", error);
+      setError("Failed to update status. Please try again.");
       setRows(prev ?? null);
     }
   };
