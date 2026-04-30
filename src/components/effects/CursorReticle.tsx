@@ -69,7 +69,7 @@ export function CursorReticle() {
         style={{
           width: 600,
           height: 600,
-          background: "radial-gradient(circle, rgba(245,166,35,0.04) 0%, transparent 60%)",
+          background: "radial-gradient(circle, rgba(37,99,235,0.04) 0%, transparent 60%)",
           zIndex: 1,
           willChange: "transform",
         }}
@@ -81,8 +81,8 @@ export function CursorReticle() {
         style={{
           width: size,
           height: size,
-          border: "1px solid #F5A623",
-          background: hovering ? "rgba(245,166,35,0.08)" : "transparent",
+          border: "1px solid #2563EB",
+          background: hovering ? "rgba(37,99,235,0.08)" : "transparent",
           zIndex: 10000,
           willChange: "transform",
           mixBlendMode: "normal",
@@ -95,8 +95,8 @@ export function CursorReticle() {
         style={{
           width: clicking ? 2 : 4,
           height: clicking ? 2 : 4,
-          background: "#F5A623",
-          boxShadow: "0 0 6px #F5A623",
+          background: "#2563EB",
+          boxShadow: "0 0 6px #2563EB",
           zIndex: 10001,
           willChange: "transform",
           animation: hovering ? "blink-slow 0.8s ease-in-out infinite" : "none",

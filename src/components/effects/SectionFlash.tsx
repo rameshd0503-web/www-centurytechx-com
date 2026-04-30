@@ -50,8 +50,8 @@ export function SectionFlash({ children, id, className, style }: SectionFlashPro
               left: 0,
               right: 0,
               height: 2,
-              background: "rgba(245,166,35,0.6)",
-              boxShadow: "0 0 12px rgba(245,166,35,0.7)",
+              background: "rgba(37,99,235,0.6)",
+              boxShadow: "0 0 12px rgba(37,99,235,0.7)",
               animation: "section-flash-sweep 0.4s linear forwards",
             }}
           />

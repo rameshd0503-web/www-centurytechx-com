@@ -41,8 +41,8 @@ function LogoLink({ variant, refEl }: { variant: Variant; refEl: (el: HTMLAnchor
           width: variant.size,
           height: variant.size,
           background: "#FFFFFF",
-          border: "1px solid rgba(245,166,35,0.45)",
-          boxShadow: "0 0 14px rgba(245,166,35,0.35)",
+          border: "1px solid rgba(37,99,235,0.45)",
+          boxShadow: "0 0 14px rgba(37,99,235,0.35)",
         }}
       >
         <img src={logoUrl} alt="Century TechX LLP logo" className="block w-full h-full object-cover" style={{ transform: "scale(1.05)" }} />
@@ -138,8 +138,8 @@ function FocusQAPage() {
                 <div
                   className="flex items-center justify-center p-6 rounded-[6px] transition-colors"
                   style={{
-                    background: isActive ? "rgba(245,166,35,0.04)" : "transparent",
-                    border: `1px dashed ${isActive ? "rgba(245,166,35,0.4)" : "rgba(245,166,35,0.12)"}`,
+                    background: isActive ? "rgba(37,99,235,0.04)" : "transparent",
+                    border: `1px dashed ${isActive ? "rgba(37,99,235,0.4)" : "rgba(37,99,235,0.12)"}`,
                     minHeight: 140,
                     minWidth: 140,
                   }}
@@ -178,7 +178,7 @@ function FocusQAPage() {
         >
           <div className="font-mono text-[10px] tracking-[0.2em] text-[var(--neon)] mb-4">// ACCEPTANCE CRITERIA</div>
           <ul className="space-y-2 font-mono text-[12px] text-[var(--text-secondary)]">
-            <li>✓ Outline is solid 2px in <span className="text-[var(--neon)]">--neon (#F5A623)</span></li>
+            <li>✓ Outline is solid 2px in <span className="text-[var(--neon)]">--neon (#2563EB)</span></li>
             <li>✓ Outline-offset is 4px (logo container fully visible inside the ring)</li>
             <li>✓ Layered glow (12px + 24px) wraps the ring without clipping the circle</li>
             <li>✓ Ring is fully circular — no square corners around the round logo</li>

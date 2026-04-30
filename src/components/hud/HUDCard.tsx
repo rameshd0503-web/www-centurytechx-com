@@ -13,7 +13,7 @@ interface HUDCardProps {
 }
 
 export function HUDCard({
-  accent = "#F5A623",
+  accent = "#2563EB",
   children,
   className = "",
   topBar = 0,
@@ -30,12 +30,12 @@ export function HUDCard({
       style={{
         boxShadow: hoverable
           ? undefined
-          : `0 0 40px rgba(245,166,35,0.06), inset 0 0 40px rgba(245,166,35,0.02)`,
+          : `0 0 40px rgba(37,99,235,0.06), inset 0 0 40px rgba(37,99,235,0.02)`,
         ...style,
       }}
       onMouseEnter={(e) => {
         if (!hoverable) return;
-        e.currentTarget.style.boxShadow = `0 0 0 1px rgba(245,166,35,0.25), 0 16px 48px rgba(245,166,35,0.12), 0 0 80px rgba(245,166,35,0.06)`;
+        e.currentTarget.style.boxShadow = `0 0 0 1px rgba(37,99,235,0.25), 0 16px 48px rgba(37,99,235,0.12), 0 0 80px rgba(37,99,235,0.06)`;
       }}
       onMouseLeave={(e) => {
         if (!hoverable) return;

@@ -202,7 +202,7 @@ export function Hero() {
                 key={i}
                 className="relative px-6 py-6 md:px-8"
                 style={{
-                  borderRight: i < 3 ? "1px solid rgba(245,166,35,0.15)" : "none",
+                  borderRight: i < 3 ? "1px solid rgba(37,99,235,0.15)" : "none",
                 }}
               >
                 <div className="font-orbitron font-black text-[var(--neon)]" style={{ fontSize: "2.4rem", lineHeight: 1 }}>
@@ -213,7 +213,7 @@ export function Hero() {
                 </div>
               </div>
             ))}
-            <CornerBrackets size={10} color="#F5A623" />
+            <CornerBrackets size={10} color="#2563EB" />
           </motion.div>
         </div>
 
@@ -225,11 +225,11 @@ export function Hero() {
           className="relative rounded-[4px] p-8"
           style={{
             background: "var(--bg-elevated)",
-            border: "1px solid rgba(245,166,35,0.20)",
-            boxShadow: "0 0 40px rgba(245,166,35,0.06), inset 0 0 40px rgba(245,166,35,0.02)",
+            border: "1px solid rgba(37,99,235,0.20)",
+            boxShadow: "0 0 40px rgba(37,99,235,0.06), inset 0 0 40px rgba(37,99,235,0.02)",
           }}
         >
-          <CornerBrackets size={16} color="#F5A623" />
+          <CornerBrackets size={16} color="#2563EB" />
 
           {/* Header */}
           <div className="flex items-center justify-between pb-3 mb-5 border-b border-[var(--border-dark)]">
@@ -255,7 +255,7 @@ export function Hero() {
           <div className="mt-6 pt-4 border-t border-[var(--border-dark)] flex items-center gap-2">
             <span
               className="inline-block w-[6px] h-3 bg-[var(--neon)]"
-              style={{ animation: "blink 1.2s steps(2) infinite", boxShadow: "0 0 8px #F5A623" }}
+              style={{ animation: "blink 1.2s steps(2) infinite", boxShadow: "0 0 8px #2563EB" }}
             />
             <span className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
               ALL SYSTEMS OPERATIONAL //

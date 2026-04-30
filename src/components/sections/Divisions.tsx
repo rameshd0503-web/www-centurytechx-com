@@ -9,7 +9,7 @@ const DIVISIONS = [
     title: "EDTECH DIVISION",
     products: "Custom School Platforms",
     desc: "Powering Indian Education at scale through AI-driven exam management and complete student performance systems.",
-    accent: "#F5A623",
+    accent: "#2563EB",
   },
   {
     badge: "DIV-02",
@@ -17,7 +17,7 @@ const DIVISIONS = [
     title: "AI AUTOMATION",
     products: "n8n · LLMs · Custom Agents",
     desc: "We design and deploy automation infrastructure that eliminates repetitive work — intelligent workflows powered by the latest AI models.",
-    accent: "#00D4E8",
+    accent: "#1E3A5F",
   },
   {
     badge: "DIV-03",
@@ -25,7 +25,7 @@ const DIVISIONS = [
     title: "SAAS PRODUCTS",
     products: "SaaS · APIs · White-label",
     desc: "End-to-end SaaS development — from architecture to deployment to long-term maintenance and scaling.",
-    accent: "#FFB830",
+    accent: "#3B82F6",
   },
 ];
 
@@ -41,7 +41,7 @@ export function Divisions() {
         aria-hidden
         className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
       >
-        <line x1="0" y1="100%" x2="100%" y2="0" stroke="rgba(245,166,35,0.06)" strokeDasharray="4 8" />
+        <line x1="0" y1="100%" x2="100%" y2="0" stroke="rgba(37,99,235,0.06)" strokeDasharray="4 8" />
       </svg>
 
       <div className="relative max-w-[1440px] mx-auto">

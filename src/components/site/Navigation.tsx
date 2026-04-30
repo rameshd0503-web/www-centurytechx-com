@@ -27,7 +27,7 @@ export function Navigation() {
       <div
         className="fixed top-0 left-0 right-0 h-[2px] z-[100]"
         style={{
-          background: "#F5A623",
+          background: "#2563EB",
           animation: "top-bar-pulse 4s ease-in-out infinite",
         }}
       />
@@ -38,7 +38,7 @@ export function Navigation() {
           background: scrolled ? "rgba(3,5,6,0.92)" : "transparent",
           backdropFilter: scrolled ? "blur(24px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(24px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(245,166,35,0.15)" : "1px solid transparent",
+          borderBottom: scrolled ? "1px solid rgba(37,99,235,0.15)" : "1px solid transparent",
           boxShadow: scrolled ? "0 4px 32px rgba(0,0,0,0.4)" : "none",
         }}
       >
@@ -55,9 +55,9 @@ export function Navigation() {
                 width: 50,
                 height: 50,
                 background: "#FFFFFF",
-                border: "1px solid rgba(245,166,35,0.45)",
+                border: "1px solid rgba(37,99,235,0.45)",
                 boxShadow:
-                  "0 0 14px rgba(245,166,35,0.35), inset 0 0 0 1px rgba(0,0,0,0.05)",
+                  "0 0 14px rgba(37,99,235,0.35), inset 0 0 0 1px rgba(0,0,0,0.05)",
               }}
             >
               <img
@@ -81,7 +81,7 @@ export function Navigation() {
                 {n.label}
                 <span
                   className="absolute left-0 -bottom-1 h-[1px] w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-                  style={{ background: "#F5A623", boxShadow: "0 0 6px #F5A623" }}
+                  style={{ background: "#2563EB", boxShadow: "0 0 6px #2563EB" }}
                 />
               </a>
             ))}
@@ -91,13 +91,13 @@ export function Navigation() {
           <a
             href="#contact"
             className="hidden md:inline-flex items-center font-orbitron font-bold text-[11px] tracking-[0.15em] text-black px-5 py-[10px] rounded-[3px] transition-all duration-200"
-            style={{ background: "#F5A623" }}
+            style={{ background: "#2563EB" }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#FFB830";
-              e.currentTarget.style.boxShadow = "0 0 20px rgba(245,166,35,0.4)";
+              e.currentTarget.style.background = "#3B82F6";
+              e.currentTarget.style.boxShadow = "0 0 20px rgba(37,99,235,0.4)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = "#F5A623";
+              e.currentTarget.style.background = "#2563EB";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -142,7 +142,7 @@ export function Navigation() {
             href="#contact"
             onClick={() => setOpen(false)}
             className="mt-6 font-orbitron font-bold text-sm tracking-[0.15em] text-black px-6 py-3 rounded-[3px]"
-            style={{ background: "#F5A623" }}
+            style={{ background: "#2563EB" }}
           >
             INITIALIZE //
           </a>

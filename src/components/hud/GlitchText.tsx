@@ -52,9 +52,9 @@ export function GlitchText({ text, className = "", intensity = "medium", as: Tag
       style={{
         display: "inline-block",
         transform: `translateX(${shift}px)`,
-        textShadow: glitching && !useDropShadow ? "3px 0 #FF2D55, -3px 0 #00D4E8" : undefined,
+        textShadow: glitching && !useDropShadow ? "3px 0 #FF2D55, -3px 0 #1E3A5F" : undefined,
         filter: glitching && useDropShadow
-          ? "drop-shadow(3px 0 0 #FF2D55) drop-shadow(-3px 0 0 #00D4E8)"
+          ? "drop-shadow(3px 0 0 #FF2D55) drop-shadow(-3px 0 0 #1E3A5F)"
           : undefined,
         transition: "transform 20ms linear",
         ...style,

@@ -14,14 +14,14 @@ const REASONS = [
     icon: "⚡",
     title: "DELIVERY-FIRST CULTURE",
     desc: "We sign contracts with timelines. If we commit to 10 weeks, we mean 10 weeks.",
-    accent: "#F5A623",
+    accent: "#2563EB",
   },
   {
     code: "TRUST_03",
     icon: "🤝",
     title: "FOUNDER-TO-FOUNDER THINKING",
     desc: "We think about your product like it's ours. Because sometimes, it is (Co-Build model).",
-    accent: "#00D4E8",
+    accent: "#1E3A5F",
   },
   {
     code: "TRUST_04",
