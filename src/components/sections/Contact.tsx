@@ -350,12 +350,12 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
           onFocus={(e) => {
             e.currentTarget.style.borderColor = "#2563EB";
             e.currentTarget.style.boxShadow = "0 0 0 2px rgba(37,99,235,0.12)";
-            e.currentTarget.style.background = "rgba(37,99,235,0.05)";
+            e.currentTarget.style.background = "#FFFFFF";
           }}
           onBlur={(e) => {
             e.currentTarget.style.borderColor = "rgba(37,99,235,0.12)";
             e.currentTarget.style.boxShadow = "none";
-            e.currentTarget.style.background = "rgba(37,99,235,0.03)";
+            e.currentTarget.style.background = "#FFFFFF";
           }}
         />
       ) : (
@@ -368,12 +368,12 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
           onFocus={(e) => {
             e.currentTarget.style.borderColor = "#2563EB";
             e.currentTarget.style.boxShadow = "0 0 0 2px rgba(37,99,235,0.12)";
-            e.currentTarget.style.background = "rgba(37,99,235,0.05)";
+            e.currentTarget.style.background = "#FFFFFF";
           }}
           onBlur={(e) => {
             e.currentTarget.style.borderColor = "rgba(37,99,235,0.12)";
             e.currentTarget.style.boxShadow = "none";
-            e.currentTarget.style.background = "rgba(37,99,235,0.03)";
+            e.currentTarget.style.background = "#FFFFFF";
           }}
         />
       )}
