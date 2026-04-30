@@ -49,7 +49,7 @@ function EnquiryPage() {
       message: parsed.data.message,
     };
     console.log("[Enquiry] Submitting payload:", payload);
-    const { data, error } = await supabase.from("enquiries").insert(payload).select();
+    const { data, error } = await supabase.from("enquiries").insert(payload);
     console.log("[Enquiry] Supabase response:", { data, error });
     setStatus("idle");
 
