@@ -18,11 +18,11 @@ import { Footer } from "@/components/sections/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => {
-    const title = "Century TechX LLP — Build · Launch · Automate";
+    const title = "CenturyTechX | Professional IT Solutions & Technology Services";
     const description =
-      "India's next-generation technology company building AI automation, EdTech platforms, and SaaS products. Based in Tumkur, Karnataka.";
+      "CenturyTechX delivers cutting-edge IT solutions, web development, software services and technology consulting. Transform your business with our expert tech team.";
     const url = "https://centurytechx.com/";
-    const image = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9e2a1725-82e8-444b-9c78-bd74e83cb3f6/id-preview-26dfb45c--be300750-a760-4e6e-920d-594741d04ab5.lovable.app-1776853397979.png";
+    const image = "https://centurytechx.com/og-image.png";
     return {
       meta: [
         { title },
