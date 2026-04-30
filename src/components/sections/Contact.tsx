@@ -314,11 +314,11 @@ interface FieldProps {
 
 function Field({ label, value, onChange, placeholder, type = "text", textarea, maxLength }: FieldProps) {
   const baseStyle = {
-    background: "rgba(37,99,235,0.03)",
+    background: "#FFFFFF",
     border: "1px solid rgba(37,99,235,0.12)",
     borderRadius: 3,
-    color: "#FFFFFF",
-    caretColor: "#3B82F6",
+    color: "#000000",
+    caretColor: "#000000",
     fontFamily: "var(--font-mono)",
     fontSize: 13,
     padding: "14px 16px",
