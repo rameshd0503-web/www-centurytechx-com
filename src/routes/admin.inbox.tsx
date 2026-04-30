@@ -71,8 +71,12 @@ function AdminInboxPage() {
     if (status !== "all") query = query.eq("status", status);
 
     const { data, error } = await query;
-    if (error) setError(error.message);
-    else setRows((data ?? []) as Submission[]);
+    if (error) {
+      console.error("Failed to load submissions:", error);
+      setError("Failed to load submissions. Please try again.");
+    } else {
+      setRows((data ?? []) as Submission[]);
+    }
     setLoading(false);
   };
 
