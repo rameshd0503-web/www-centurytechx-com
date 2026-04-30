@@ -71,8 +71,12 @@ function AdminInboxPage() {
     if (status !== "all") query = query.eq("status", status);
 
     const { data, error } = await query;
-    if (error) setError(error.message);
-    else setRows((data ?? []) as Submission[]);
+    if (error) {
+      console.error("Failed to load submissions:", error);
+      setError("Failed to load submissions. Please try again.");
+    } else {
+      setRows((data ?? []) as Submission[]);
+    }
     setLoading(false);
   };
 
@@ -93,7 +97,8 @@ function AdminInboxPage() {
     setRows((curr) => curr?.map((r) => (r.id === id ? { ...r, status: next } : r)) ?? curr);
     const { error } = await supabase.from("enquiries").update({ status: next }).eq("id", id);
     if (error) {
-      setError(error.message);
+      console.error("Failed to update submission status:", error);
+      setError("Failed to update status. Please try again.");
       setRows(prev ?? null);
     }
   };

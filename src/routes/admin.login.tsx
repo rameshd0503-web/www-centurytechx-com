@@ -20,17 +20,13 @@ const credsSchema = z.object({
   password: z.string().min(8, "Password must be at least 8 characters").max(128),
 });
 
-type Mode = "signin" | "signup";
-
 function AdminLoginPage() {
   const auth = useAdminAuth();
   const navigate = useNavigate();
-  const [mode, setMode] = useState<Mode>("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
-  const [info, setInfo] = useState("");
 
   // If already an admin, bounce to inbox.
   useEffect(() => {
@@ -42,7 +38,6 @@ function AdminLoginPage() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
-    setInfo("");
 
     const parsed = credsSchema.safeParse({ email, password });
     if (!parsed.success) {
@@ -51,17 +46,10 @@ function AdminLoginPage() {
     }
 
     setSubmitting(true);
-    if (mode === "signin") {
-      const { error } = await supabase.auth.signInWithPassword(parsed.data);
-      if (error) setError(error.message);
-    } else {
-      const { error } = await supabase.auth.signUp({
-        email: parsed.data.email,
-        password: parsed.data.password,
-        options: { emailRedirectTo: `${window.location.origin}/admin/inbox` },
-      });
-      if (error) setError(error.message);
-      else setInfo("Account created. You'll need an admin role assigned to access the inbox.");
+    const { error } = await supabase.auth.signInWithPassword(parsed.data);
+    if (error) {
+      // Generic message to avoid email enumeration / leaking auth details.
+      setError("Invalid email or password.");
     }
     setSubmitting(false);
   };
@@ -82,27 +70,6 @@ function AdminLoginPage() {
           className="rounded-[6px] p-7"
           style={{ background: "var(--bg-elevated)", border: "1px solid var(--border-mid)" }}
         >
-          <div className="flex gap-2 mb-6 p-1 rounded-[3px]" style={{ background: "var(--bg-surface)" }}>
-            {(["signin", "signup"] as const).map((m) => (
-              <button
-                key={m}
-                type="button"
-                onClick={() => {
-                  setMode(m);
-                  setError("");
-                  setInfo("");
-                }}
-                className="flex-1 font-mono text-[10px] tracking-[0.18em] py-2 rounded-[2px] transition-all"
-                style={{
-                  background: mode === m ? "var(--neon)" : "transparent",
-                  color: mode === m ? "#000" : "var(--text-secondary)",
-                }}
-              >
-                {m === "signin" ? "SIGN IN" : "REGISTER"}
-              </button>
-            ))}
-          </div>
-
           <div className="space-y-4">
             <LabeledField
               label="// EMAIL"
@@ -117,7 +84,7 @@ function AdminLoginPage() {
               type="password"
               value={password}
               onChange={setPassword}
-              autoComplete={mode === "signin" ? "current-password" : "new-password"}
+              autoComplete="current-password"
               placeholder="••••••••"
             />
           </div>
@@ -131,15 +98,6 @@ function AdminLoginPage() {
               ⚠ {error}
             </div>
           )}
-          {info && (
-            <div
-              role="status"
-              className="mt-4 font-mono text-[11px] px-3 py-2 rounded-[3px]"
-              style={{ background: "rgba(0,255,136,0.06)", border: "1px solid rgba(0,255,136,0.30)", color: "#00FF88" }}
-            >
-              ✓ {info}
-            </div>
-          )}
 
           <button
             type="submit"
@@ -147,8 +105,12 @@ function AdminLoginPage() {
             className="ctx-focus-ring w-full mt-6 font-orbitron font-bold text-[12px] tracking-[0.15em] px-6 py-4 rounded-[3px] transition-all disabled:opacity-60"
             style={{ background: "var(--neon)", color: "#000" }}
           >
-            {submitting ? "AUTHENTICATING..." : mode === "signin" ? "ACCESS TERMINAL //" : "REQUEST ACCESS //"}
+            {submitting ? "AUTHENTICATING..." : "ACCESS TERMINAL //"}
           </button>
+
+          <p className="mt-4 font-mono text-[10px] tracking-[0.15em] text-[var(--text-dim)] text-center">
+            // ACCOUNTS ARE PROVISIONED BY SYSTEM ADMINISTRATORS
+          </p>
 
           <div className="mt-5 text-center">
             <Link
