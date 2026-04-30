@@ -16,7 +16,7 @@ export function Hero() {
     <section
       id="top"
       className="relative min-h-screen pt-[110px] pb-20 px-5 md:px-8"
-      style={{ background: "var(--bg-primary)" }}
+      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EFF6FF 100%)" }}
     >
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[58fr_42fr] gap-15 lg:gap-[60px] items-center">
         {/* LEFT */}
@@ -44,17 +44,17 @@ export function Hero() {
           <motion.div
             {...reveal}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3 py-[6px] rounded-[2px] mb-7"
+            className="inline-flex items-center gap-2 px-3 py-[6px] rounded-full mb-7"
             style={{
-              border: "1px solid rgba(245,166,35,0.25)",
-              background: "rgba(245,166,35,0.05)",
+              border: "1px solid rgba(37,99,235,0.25)",
+              background: "rgba(37,99,235,0.06)",
             }}
           >
             <span
               className="inline-block w-[6px] h-[6px] rounded-full"
-              style={{ background: "#F5A623", boxShadow: "0 0 6px #F5A623" }}
+              style={{ background: "#2563EB", boxShadow: "0 0 6px #2563EB" }}
             />
-            <span className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
+            <span className="font-mono text-[10px] tracking-[0.18em] text-[var(--accent)]">
               // CTX-2026 · TECHNOLOGY COMPANY · INDIA
             </span>
           </motion.div>
@@ -70,7 +70,7 @@ export function Hero() {
             <span
               className="block font-black"
               style={{
-                color: "#FFFFFF",
+                color: "#1E3A5F",
                 fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
                 lineHeight: 0.9,
                 letterSpacing: "-0.04em",
@@ -79,14 +79,13 @@ export function Hero() {
               <GlitchText text="STOP WORKING." intensity="low" />
             </span>
 
-            {/* Line 2 — gradient, same size, drop-shadow glow */}
+            {/* Line 2 — gradient navy→accent */}
             <span
               className="block font-black"
               style={{
                 fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
                 lineHeight: 0.9,
                 letterSpacing: "-0.04em",
-                filter: "drop-shadow(0 0 20px rgba(245,166,35,0.5))",
               }}
             >
               <GlitchText
@@ -100,16 +99,15 @@ export function Hero() {
               />
             </span>
 
-            {/* Line 3 — cyan accent */}
+            {/* Line 3 — accent blue */}
             <span
               className="block font-bold"
               style={{
-                color: "#00D4E8",
+                color: "#2563EB",
                 fontFamily: "var(--font-orbitron)",
                 fontWeight: 700,
                 fontSize: "clamp(1rem, 2.5vw, 1.6rem)",
                 letterSpacing: "0.15em",
-                textShadow: "0 0 20px rgba(0,212,232,0.5)",
                 marginTop: 12,
               }}
             >
@@ -138,17 +136,17 @@ export function Hero() {
           >
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-black px-8 py-4 rounded-[3px] transition-all duration-200"
-              style={{ background: "#F5A623" }}
+              className="group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
+              style={{ background: "#2563EB", boxShadow: "0 6px 18px rgba(37,99,235,0.25)" }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#FFB830";
-                e.currentTarget.style.boxShadow = "0 0 30px rgba(245,166,35,0.5)";
-                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.background = "#3B82F6";
+                e.currentTarget.style.boxShadow = "0 10px 28px rgba(37,99,235,0.35)";
+                e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#F5A623";
-                e.currentTarget.style.boxShadow = "none";
-                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.background = "#2563EB";
+                e.currentTarget.style.boxShadow = "0 6px 18px rgba(37,99,235,0.25)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
               }}
             >
               ENGAGE MISSION
@@ -156,18 +154,19 @@ export function Hero() {
             </a>
             <a
               href="#automations"
-              className="inline-flex items-center font-orbitron font-bold text-[12px] tracking-[0.12em] text-[var(--neon)] px-8 py-4 rounded-[3px] transition-all duration-200"
+              className="inline-flex items-center font-orbitron font-bold text-[12px] tracking-[0.12em] px-8 py-4 rounded-[8px] transition-all duration-200"
               style={{
                 background: "transparent",
-                border: "1px solid rgba(245,166,35,0.35)",
+                border: "2px solid #1E3A5F",
+                color: "#1E3A5F",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(245,166,35,0.08)";
-                e.currentTarget.style.borderColor = "#F5A623";
+                e.currentTarget.style.background = "#1E3A5F";
+                e.currentTarget.style.color = "#FFFFFF";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.borderColor = "rgba(245,166,35,0.35)";
+                e.currentTarget.style.color = "#1E3A5F";
               }}
             >
               VIEW INTEL //
