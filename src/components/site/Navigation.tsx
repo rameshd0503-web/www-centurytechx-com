@@ -122,7 +122,7 @@ export function Navigation() {
         className={`fixed inset-0 z-[200] transition-opacity duration-300 lg:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ background: "rgba(3,5,6,0.98)", backdropFilter: "blur(20px)" }}
+        style={{ background: "rgba(255,255,255,0.98)", backdropFilter: "blur(20px)" }}
       >
         <div className="flex justify-end p-6">
           <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-[var(--neon)]">
