@@ -43,15 +43,18 @@ function EnquiryPage() {
     }
 
     setStatus("loading");
-    const { error } = await supabase.from("enquiries").insert({
+    const payload = {
       name: parsed.data.name,
       email: parsed.data.email,
       message: parsed.data.message,
-    });
+    };
+    console.log("[Enquiry] Submitting payload:", payload);
+    const { data, error } = await supabase.from("enquiries").insert(payload).select();
+    console.log("[Enquiry] Supabase response:", { data, error });
     setStatus("idle");
 
     if (error) {
-      toast.error("Submission failed — please try again in a moment.");
+      toast.error(`Submission failed — ${error.message}`);
       return;
     }
 
