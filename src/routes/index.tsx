@@ -19,30 +19,29 @@ import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Century TechX LLP — Build · Launch · Automate" },
-      {
-        name: "description",
-        content:
-          "India's next-generation technology company building AI automation, EdTech platforms, and SaaS products. Based in Tumkur, Karnataka.",
-      },
-      { property: "og:title", content: "Century TechX LLP — Build · Launch · Automate" },
-      {
-        property: "og:description",
-        content:
-          "AI automation, EdTech platforms, and SaaS products engineered in India. Custom systems and workflows for ambitious teams.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Century TechX LLP — Build · Launch · Automate" },
-      {
-        name: "twitter:description",
-        content: "India's next-generation technology company. AI · EdTech · SaaS.",
-      },
-      { rel: "canonical", href: "https://centurytechx.in" } as unknown as Record<string, string>,
-    ],
-  }),
+  head: () => {
+    const title = "Century TechX LLP — Build · Launch · Automate";
+    const description =
+      "India's next-generation technology company building AI automation, EdTech platforms, and SaaS products. Based in Tumkur, Karnataka.";
+    const url = "https://centurytechx.com/";
+    const image = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9e2a1725-82e8-444b-9c78-bd74e83cb3f6/id-preview-26dfb45c--be300750-a760-4e6e-920d-594741d04ab5.lovable.app-1776853397979.png";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: url },
+        { property: "og:image", content: image },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   component: Index,
 });
 
