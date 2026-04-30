@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { CornerBrackets } from "@/components/hud/CornerBrackets";
 import { Phone, Mail, MapPin, Globe } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const CONTACTS = [
   {
