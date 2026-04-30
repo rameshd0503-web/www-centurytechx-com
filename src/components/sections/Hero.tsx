@@ -31,8 +31,8 @@ export function Hero() {
           >
             <span className="flex items-center gap-2">
               <span
-                className="inline-block w-[6px] h-[6px] rounded-full"
-                style={{ background: "#00FF88", boxShadow: "0 0 6px #00FF88", animation: "blink 1s steps(2) infinite" }}
+                className="inline-block w-[8px] h-[8px] rounded-full fx-pulse-ring"
+                style={{ background: "#22C55E" }}
               />
               SYS.ONLINE
             </span>
@@ -138,7 +138,7 @@ export function Hero() {
           >
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
+              className="fx-shine group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
               style={{ background: "#2563EB", boxShadow: "0 6px 18px rgba(37,99,235,0.25)" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "#3B82F6";
@@ -224,11 +224,11 @@ export function Hero() {
           initial={{ opacity: 0, x: 40, filter: "blur(6px)" }}
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="relative rounded-[4px] p-8"
+          className="fx-float relative rounded-[12px] p-8"
           style={{
             background: "var(--bg-elevated)",
             border: "1px solid rgba(37,99,235,0.20)",
-            boxShadow: "0 0 40px rgba(37,99,235,0.06), inset 0 0 40px rgba(37,99,235,0.02)",
+            boxShadow: "0 20px 50px rgba(30,58,95,0.10), 0 4px 12px rgba(30,58,95,0.06)",
           }}
         >
           <CornerBrackets size={16} color="#2563EB" />
