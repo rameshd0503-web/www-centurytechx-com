@@ -103,7 +103,7 @@ function AdminLoginPage() {
             type="submit"
             disabled={submitting}
             className="ctx-focus-ring w-full mt-6 font-orbitron font-bold text-[12px] tracking-[0.15em] px-6 py-4 rounded-[3px] transition-all disabled:opacity-60"
-            style={{ background: "var(--neon)", color: "#000" }}
+            style={{ background: "var(--neon)", color: "#FFFFFF" }}
           >
             {submitting ? "AUTHENTICATING..." : "ACCESS TERMINAL //"}
           </button>

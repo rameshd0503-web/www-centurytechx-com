@@ -345,7 +345,7 @@ function NoRoleScreen({ email, onSignOut }: { email: string | undefined; onSignO
           <Link
             to="/"
             className="ctx-focus-ring inline-flex items-center font-mono text-[10px] tracking-[0.18em] px-4 py-2 rounded-[3px]"
-            style={{ background: "var(--neon)", color: "#000" }}
+            style={{ background: "var(--neon)", color: "#FFFFFF" }}
           >
             ← BACK TO SITE
           </Link>

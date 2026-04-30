@@ -58,7 +58,7 @@ export function Portfolio() {
                     <div
                       className="absolute top-3 right-3 font-mono text-[9px] tracking-[0.18em] px-2 py-1 rounded-[2px]"
                       style={{
-                        color: "#000",
+                        color: "#FFFFFF",
                         background: "#2563EB",
                         boxShadow: "0 0 14px rgba(37,99,235,0.55)",
                         fontWeight: 700,

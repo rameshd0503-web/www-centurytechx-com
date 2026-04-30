@@ -236,7 +236,7 @@ export function Contact() {
                 className="w-full font-orbitron font-bold text-[12px] tracking-[0.15em] px-6 rounded-[3px] transition-all duration-200 disabled:opacity-60"
                 style={{
                   background: status === "success" ? "#00AA44" : "#2563EB",
-                  color: "#000",
+                  color: "#FFFFFF",
                   padding: "18px",
                 }}
                 onMouseEnter={(e) => {
