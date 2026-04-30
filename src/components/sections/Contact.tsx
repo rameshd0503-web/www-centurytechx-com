@@ -70,7 +70,7 @@ export function Contact() {
       message: parsed.data.message,
     };
     console.log("[Contact] Submitting payload:", payload);
-    const { data, error } = await supabase.from("contacts").insert(payload).select();
+    const { data, error } = await supabase.from("contacts").insert(payload);
     console.log("[Contact] Supabase response:", { data, error });
 
     if (error) {
