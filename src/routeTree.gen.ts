@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as EnquiryRouteImport } from './routes/enquiry'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as QaFocusRouteImport } from './routes/qa.focus'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as AdminInboxRouteImport } from './routes/admin.inbox'
 
+const EnquiryRoute = EnquiryRouteImport.update({
+  id: '/enquiry',
+  path: '/enquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const AdminInboxRoute = AdminInboxRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/enquiry': typeof EnquiryRoute
   '/admin/inbox': typeof AdminInboxRoute
   '/admin/login': typeof AdminLoginRoute
   '/qa/focus': typeof QaFocusRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/enquiry': typeof EnquiryRoute
   '/admin/inbox': typeof AdminInboxRoute
   '/admin/login': typeof AdminLoginRoute
   '/qa/focus': typeof QaFocusRoute
@@ -50,20 +58,28 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/enquiry': typeof EnquiryRoute
   '/admin/inbox': typeof AdminInboxRoute
   '/admin/login': typeof AdminLoginRoute
   '/qa/focus': typeof QaFocusRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin/inbox' | '/admin/login' | '/qa/focus'
+  fullPaths: '/' | '/enquiry' | '/admin/inbox' | '/admin/login' | '/qa/focus'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin/inbox' | '/admin/login' | '/qa/focus'
-  id: '__root__' | '/' | '/admin/inbox' | '/admin/login' | '/qa/focus'
+  to: '/' | '/enquiry' | '/admin/inbox' | '/admin/login' | '/qa/focus'
+  id:
+    | '__root__'
+    | '/'
+    | '/enquiry'
+    | '/admin/inbox'
+    | '/admin/login'
+    | '/qa/focus'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EnquiryRoute: typeof EnquiryRoute
   AdminInboxRoute: typeof AdminInboxRoute
   AdminLoginRoute: typeof AdminLoginRoute
   QaFocusRoute: typeof QaFocusRoute
@@ -71,6 +87,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/enquiry': {
+      id: '/enquiry'
+      path: '/enquiry'
+      fullPath: '/enquiry'
+      preLoaderRoute: typeof EnquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +127,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EnquiryRoute: EnquiryRoute,
   AdminInboxRoute: AdminInboxRoute,
   AdminLoginRoute: AdminLoginRoute,
   QaFocusRoute: QaFocusRoute,
