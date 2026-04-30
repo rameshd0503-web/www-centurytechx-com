@@ -44,22 +44,22 @@ export function ProgressBar({
         </span>
         <span
           className="font-mono text-[9px] tracking-[0.15em]"
-          style={{ color: empty ? emptyColor : "#F5A623" }}
+          style={{ color: empty ? emptyColor : "#2563EB" }}
         >
           {display ?? `${value}%`}
         </span>
       </div>
       <div
         className="h-[3px] w-full rounded-[1px] overflow-hidden"
-        style={{ background: "rgba(245,166,35,0.10)" }}
+        style={{ background: "rgba(37,99,235,0.10)" }}
       >
         <div
           className="h-full rounded-[1px]"
           style={{
             width: `${filled}%`,
-            background: empty ? "transparent" : "linear-gradient(90deg, #F5A623, #FFB830)",
+            background: empty ? "transparent" : "linear-gradient(90deg, #2563EB, #3B82F6)",
             transition: "width 1.5s cubic-bezier(0.16, 1, 0.3, 1)",
-            boxShadow: empty ? "none" : "0 0 8px rgba(245,166,35,0.5)",
+            boxShadow: empty ? "none" : "0 0 8px rgba(37,99,235,0.5)",
             animation: filled > 0 && !empty ? "neon-pulse 3s ease-in-out infinite" : "none",
           }}
         />

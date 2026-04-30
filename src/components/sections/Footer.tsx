@@ -13,9 +13,8 @@ export function Footer() {
     <footer
       className="relative px-5 md:px-8 pt-16 pb-6"
       style={{
-        background: "#000",
-        borderTop: "2px solid #F5A623",
-        boxShadow: "0 -4px 40px rgba(245,166,35,0.10)",
+        background: "#F8F9FA",
+        borderTop: "1px solid rgba(30,58,95,0.10)",
       }}
     >
       <div className="max-w-[1440px] mx-auto">
@@ -33,8 +32,8 @@ export function Footer() {
                   width: 80,
                   height: 80,
                   background: "#FFFFFF",
-                  border: "1px solid rgba(245,166,35,0.5)",
-                  boxShadow: "0 0 20px rgba(245,166,35,0.3)",
+                  border: "1px solid rgba(37,99,235,0.5)",
+                  boxShadow: "0 0 20px rgba(37,99,235,0.3)",
                 }}
               >
                 <img
@@ -45,7 +44,7 @@ export function Footer() {
                 />
               </span>
             </a>
-            <div className="font-rajdhani font-semibold text-white text-[16px] tracking-[0.08em] mb-2">
+            <div className="font-rajdhani font-semibold text-[#1E3A5F] text-[16px] tracking-[0.08em] mb-2">
               CENTURY TECHX LLP
             </div>
             <div className="font-mono text-[11px] text-[var(--neon)] tracking-[0.15em] mb-5">
@@ -108,7 +107,7 @@ export function Footer() {
                 href="#"
                 aria-label="LinkedIn"
                 className="inline-flex items-center justify-center w-9 h-9 rounded-[3px] text-[var(--text-secondary)] hover:text-[var(--neon)] transition-colors"
-                style={{ border: "1px solid rgba(245,166,35,0.25)", background: "rgba(245,166,35,0.04)" }}
+                style={{ border: "1px solid rgba(37,99,235,0.25)", background: "rgba(37,99,235,0.04)" }}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                   <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 11.01-4.12 2.06 2.06 0 01-.01 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
@@ -118,7 +117,7 @@ export function Footer() {
                 href="#"
                 aria-label="Instagram"
                 className="inline-flex items-center justify-center w-9 h-9 rounded-[3px] text-[var(--text-secondary)] hover:text-[var(--neon)] transition-colors"
-                style={{ border: "1px solid rgba(245,166,35,0.25)", background: "rgba(245,166,35,0.04)" }}
+                style={{ border: "1px solid rgba(37,99,235,0.25)", background: "rgba(37,99,235,0.04)" }}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                   <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 01-1.38-.9 3.71 3.71 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.94c-3.14 0-3.51.01-4.75.07-1.07.05-1.65.23-2.04.38-.51.2-.88.44-1.26.82-.38.38-.62.75-.82 1.26-.15.39-.33.97-.38 2.04-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.07.23 1.65.38 2.04.2.51.44.88.82 1.26.38.38.75.62 1.26.82.39.15.97.33 2.04.38 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.07-.05 1.65-.23 2.04-.38.51-.2.88-.44 1.26-.82.38-.38.62-.75.82-1.26.15-.39.33-.97.38-2.04.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.07-.23-1.65-.38-2.04-.2-.51-.44-.88-.82-1.26a3.39 3.39 0 00-1.26-.82c-.39-.15-.97-.33-2.04-.38-1.24-.06-1.61-.07-4.75-.07zm0 3.3a4.6 4.6 0 110 9.2 4.6 4.6 0 010-9.2zm0 1.94a2.66 2.66 0 100 5.32 2.66 2.66 0 000-5.32zm5.85-2.16a1.08 1.08 0 11-2.16 0 1.08 1.08 0 012.16 0z" />
@@ -130,7 +129,7 @@ export function Footer() {
 
         <div
           className="flex flex-col md:flex-row items-center justify-between gap-3 pt-5"
-          style={{ borderTop: "1px solid rgba(245,166,35,0.15)" }}
+          style={{ borderTop: "1px solid rgba(37,99,235,0.15)" }}
         >
           <span className="font-mono text-[9px] tracking-[0.18em] text-[var(--text-dim)]">
             © 2026 CENTURY TECHX LLP · ALL RIGHTS RESERVED

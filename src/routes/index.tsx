@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ScanlineOverlay } from "@/components/effects/ScanlineOverlay";
 import { CircuitBackground } from "@/components/effects/CircuitBackground";
-import { CursorReticle } from "@/components/effects/CursorReticle";
 import { BootSequence } from "@/components/effects/BootSequence";
 import { SectionFlash } from "@/components/effects/SectionFlash";
 import { Navigation } from "@/components/site/Navigation";
@@ -49,8 +47,6 @@ function Index() {
   return (
     <div className="relative min-h-screen" style={{ background: "var(--bg-primary)" }}>
       <CircuitBackground />
-      <ScanlineOverlay />
-      <CursorReticle />
       <BootSequence />
 
       <div className="relative" style={{ zIndex: 2 }}>

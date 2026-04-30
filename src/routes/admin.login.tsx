@@ -103,7 +103,7 @@ function AdminLoginPage() {
             type="submit"
             disabled={submitting}
             className="ctx-focus-ring w-full mt-6 font-orbitron font-bold text-[12px] tracking-[0.15em] px-6 py-4 rounded-[3px] transition-all disabled:opacity-60"
-            style={{ background: "var(--neon)", color: "#000" }}
+            style={{ background: "var(--neon)", color: "#FFFFFF" }}
           >
             {submitting ? "AUTHENTICATING..." : "ACCESS TERMINAL //"}
           </button>
@@ -152,8 +152,8 @@ function LabeledField({
         placeholder={placeholder}
         className="ctx-focus-ring w-full font-mono text-[13px]"
         style={{
-          background: "rgba(245,166,35,0.03)",
-          border: "1px solid rgba(245,166,35,0.18)",
+          background: "rgba(37,99,235,0.03)",
+          border: "1px solid rgba(37,99,235,0.18)",
           color: "var(--text-primary)",
           padding: "12px 14px",
           borderRadius: 3,

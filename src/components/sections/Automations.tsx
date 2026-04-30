@@ -15,7 +15,7 @@ const WORKFLOWS = [
       "Slack alert pinged to sales channel",
     ],
     impact: "Cuts lead response time from hours → under 60 seconds.",
-    accent: "#F5A623",
+    accent: "#2563EB",
   },
   {
     code: "FLOW_02",
@@ -29,7 +29,7 @@ const WORKFLOWS = [
       "Tally / Zoho Books updated via API",
     ],
     impact: "Eliminates 10+ hours/week of manual bookkeeping.",
-    accent: "#00D4E8",
+    accent: "#1E3A5F",
   },
   {
     code: "FLOW_03",
@@ -85,7 +85,7 @@ const WORKFLOWS = [
       "Parent portal credentials provisioned",
     ],
     impact: "Onboards 500+ students/day without admin overhead.",
-    accent: "#F5A623",
+    accent: "#2563EB",
   },
 ];
 

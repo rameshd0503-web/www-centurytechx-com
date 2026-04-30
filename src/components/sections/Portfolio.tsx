@@ -8,7 +8,7 @@ const PROJECTS = [
     name: "EduCore LMS",
     desc: "AI-powered exam & student management platform for coaching centres.",
     tags: ["React", "Node.js", "PostgreSQL", "AI"],
-    accent: "#00D4E8",
+    accent: "#1E3A5F",
     flagship: false,
   },
   {
@@ -24,7 +24,7 @@ const PROJECTS = [
     name: "CutX",
     desc: "AI video editing pipeline for content creators.",
     tags: ["Python", "FFmpeg", "OpenAI", "LangChain"],
-    accent: "#F5A623",
+    accent: "#2563EB",
     flagship: true,
   },
 ];
@@ -58,9 +58,9 @@ export function Portfolio() {
                     <div
                       className="absolute top-3 right-3 font-mono text-[9px] tracking-[0.18em] px-2 py-1 rounded-[2px]"
                       style={{
-                        color: "#000",
-                        background: "#F5A623",
-                        boxShadow: "0 0 14px rgba(245,166,35,0.55)",
+                        color: "#FFFFFF",
+                        background: "#2563EB",
+                        boxShadow: "0 0 14px rgba(37,99,235,0.55)",
                         fontWeight: 700,
                       }}
                     >

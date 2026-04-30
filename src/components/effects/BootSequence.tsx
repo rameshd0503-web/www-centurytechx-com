@@ -42,7 +42,7 @@ export function BootSequence() {
       className="fixed inset-0 flex items-center justify-center pointer-events-none"
       style={{
         zIndex: 99999,
-        background: "#000",
+        background: "#FFFFFF",
         opacity: stage === "fading" ? 0 : 1,
         transition: "opacity 400ms ease-out",
       }}
@@ -65,13 +65,13 @@ export function BootSequence() {
             </div>
             <div
               className="w-full h-[3px] rounded-[1px] overflow-hidden"
-              style={{ background: "rgba(245,166,35,0.15)" }}
+              style={{ background: "rgba(37,99,235,0.15)" }}
             >
               <div
                 className="h-full"
                 style={{
-                  background: "#F5A623",
-                  boxShadow: "0 0 10px rgba(245,166,35,0.8)",
+                  background: "#2563EB",
+                  boxShadow: "0 0 10px rgba(37,99,235,0.8)",
                   width: stage === "loading" ? "0%" : "100%",
                   animation: stage === "loading" ? "boot-progress-fill 500ms linear forwards" : undefined,
                 }}

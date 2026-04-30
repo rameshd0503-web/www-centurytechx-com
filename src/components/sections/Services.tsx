@@ -30,7 +30,7 @@ export function Services() {
               transition={{ duration: 0.6, delay: (i % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className={i === 3 ? "lg:col-start-1 lg:col-end-2 xl:col-start-1" : ""}
             >
-              <HUDCard accent="#F5A623" bracketSize={10} className="h-full">
+              <HUDCard accent="#2563EB" bracketSize={10} className="h-full">
                 <div className="p-8 px-7 relative">
                   <div className="flex items-start justify-between mb-5">
                     <div

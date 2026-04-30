@@ -16,18 +16,18 @@ function Pill({ label }: { label: string }) {
       className="inline-flex items-center gap-2 px-5 py-[10px] rounded-[3px] mr-2 transition-all duration-200"
       style={{
         background: "var(--bg-elevated)",
-        border: "1px solid rgba(245,166,35,0.18)",
+        border: "1px solid rgba(37,99,235,0.18)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "rgba(245,166,35,0.5)";
-        e.currentTarget.style.background = "rgba(245,166,35,0.06)";
+        e.currentTarget.style.borderColor = "rgba(37,99,235,0.5)";
+        e.currentTarget.style.background = "rgba(37,99,235,0.06)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "rgba(245,166,35,0.18)";
+        e.currentTarget.style.borderColor = "rgba(37,99,235,0.18)";
         e.currentTarget.style.background = "var(--bg-elevated)";
       }}
     >
-      <span className="w-[6px] h-[6px] rounded-full" style={{ background: "#F5A623", boxShadow: "0 0 4px #F5A623" }} />
+      <span className="w-[6px] h-[6px] rounded-full" style={{ background: "#2563EB", boxShadow: "0 0 4px #2563EB" }} />
       <span className="font-mono text-[12px] text-[var(--text-secondary)] whitespace-nowrap">{label}</span>
     </div>
   );

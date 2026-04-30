@@ -14,7 +14,7 @@ const COLLAB = [
       "You own 100% of the code & IP",
       "Timeline guaranteed in contract",
     ],
-    accent: "#F5A623",
+    accent: "#2563EB",
   },
   {
     icon: "🤝",
@@ -27,7 +27,7 @@ const COLLAB = [
       "Performance monitoring",
       "Strategy calls as needed",
     ],
-    accent: "#00D4E8",
+    accent: "#1E3A5F",
   },
   {
     icon: "⚡",

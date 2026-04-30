@@ -39,8 +39,8 @@ interface Submission {
 
 const STATUS_META: Record<SubmissionStatus, { label: string; color: string; bg: string }> = {
   new: { label: "NEW", color: "#00FF88", bg: "rgba(0,255,136,0.10)" },
-  in_progress: { label: "IN PROGRESS", color: "#F5A623", bg: "rgba(245,166,35,0.10)" },
-  resolved: { label: "RESOLVED", color: "#00D4E8", bg: "rgba(0,212,232,0.10)" },
+  in_progress: { label: "IN PROGRESS", color: "#2563EB", bg: "rgba(37,99,235,0.10)" },
+  resolved: { label: "RESOLVED", color: "#1E3A5F", bg: "rgba(30,58,95,0.10)" },
   spam: { label: "SPAM", color: "#FF2D55", bg: "rgba(255,45,85,0.10)" },
 };
 
@@ -241,7 +241,7 @@ function AdminInboxPage() {
                 <button
                   onClick={() => setExpanded(isOpen ? null : row.id)}
                   aria-expanded={isOpen}
-                  className="ctx-focus-ring w-full grid gap-3 px-4 py-3 text-left items-center hover:bg-[rgba(245,166,35,0.03)] transition-colors"
+                  className="ctx-focus-ring w-full grid gap-3 px-4 py-3 text-left items-center hover:bg-[rgba(37,99,235,0.03)] transition-colors"
                   style={{ gridTemplateColumns: "24px 1.4fr 1.6fr 1.1fr 1fr" }}
                 >
                   {isOpen ? (
@@ -263,7 +263,7 @@ function AdminInboxPage() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 pb-5 pt-1" style={{ background: "rgba(245,166,35,0.02)" }}>
+                  <div className="px-4 pb-5 pt-1" style={{ background: "rgba(37,99,235,0.02)" }}>
                     <div
                       className="font-mono text-[12px] leading-relaxed text-[var(--text-primary)] whitespace-pre-wrap p-4 rounded-[3px] mb-4"
                       style={{ background: "var(--bg-elevated)", border: "1px solid var(--border-dark)" }}
@@ -345,7 +345,7 @@ function NoRoleScreen({ email, onSignOut }: { email: string | undefined; onSignO
           <Link
             to="/"
             className="ctx-focus-ring inline-flex items-center font-mono text-[10px] tracking-[0.18em] px-4 py-2 rounded-[3px]"
-            style={{ background: "var(--neon)", color: "#000" }}
+            style={{ background: "var(--neon)", color: "#FFFFFF" }}
           >
             ← BACK TO SITE
           </Link>
