@@ -42,7 +42,7 @@ export function BootSequence() {
       className="fixed inset-0 flex items-center justify-center pointer-events-none"
       style={{
         zIndex: 99999,
-        background: "#000",
+        background: "#FFFFFF",
         opacity: stage === "fading" ? 0 : 1,
         transition: "opacity 400ms ease-out",
       }}

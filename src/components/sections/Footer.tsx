@@ -13,9 +13,8 @@ export function Footer() {
     <footer
       className="relative px-5 md:px-8 pt-16 pb-6"
       style={{
-        background: "#000",
-        borderTop: "2px solid #2563EB",
-        boxShadow: "0 -4px 40px rgba(37,99,235,0.10)",
+        background: "#F8F9FA",
+        borderTop: "1px solid rgba(30,58,95,0.10)",
       }}
     >
       <div className="max-w-[1440px] mx-auto">
@@ -45,7 +44,7 @@ export function Footer() {
                 />
               </span>
             </a>
-            <div className="font-rajdhani font-semibold text-white text-[16px] tracking-[0.08em] mb-2">
+            <div className="font-rajdhani font-semibold text-[#1E3A5F] text-[16px] tracking-[0.08em] mb-2">
               CENTURY TECHX LLP
             </div>
             <div className="font-mono text-[11px] text-[var(--neon)] tracking-[0.15em] mb-5">
