@@ -34,6 +34,7 @@ const CONTACTS = [
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Operative name is required").max(100, "Name must be 100 characters or fewer"),
   email: z.string().trim().email("Enter a valid email address").max(255, "Email must be 255 characters or fewer"),
+  phone: z.string().trim().max(50, "Phone must be 50 characters or fewer").optional(),
   message: z.string().trim().min(1, "Mission payload is required").max(2000, "Message must be 2000 characters or fewer"),
 });
 
@@ -42,6 +43,7 @@ type FormStatus = "idle" | "loading" | "success" | "error";
 export function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -50,7 +52,7 @@ export function Contact() {
     e.preventDefault();
     setErrorMsg("");
 
-    const parsed = contactSchema.safeParse({ name, email, message });
+    const parsed = contactSchema.safeParse({ name, email, phone: phone || undefined, message });
     if (!parsed.success) {
       setStatus("error");
       setErrorMsg(parsed.error.issues[0]?.message ?? "Invalid input");
@@ -58,9 +60,10 @@ export function Contact() {
     }
 
     setStatus("loading");
-    const { error } = await supabase.from("enquiries").insert({
+    const { error } = await supabase.from("contacts").insert({
       name: parsed.data.name,
       email: parsed.data.email,
+      phone: parsed.data.phone ?? null,
       message: parsed.data.message,
     });
 
@@ -73,6 +76,7 @@ export function Contact() {
     setStatus("success");
     setName("");
     setEmail("");
+    setPhone("");
     setMessage("");
     window.setTimeout(() => setStatus("idle"), 4000);
   };
@@ -221,6 +225,7 @@ export function Contact() {
             <div className="space-y-5">
               <Field label="// OPERATIVE_NAME" value={name} onChange={setName} placeholder="Your full name" />
               <Field label="// COMMS_CHANNEL" value={email} onChange={setEmail} placeholder="you@domain.com" type="email" />
+              <Field label="// PHONE_LINK (OPTIONAL)" value={phone} onChange={setPhone} placeholder="+91 80730 92082" type="tel" />
               <Field
                 label="// PAYLOAD"
                 value={message}
