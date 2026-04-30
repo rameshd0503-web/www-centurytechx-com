@@ -35,11 +35,11 @@ export function Navigation() {
         className="fixed top-[2px] left-0 right-0 z-[99] transition-all duration-300"
         style={{
           height: 70,
-          background: scrolled ? "rgba(3,5,6,0.92)" : "transparent",
-          backdropFilter: scrolled ? "blur(24px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(24px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(37,99,235,0.15)" : "1px solid transparent",
-          boxShadow: scrolled ? "0 4px 32px rgba(0,0,0,0.4)" : "none",
+          background: scrolled ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.85)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          borderBottom: "1px solid rgba(30,58,95,0.08)",
+          boxShadow: scrolled ? "0 4px 20px rgba(30,58,95,0.06)" : "none",
         }}
       >
         <div className="h-full max-w-[1440px] mx-auto px-5 md:px-8 flex items-center justify-between">
