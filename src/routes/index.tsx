@@ -9,6 +9,7 @@ import { Divisions } from "@/components/sections/Divisions";
 import { Services } from "@/components/sections/Services";
 import { Collaboration } from "@/components/sections/Collaboration";
 import { Automations } from "@/components/sections/Automations";
+import { WorkflowsN8n } from "@/components/sections/WorkflowsN8n";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Clients } from "@/components/sections/Clients";
 import { WhyTrust } from "@/components/sections/WhyTrust";
