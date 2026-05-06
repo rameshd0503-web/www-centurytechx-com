@@ -306,13 +306,13 @@ export function Hero() {
       </div>
 
       <Dialog open={bookOpen} onOpenChange={setBookOpen}>
-        <DialogContent className="max-w-3xl p-0 overflow-hidden">
-          <DialogHeader className="px-6 pt-6">
+        <DialogContent className="max-w-3xl p-0 overflow-hidden max-h-[90vh] flex flex-col">
+          <DialogHeader className="px-6 pt-6 pb-2 shrink-0">
             <DialogTitle className="font-orbitron tracking-[0.12em]">BOOK A FREE CONSULTATION</DialogTitle>
           </DialogHeader>
-          <div className="p-4">
+          <div className="flex-1 overflow-y-auto p-4">
             <div
-              style={{ width: "100%", height: 600 }}
+              style={{ width: "100%", minHeight: 700 }}
               data-fillout-id="jTLPTgcFafus"
               data-fillout-embed-type="standard"
               data-fillout-inherit-parameters
