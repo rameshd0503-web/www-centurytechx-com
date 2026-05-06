@@ -59,6 +59,7 @@ function Index() {
           <SectionFlash><Services /></SectionFlash>
           <SectionFlash><Collaboration /></SectionFlash>
           <SectionFlash><Automations /></SectionFlash>
+          <SectionFlash><WorkflowsN8n /></SectionFlash>
           <SectionFlash><Portfolio /></SectionFlash>
           <SectionFlash><Clients /></SectionFlash>
           <SectionFlash><WhyTrust /></SectionFlash>
