@@ -173,6 +173,25 @@ export function Hero() {
             >
               VIEW INTEL //
             </a>
+            <a
+              href="#contact"
+              className="fx-shine group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
+              style={{
+                background: "linear-gradient(135deg, #22C55E 0%, #16A34A 100%)",
+                boxShadow: "0 6px 18px rgba(34,197,94,0.30)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 10px 28px rgba(34,197,94,0.45)";
+                e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 6px 18px rgba(34,197,94,0.30)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+              }}
+            >
+              BOOK FREE CONSULTATION
+              <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+            </a>
           </motion.div>
 
           {/* Social proof */}
