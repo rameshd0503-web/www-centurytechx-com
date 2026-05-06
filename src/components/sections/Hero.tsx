@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { GlitchText } from "@/components/hud/GlitchText";
 import { Typewriter } from "@/components/hud/Typewriter";
 import { CircuitTree } from "@/components/hud/CircuitTree";
@@ -6,6 +7,7 @@ import { ProgressBar } from "@/components/hud/ProgressBar";
 import { StatCounter } from "@/components/hud/StatCounter";
 import { CornerBrackets } from "@/components/hud/CornerBrackets";
 import { HeroFX } from "@/components/effects/HeroFX";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const reveal = {
   initial: { opacity: 0, y: 40, filter: "blur(4px)" },
@@ -13,6 +15,23 @@ const reveal = {
 };
 
 export function Hero() {
+  const [bookOpen, setBookOpen] = useState(false);
+
+  useEffect(() => {
+    if (!bookOpen) return;
+    const id = "fillout-embed-script";
+    if (document.getElementById(id)) {
+      // @ts-ignore
+      window.Fillout?.reload?.();
+      return;
+    }
+    const s = document.createElement("script");
+    s.id = id;
+    s.src = "https://server.fillout.com/embed/v1/";
+    s.async = true;
+    document.body.appendChild(s);
+  }, [bookOpen]);
+
   return (
     <section
       id="top"
