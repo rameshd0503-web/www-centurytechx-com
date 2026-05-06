@@ -158,7 +158,7 @@ function AdminInboxPage() {
 
   const setSearch = (patch: Partial<{ source: Source; status: StatusFilter; q: string; page: number }>) => {
     void navigate({
-      search: (prev) => ({
+      search: (prev: any) => ({
         ...prev,
         ...patch,
         // Reset to page 1 when filters change (unless page is in patch)
