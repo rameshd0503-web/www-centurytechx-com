@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { GlitchText } from "@/components/hud/GlitchText";
 import { Typewriter } from "@/components/hud/Typewriter";
 import { CircuitTree } from "@/components/hud/CircuitTree";
@@ -6,6 +7,7 @@ import { ProgressBar } from "@/components/hud/ProgressBar";
 import { StatCounter } from "@/components/hud/StatCounter";
 import { CornerBrackets } from "@/components/hud/CornerBrackets";
 import { HeroFX } from "@/components/effects/HeroFX";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const reveal = {
   initial: { opacity: 0, y: 40, filter: "blur(4px)" },
@@ -13,6 +15,23 @@ const reveal = {
 };
 
 export function Hero() {
+  const [bookOpen, setBookOpen] = useState(false);
+
+  useEffect(() => {
+    if (!bookOpen) return;
+    const id = "fillout-embed-script";
+    if (document.getElementById(id)) {
+      // @ts-ignore
+      window.Fillout?.reload?.();
+      return;
+    }
+    const s = document.createElement("script");
+    s.id = id;
+    s.src = "https://server.fillout.com/embed/v1/";
+    s.async = true;
+    document.body.appendChild(s);
+  }, [bookOpen]);
+
   return (
     <section
       id="top"
@@ -173,8 +192,9 @@ export function Hero() {
             >
               VIEW INTEL //
             </a>
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={() => setBookOpen(true)}
               className="fx-shine group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
               style={{
                 background: "linear-gradient(135deg, #22C55E 0%, #16A34A 100%)",
@@ -191,7 +211,7 @@ export function Hero() {
             >
               BOOK FREE CONSULTATION
               <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-            </a>
+            </button>
           </motion.div>
 
           {/* Social proof */}
@@ -284,6 +304,23 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
+
+      <Dialog open={bookOpen} onOpenChange={setBookOpen}>
+        <DialogContent className="max-w-3xl p-0 overflow-hidden">
+          <DialogHeader className="px-6 pt-6">
+            <DialogTitle className="font-orbitron tracking-[0.12em]">BOOK A FREE CONSULTATION</DialogTitle>
+          </DialogHeader>
+          <div className="p-4">
+            <div
+              style={{ width: "100%", height: 600 }}
+              data-fillout-id="jTLPTgcFafus"
+              data-fillout-embed-type="standard"
+              data-fillout-inherit-parameters
+              data-fillout-dynamic-resize
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
