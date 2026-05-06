@@ -304,6 +304,23 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
+
+      <Dialog open={bookOpen} onOpenChange={setBookOpen}>
+        <DialogContent className="max-w-3xl p-0 overflow-hidden">
+          <DialogHeader className="px-6 pt-6">
+            <DialogTitle className="font-orbitron tracking-[0.12em]">BOOK A FREE CONSULTATION</DialogTitle>
+          </DialogHeader>
+          <div className="p-4">
+            <div
+              style={{ width: "100%", height: 600 }}
+              data-fillout-id="jTLPTgcFafus"
+              data-fillout-embed-type="standard"
+              data-fillout-inherit-parameters
+              data-fillout-dynamic-resize
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
