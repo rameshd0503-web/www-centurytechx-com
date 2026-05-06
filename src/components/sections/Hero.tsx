@@ -192,8 +192,9 @@ export function Hero() {
             >
               VIEW INTEL //
             </a>
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={() => setBookOpen(true)}
               className="fx-shine group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
               style={{
                 background: "linear-gradient(135deg, #22C55E 0%, #16A34A 100%)",
@@ -210,7 +211,7 @@ export function Hero() {
             >
               BOOK FREE CONSULTATION
               <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-            </a>
+            </button>
           </motion.div>
 
           {/* Social proof */}
