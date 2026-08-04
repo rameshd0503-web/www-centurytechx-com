@@ -1,27 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CircuitBackground } from "@/components/effects/CircuitBackground";
-import { BootSequence } from "@/components/effects/BootSequence";
-import { SectionFlash } from "@/components/effects/SectionFlash";
-import { Navigation } from "@/components/site/Navigation";
-import { Hero } from "@/components/sections/Hero";
-import { Divisions } from "@/components/sections/Divisions";
-
-import { Services } from "@/components/sections/Services";
-import { Collaboration } from "@/components/sections/Collaboration";
-import { Automations } from "@/components/sections/Automations";
-import { WorkflowsN8n } from "@/components/sections/WorkflowsN8n";
-import { Portfolio } from "@/components/sections/Portfolio";
-import { Clients } from "@/components/sections/Clients";
-import { WhyTrust } from "@/components/sections/WhyTrust";
-import { Stack } from "@/components/sections/Stack";
-import { Contact } from "@/components/sections/Contact";
-import { Footer } from "@/components/sections/Footer";
+import { Nav } from "@/components/edu/Nav";
+import { Hero } from "@/components/edu/Hero";
+import {
+  Problem,
+  BrandOS,
+  Ecosystem,
+  WhoWeServe,
+  WhyOnePartner,
+  Insights,
+  Company,
+} from "@/components/edu/Sections";
+import { DemoCTA } from "@/components/edu/DemoCTA";
+import { SiteFooter } from "@/components/edu/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => {
-    const title = "CenturyTechX | Professional IT Solutions & Technology Services";
+    const title = "Century TechX | The Operating System for Education";
     const description =
-      "CenturyTechX delivers cutting-edge IT solutions, web development, software services and technology consulting. Transform your business with our expert tech team.";
+      "One technology partner for Indian schools, colleges, coaching and training institutes. Brand-OS is live today, with a seven-phase education ecosystem in build.";
     const url = "https://centurytechx.com/";
     const image = "https://centurytechx.com/og-image.png";
     return {
@@ -46,28 +42,20 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="relative min-h-screen" style={{ background: "var(--bg-primary)" }}>
-      <CircuitBackground />
-      <BootSequence />
-
-      <div className="relative" style={{ zIndex: 2 }}>
-        <Navigation />
-        <main>
-          <Hero />
-          <SectionFlash><Divisions /></SectionFlash>
-          
-          <SectionFlash><Services /></SectionFlash>
-          <SectionFlash><Collaboration /></SectionFlash>
-          <SectionFlash><Automations /></SectionFlash>
-          <SectionFlash><WorkflowsN8n /></SectionFlash>
-          <SectionFlash><Portfolio /></SectionFlash>
-          <SectionFlash><Clients /></SectionFlash>
-          <SectionFlash><WhyTrust /></SectionFlash>
-          <SectionFlash><Stack /></SectionFlash>
-          <SectionFlash><Contact /></SectionFlash>
-        </main>
-        <Footer />
-      </div>
+    <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
+      <Nav />
+      <main>
+        <Hero />
+        <Problem />
+        <BrandOS />
+        <Ecosystem />
+        <WhoWeServe />
+        <WhyOnePartner />
+        <Insights />
+        <Company />
+        <DemoCTA />
+      </main>
+      <SiteFooter />
     </div>
   );
 }
