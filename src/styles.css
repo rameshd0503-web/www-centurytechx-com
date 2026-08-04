@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+/* Web fonts are loaded via <link> tags in src/routes/__root.tsx */
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -54,54 +54,54 @@
 }
 
 :root {
-  --radius: 12px;
+  --radius: 14px;
 
-  /* Backgrounds — light theme */
-  --bg-void: #FFFFFF;
-  --bg-primary: #FFFFFF;
-  --bg-surface: #F0F4FF;     /* alternating section bg */
-  --bg-elevated: #FFFFFF;     /* cards */
-  --bg-glass: rgba(255,255,255,0.85);
+  /* Backgrounds — dark institutional theme */
+  --bg-void: #060910;
+  --bg-primary: #080C16;
+  --bg-surface: #0D1322;     /* alternating section bg */
+  --bg-elevated: #111829;     /* cards */
+  --bg-glass: rgba(8,12,22,0.78);
 
-  /* Brand — Navy + Vibrant Blue
-     Old "--neon" tokens are repurposed to navy so existing components
-     (which reference --neon) automatically pick up the new primary color. */
-  --navy: #1E3A5F;
-  --navy-soft: #2C4A75;
-  --accent: #2563EB;          /* CTAs, links, highlights */
-  --accent-bright: #3B82F6;
-  --accent-soft: #EFF6FF;
+  /* Brand — deep indigo primary, teal secondary
+     Legacy "--navy"/"--neon" names are retained so older components re-theme. */
+  --navy: #EDF1FA;            /* heading color in dark theme */
+  --navy-soft: #C7D2E8;
+  --accent: #4F6BFF;          /* CTAs, links, highlights */
+  --accent-bright: #7C90FF;
+  --accent-soft: rgba(79,107,255,0.12);
+  --teal: #2DD4BF;
+  --teal-soft: rgba(45,212,191,0.12);
 
-  --neon: #1E3A5F;            /* legacy alias → navy */
-  --neon-bright: #2563EB;     /* legacy alias → accent blue */
-  --neon-dim: #6B7280;        /* legacy alias → muted */
-  --neon-glow: rgba(37,99,235,0.18);
-  --neon-glow-lg: rgba(37,99,235,0.30);
-  --neon-pale: rgba(37,99,235,0.06);
+  --neon: #4F6BFF;
+  --neon-bright: #7C90FF;
+  --neon-dim: #8A96AE;
+  --neon-glow: rgba(79,107,255,0.22);
+  --neon-glow-lg: rgba(79,107,255,0.38);
+  --neon-pale: rgba(79,107,255,0.08);
 
-  /* Cyan retained as accent blue for legacy refs */
-  --cyan: #2563EB;
-  --cyan-glow: rgba(37,99,235,0.18);
-  --cyan-pale: rgba(37,99,235,0.06);
+  --cyan: #2DD4BF;
+  --cyan-glow: rgba(45,212,191,0.20);
+  --cyan-pale: rgba(45,212,191,0.08);
 
   /* Red */
-  --red: #EF4444;
-  --red-glow: rgba(239,68,68,0.15);
+  --red: #F87171;
+  --red-glow: rgba(248,113,113,0.18);
 
   /* Text */
-  --text-primary: #1A1A2E;     /* charcoal body */
-  --text-secondary: #6B7280;   /* muted gray */
-  --text-dim: #9CA3AF;
+  --text-primary: #E7ECF7;
+  --text-secondary: #9BA7C0;
+  --text-dim: #6B7793;
 
   /* Borders */
-  --border-dark: rgba(30,58,95,0.08);
-  --border-mid: rgba(30,58,95,0.12);
-  --border-bright: rgba(37,99,235,0.45);
-  --border-neutral: rgba(30,58,95,0.08);
+  --border-dark: rgba(255,255,255,0.06);
+  --border-mid: rgba(255,255,255,0.10);
+  --border-bright: rgba(79,107,255,0.45);
+  --border-neutral: rgba(255,255,255,0.08);
 
   /* Special */
-  --scanline: rgba(30,58,95,0.012);
-  --grain-opacity: 0;          /* disable grain for clean light theme */
+  --scanline: rgba(255,255,255,0.01);
+  --grain-opacity: 0;
 
   /* shadcn fallbacks */
   --card: var(--bg-elevated);
@@ -122,26 +122,26 @@
   --ring: var(--accent);
   --background: var(--bg-primary);
   --foreground: var(--text-primary);
-  --sidebar: #F8F9FA;
+  --sidebar: var(--bg-surface);
   --sidebar-foreground: var(--text-primary);
   --sidebar-primary: var(--accent);
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: var(--bg-surface);
-  --sidebar-accent-foreground: var(--navy);
+  --sidebar-accent: var(--bg-elevated);
+  --sidebar-accent-foreground: var(--text-primary);
   --sidebar-border: var(--border-mid);
   --sidebar-ring: var(--accent);
   --chart-1: var(--accent);
-  --chart-2: var(--navy);
+  --chart-2: var(--teal);
   --chart-3: var(--accent-bright);
   --chart-4: var(--red);
   --chart-5: var(--navy-soft);
 
   /* Footer */
-  --footer-bg: #F8F9FA;
+  --footer-bg: #060910;
 
   /* Card shadow */
-  --shadow-card: 0 1px 3px rgba(30,58,95,0.06), 0 4px 12px rgba(30,58,95,0.05);
-  --shadow-card-hover: 0 8px 24px rgba(30,58,95,0.10), 0 2px 6px rgba(30,58,95,0.06);
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
+  --shadow-card-hover: 0 12px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3);
 }
 
 @layer base {
