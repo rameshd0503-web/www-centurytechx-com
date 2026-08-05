@@ -91,7 +91,7 @@ export function Hero() {
             <span
               className="block font-black"
               style={{
-                color: "#1E3A5F",
+                color: "var(--text-primary)",
                 fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
                 lineHeight: 0.9,
                 letterSpacing: "-0.04em",
@@ -178,16 +178,16 @@ export function Hero() {
               className="inline-flex items-center font-orbitron font-bold text-[12px] tracking-[0.12em] px-8 py-4 rounded-[8px] transition-all duration-200"
               style={{
                 background: "transparent",
-                border: "2px solid #1E3A5F",
-                color: "#1E3A5F",
+                border: "2px solid var(--text-primary)",
+                color: "var(--text-primary)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#1E3A5F";
+                e.currentTarget.style.background = "var(--text-primary)";
                 e.currentTarget.style.color = "#FFFFFF";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "#1E3A5F";
+                e.currentTarget.style.color = "var(--text-primary)";
               }}
             >
               VIEW THE ECOSYSTEM //

@@ -25,9 +25,9 @@ const CONTACTS = [
   {
     icon: Globe,
     label: "// NETWORK",
-    value: "centurytechx.in",
+    value: "centurytechx.com",
     sub: "Live · 24/7 uptime",
-    href: "https://centurytechx.in",
+    href: "https://centurytechx.com",
   },
 ];
 
