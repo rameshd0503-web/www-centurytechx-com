@@ -3,10 +3,10 @@ import { Menu, X } from "lucide-react";
 import logoUrl from "@/assets/ctx-logo.jpeg";
 
 const NAV_ITEMS = [
-  { label: "DIVISIONS", href: "#divisions" },
-  
-  { label: "SERVICES", href: "#services" },
-  { label: "STACK", href: "#stack" },
+  { label: "PRODUCT", href: "#product" },
+  { label: "ECOSYSTEM", href: "#ecosystem" },
+  { label: "FOR INSTITUTIONS", href: "#institutions" },
+  { label: "INSIGHTS", href: "#automations" },
   { label: "CONTACT", href: "#contact" },
 ];
 
@@ -35,11 +35,11 @@ export function Navigation() {
         className="fixed top-[2px] left-0 right-0 z-[99] transition-all duration-300"
         style={{
           height: 70,
-          background: scrolled ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.85)",
+          background: scrolled ? "var(--bg-glass)" : "rgba(8,12,22,0.82)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(30,58,95,0.08)",
-          boxShadow: scrolled ? "0 4px 20px rgba(30,58,95,0.06)" : "none",
+          borderBottom: "1px solid var(--border-dark)",
+          boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.25)" : "none",
         }}
       >
         <div className="h-full max-w-[1440px] mx-auto px-5 md:px-8 flex items-center justify-between">
@@ -54,7 +54,7 @@ export function Navigation() {
               style={{
                 width: 50,
                 height: 50,
-                background: "#FFFFFF",
+                 background: "var(--bg-elevated)",
                 border: "1px solid rgba(37,99,235,0.45)",
                 boxShadow:
                   "0 0 14px rgba(37,99,235,0.35), inset 0 0 0 1px rgba(0,0,0,0.05)",
@@ -103,7 +103,7 @@ export function Navigation() {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            INITIALIZE //
+             BOOK A DEMO //
           </a>
 
           {/* Hamburger */}
@@ -122,7 +122,7 @@ export function Navigation() {
         className={`fixed inset-0 z-[200] transition-opacity duration-300 lg:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ background: "rgba(255,255,255,0.98)", backdropFilter: "blur(20px)" }}
+        style={{ background: "var(--bg-primary)", backdropFilter: "blur(20px)" }}
       >
         <div className="flex justify-end p-6">
           <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-[var(--neon)]">
@@ -146,7 +146,7 @@ export function Navigation() {
             className="mt-6 font-orbitron font-bold text-sm tracking-[0.15em] text-black px-6 py-3 rounded-[3px]"
             style={{ background: "#2563EB" }}
           >
-            INITIALIZE //
+             BOOK A DEMO //
           </a>
         </nav>
       </div>

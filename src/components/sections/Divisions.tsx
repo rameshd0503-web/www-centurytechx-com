@@ -4,27 +4,27 @@ import { HUDCard } from "@/components/hud/HUDCard";
 
 const DIVISIONS = [
   {
-    badge: "DIV-01",
-    icon: "🎓",
-    title: "EDTECH DIVISION",
-    products: "Custom School Platforms",
-    desc: "Powering Indian Education at scale through AI-driven exam management and complete student performance systems.",
+    badge: "PHASE-01 · LIVE",
+    icon: "🎨",
+    title: "BRAND-OS",
+    products: "AI branding & marketing automation",
+    desc: "AI poster and video generation, content writing, and campaign planning. Every institution needs branding — we start where value is immediate.",
     accent: "#2563EB",
   },
   {
-    badge: "DIV-02",
+    badge: "PHASE-02 · ROADMAP",
     icon: "🤖",
-    title: "AI AUTOMATION",
-    products: "n8n · LLMs · Custom Agents",
-    desc: "We design and deploy automation infrastructure that eliminates repetitive work — intelligent workflows powered by the latest AI models.",
+    title: "AI AUTOMATION SUITE",
+    products: "WhatsApp · Admissions · CRM · Chatbots",
+    desc: "Admissions, email, WhatsApp, CRM, and chatbot automations that deepen the relationship once trust is built.",
     accent: "#1E3A5F",
   },
   {
-    badge: "DIV-03",
-    icon: "💻",
-    title: "SAAS PRODUCTS",
-    products: "SaaS · APIs · White-label",
-    desc: "End-to-end SaaS development — from architecture to deployment to long-term maintenance and scaling.",
+    badge: "PHASE-03 · ROADMAP",
+    icon: "📝",
+    title: "EXAM-OS",
+    products: "Assessments · Evaluation · Analytics",
+    desc: "Question paper generation, evaluation, analytics, parent reports, and teacher dashboards in one assessment system.",
     accent: "#3B82F6",
   },
 ];
@@ -32,7 +32,7 @@ const DIVISIONS = [
 export function Divisions() {
   return (
     <section
-      id="divisions"
+       id="ecosystem"
       className="relative py-24 md:py-32 px-5 md:px-8 overflow-hidden"
       style={{ background: "var(--bg-surface)" }}
     >
@@ -46,9 +46,9 @@ export function Divisions() {
 
       <div className="relative max-w-[1440px] mx-auto">
         <SectionHeader
-          eyebrow="// DIVISIONS.EXE"
-          title="OUR CORE DIVISIONS"
-          subtitle="Three focused divisions. One unified mission."
+           eyebrow="// ECOSYSTEM PHASES"
+           title="ONE ECOSYSTEM. SEVEN PHASES."
+           subtitle="Starting with immediate value today, then expanding into the complete operating system for education."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -120,6 +120,14 @@ export function Divisions() {
               </HUDCard>
             </motion.div>
           ))}
+        </div>
+        <div className="mt-10 rounded-[4px] p-6" style={{ background: "var(--bg-elevated)", border: "1px solid var(--border-mid)" }}>
+          <div className="font-mono text-[10px] tracking-[0.2em] text-[var(--neon)] mb-4">// FULL 7-PHASE ECOSYSTEM</div>
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            {["● BRAND-OS · LIVE NOW", "○ AI AUTOMATION · ROADMAP", "○ EXAM-OS · ROADMAP", "○ INSTITUTION ERP · ROADMAP", "○ STUDENT NETWORK · ROADMAP", "○ MARKETPLACE · ROADMAP", "○ EDUCATION INTELLIGENCE · ROADMAP"].map((phase) => (
+              <div key={phase} className="font-mono text-[10px] leading-[1.6] text-[var(--text-secondary)]">{phase}</div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

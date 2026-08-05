@@ -4,54 +4,54 @@ import { HUDCard } from "@/components/hud/HUDCard";
 
 const COLLAB = [
   {
-    icon: "🚀",
-    title: "BUILD YOUR PRODUCT",
-    sub: "Project · Fixed scope",
-    body: "You have an idea or vision. We take it from zero to a live, working SaaS product — with full IP ownership transferred to you.",
+    icon: "🎓",
+    title: "START WITH BRAND-OS",
+    sub: "Subscription · Get onboarded fast",
+    body: "Start with AI-powered branding and marketing content from week one.",
     features: [
-      "Full-stack development from scratch",
-      "Fixed pricing, no hidden charges",
-      "You own 100% of the code & IP",
-      "Timeline guaranteed in contract",
+      "Institution brand profile setup",
+      "AI posters, captions, and campaigns",
+      "Approval-ready content workflows",
+      "Fast onboarding and support",
     ],
     accent: "#2563EB",
   },
   {
     icon: "🤝",
-    title: "SCALE TOGETHER",
-    sub: "Retainer · Ongoing partnership",
-    body: "After launch, we stay in as your dedicated tech team — shipping features, fixing issues, and growing the product with you.",
+    title: "GROW WITH THE ECOSYSTEM",
+    sub: "Ongoing partnership · One login",
+    body: "As your institution scales, add automation, Exam-OS, and ERP without changing technology partners.",
     features: [
-      "Monthly feature sprints",
-      "Priority support & bug fixes",
-      "Performance monitoring",
-      "Strategy calls as needed",
+      "Add modules at your pace",
+      "Shared institution data layer",
+      "Priority implementation support",
+      "No fragmented vendor stack",
     ],
     accent: "#1E3A5F",
   },
   {
     icon: "⚡",
-    title: "AUGMENT YOUR TEAM",
-    sub: "Staff augmentation · Dev bandwidth",
-    body: "Already have a team but need more hands? Plug our developers directly into your workflow and ship faster.",
+    title: "FULL INSTITUTION OS",
+    sub: "Enterprise · Integrated operations",
+    body: "Large institutions and university systems get the complete integrated stack with dedicated support.",
     features: [
-      "Dedicated devs on your stack",
-      "Work in your tools & processes",
-      "Flexible monthly engagement",
-      "No long-term lock-in",
+      "Multi-campus architecture",
+      "Central administration controls",
+      "Dedicated success team",
+      "Phased rollout and migration",
     ],
     accent: "#7B5EA7",
   },
   {
     icon: "💡",
-    title: "CO-BUILD & CO-OWN",
-    sub: "Venture model · Equity partnership",
-    body: "Have a strong idea but limited budget? We co-build in exchange for equity — skin in the game, together.",
+    title: "FOUNDING INSTITUTION PROGRAM",
+    sub: "Early access · Shape the roadmap",
+    body: "Join as one of our first institutions and directly influence the ecosystem with preferential pricing.",
     features: [
-      "Reduced upfront development cost",
-      "Century TechX as technical co-founder",
-      "Shared growth incentive",
-      "Selective, high-conviction only",
+      "Early access to new modules",
+      "Preferential founding pricing",
+      "Direct product feedback channel",
+      "Recognition as an early partner",
     ],
     accent: "#C9A84C",
   },
@@ -67,7 +67,7 @@ export function Collaboration() {
         <SectionHeader
           eyebrow="// ENGAGEMENT PROTOCOLS"
           title="HOW WE WORK WITH YOU"
-          subtitle="Century TechX operates as a long-term tech partner, not a one-time vendor."
+          subtitle="Start with what you need now, then grow into one complete education ecosystem."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

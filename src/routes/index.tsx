@@ -1,17 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/edu/Nav";
-import { Hero } from "@/components/edu/Hero";
-import {
-  Problem,
-  BrandOS,
-  Ecosystem,
-  WhoWeServe,
-  WhyOnePartner,
-  Insights,
-  Company,
-} from "@/components/edu/Sections";
-import { DemoCTA } from "@/components/edu/DemoCTA";
-import { SiteFooter } from "@/components/edu/SiteFooter";
+import { Navigation } from "@/components/site/Navigation";
+import { Hero } from "@/components/sections/Hero";
+import { Divisions } from "@/components/sections/Divisions";
+import { Services } from "@/components/sections/Services";
+import { Collaboration } from "@/components/sections/Collaboration";
+import { Automations } from "@/components/sections/Automations";
+import { WorkflowsN8n } from "@/components/sections/WorkflowsN8n";
+import { Portfolio } from "@/components/sections/Portfolio";
+import { Clients } from "@/components/sections/Clients";
+import { WhyTrust } from "@/components/sections/WhyTrust";
+import { Stack } from "@/components/sections/Stack";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/sections/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => {
@@ -43,19 +43,21 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
-      <Nav />
+      <Navigation />
       <main>
         <Hero />
-        <Problem />
-        <BrandOS />
-        <Ecosystem />
-        <WhoWeServe />
-        <WhyOnePartner />
-        <Insights />
-        <Company />
-        <DemoCTA />
+        <Divisions />
+        <Services />
+        <Collaboration />
+        <Automations />
+        <WorkflowsN8n />
+        <Portfolio />
+        <Clients />
+        <WhyTrust />
+        <Stack />
+        <Contact />
       </main>
-      <SiteFooter />
+      <Footer />
     </div>
   );
 }
