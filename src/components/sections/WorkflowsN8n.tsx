@@ -20,18 +20,18 @@ interface Workflow {
 }
 
 const WORKFLOWS: Workflow[] = [
-  { icon: "🎯", title: "Lead Capture Automation", trigger: "Website form submission",
-    steps: ["Save to Google Sheets", "Send welcome email", "Notify team on WhatsApp", "Add to CRM"], theme: "blue" },
-  { icon: "💰", title: "Invoice & Payment Automation", trigger: "New order received",
-    steps: ["Generate PDF invoice", "Email to client", "Update accounting sheet", "7-day payment reminder"], theme: "green" },
-  { icon: "📱", title: "Social Media Auto-Posting", trigger: "New blog post published",
-    steps: ["Extract content", "AI caption", "Post to Instagram", "Post to LinkedIn", "Post to X", "Log in sheet"], theme: "purple" },
-  { icon: "🎧", title: "Customer Support Tickets", trigger: "Email to support inbox",
-    steps: ["Create Notion ticket", "Assign to agent", "Auto-reply customer", "Escalate after 24h", "Close + feedback"], theme: "orange" },
-  { icon: "🛒", title: "E-Commerce Order Processing", trigger: "New Shopify / Woo order",
-    steps: ["Update inventory", "Order confirmation", "Notify warehouse", "Generate shipping label", "Send tracking"], theme: "teal" },
-  { icon: "👥", title: "HR Onboarding Automation", trigger: "New employee added",
-    steps: ["Welcome email", "Create accounts", "Add to payroll", "Schedule orientation", "Week-1 checklist"], theme: "pink" },
+  { icon: "🎓", title: "Student Onboarding", trigger: "Admission confirmed",
+    steps: ["Create student record", "Send fee link", "WhatsApp class schedule", "Issue parent access"], theme: "blue" },
+  { icon: "💰", title: "Fee Reminder Automation", trigger: "Fee due date approaching",
+    steps: ["Check balance", "Send WhatsApp reminder", "Share payment link", "Update accounts"], theme: "green" },
+  { icon: "🎯", title: "Admissions Follow-Up", trigger: "New admission enquiry",
+    steps: ["Score lead", "Create CRM record", "Start nurture sequence", "Assign counselor"], theme: "purple" },
+  { icon: "💬", title: "Parent Communication", trigger: "Institution announcement",
+    steps: ["Select audience", "Personalize message", "Send WhatsApp + email", "Track delivery"], theme: "orange" },
+  { icon: "🎨", title: "Brand Content Posting", trigger: "Campaign approved",
+    steps: ["Generate channel copy", "Resize creative", "Schedule channels", "Log performance"], theme: "teal" },
+  { icon: "📚", title: "Batch & Class Updates", trigger: "Schedule changed",
+    steps: ["Update timetable", "Notify students", "Notify faculty", "Record acknowledgement"], theme: "pink" },
 ];
 
 const STATS = [
@@ -83,26 +83,26 @@ function FlowDiagram({ steps, theme }: { steps: string[]; theme: Theme }) {
 
 export function WorkflowsN8n() {
   return (
-    <section id="workflows" className="relative py-24 px-5 md:px-8" style={{ background: "#F0F4FF" }}>
+     <section id="workflows" className="relative py-24 px-5 md:px-8" style={{ background: "var(--bg-primary)" }}>
       <div className="max-w-[1280px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-[6px] rounded-full mb-5"
             style={{ border: "1px solid rgba(37,99,235,0.25)", background: "rgba(37,99,235,0.06)" }}>
             <span className="inline-block w-[6px] h-[6px] rounded-full" style={{ background: "#2563EB", boxShadow: "0 0 6px #2563EB" }} />
-            <span className="font-mono text-[10px] tracking-[0.18em] text-[#2563EB]">// POWERED BY n8n</span>
+             <span className="font-mono text-[10px] tracking-[0.18em] text-[var(--accent)]">// POWERED BY N8N — FOR EDUCATION</span>
           </div>
-          <h2 className="font-orbitron font-black mb-4" style={{ color: "#1E3A5F", fontSize: "clamp(2rem, 4.2vw, 3.4rem)", letterSpacing: "-0.03em", lineHeight: 1 }}>
-            Smart Automation Workflows
+           <h2 className="font-orbitron font-black mb-4" style={{ color: "var(--text-primary)", fontSize: "clamp(2rem, 4.2vw, 3.4rem)", lineHeight: 1 }}>
+             SMART EDUCATION WORKFLOWS
           </h2>
-          <p className="font-inter font-light text-[16px] md:text-[17px] leading-[1.7] text-[#475569] max-w-[640px] mx-auto">
-            We build custom n8n workflows that save your team hours every week.
+           <p className="font-inter font-light text-[16px] md:text-[17px] leading-[1.7] text-[var(--text-secondary)] max-w-[640px] mx-auto">
+             Custom n8n workflows for admissions, accounts, communication, and institution marketing.
           </p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 rounded-[10px] overflow-hidden mb-14"
-          style={{ background: "white", border: "1px solid rgba(37,99,235,0.18)", boxShadow: "0 10px 30px rgba(30,58,95,0.06)" }}>
+           style={{ background: "var(--bg-elevated)", border: "1px solid var(--border-mid)", boxShadow: "var(--shadow-card)" }}>
           {STATS.map((s, i) => (
             <div key={i} className="px-5 py-6 text-center"
               style={{ borderRight: i < 3 ? "1px solid rgba(37,99,235,0.12)" : "none" }}>
@@ -124,8 +124,8 @@ export function WorkflowsN8n() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-                className="group relative rounded-[12px] p-6 bg-white transition-all duration-300 hover:-translate-y-1"
-                style={{ border: `1px solid ${t.ring}`, boxShadow: "0 4px 14px rgba(30,58,95,0.06)" }}
+                 className="group relative rounded-[12px] p-6 transition-all duration-300 hover:-translate-y-1"
+                 style={{ background: "var(--bg-elevated)", border: `1px solid ${t.ring}`, boxShadow: "var(--shadow-card)" }}
                 onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 18px 40px ${t.ring}`; }}
                 onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 4px 14px rgba(30,58,95,0.06)"; }}
               >
@@ -137,7 +137,7 @@ export function WorkflowsN8n() {
                     <span>{w.icon}</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-orbitron font-bold text-[15px] tracking-[0.02em]" style={{ color: t.text }}>
+                     <h3 className="font-orbitron font-bold text-[15px]" style={{ color: "var(--text-primary)" }}>
                       {w.title}
                     </h3>
                     <div className="mt-1 font-mono text-[10px] tracking-[0.14em] text-[#64748B]">

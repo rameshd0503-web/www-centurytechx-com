@@ -25,9 +25,9 @@ const CONTACTS = [
   {
     icon: Globe,
     label: "// NETWORK",
-    value: "centurytechx.in",
+    value: "centurytechx.com",
     sub: "Live · 24/7 uptime",
-    href: "https://centurytechx.in",
+    href: "https://centurytechx.com",
   },
 ];
 
@@ -36,6 +36,7 @@ const contactSchema = z.object({
   name: z.string().trim().min(1, "Operative name is required").max(100, "Name must be 100 characters or fewer"),
   email: z.string().trim().email("Enter a valid email address").max(255, "Email must be 255 characters or fewer"),
   phone: z.string().trim().max(50, "Phone must be 50 characters or fewer").optional(),
+  institutionType: z.enum(["School", "College", "University", "Coaching Institute", "Training Institute"]),
   message: z.string().trim().min(1, "Mission payload is required").max(2000, "Message must be 2000 characters or fewer"),
 });
 
@@ -45,6 +46,7 @@ export function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [institutionType, setInstitutionType] = useState("School");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -53,7 +55,7 @@ export function Contact() {
     e.preventDefault();
     setErrorMsg("");
 
-    const parsed = contactSchema.safeParse({ name, email, phone: phone || undefined, message });
+    const parsed = contactSchema.safeParse({ name, email, phone: phone || undefined, institutionType, message });
     if (!parsed.success) {
       setStatus("error");
       const msg = parsed.error.issues[0]?.message ?? "Invalid input";
@@ -67,7 +69,7 @@ export function Contact() {
       name: parsed.data.name,
       email: parsed.data.email,
       phone: parsed.data.phone ?? null,
-      message: parsed.data.message,
+      message: `Institution type: ${parsed.data.institutionType}\n\n${parsed.data.message}`,
     };
     console.log("[Contact] Submitting payload:", payload);
     const { data, error } = await supabase.from("contacts").insert(payload);
@@ -86,6 +88,7 @@ export function Contact() {
     setName("");
     setEmail("");
     setPhone("");
+    setInstitutionType("School");
     setMessage("");
     window.setTimeout(() => setStatus("idle"), 4000);
   };
@@ -104,12 +107,12 @@ export function Contact() {
       <div className="max-w-[1440px] mx-auto">
         <SectionHeader
           eyebrow="// MISSION CONTROL — CONTACT"
-          title="HAVE A MISSION?"
-          subtitle="Drop your coordinates below. We'll map the plan, price it fairly, and build it right."
+           title="HAVE AN INSTITUTION TO TRANSFORM?"
+           subtitle="Drop your coordinates below. We'll map your ecosystem plan and get you live on Brand-OS in days."
         />
         <div className="text-center -mt-10 mb-16">
           <span className="font-orbitron font-bold text-[var(--neon)] text-glow-neon" style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}>
-            // LET&apos;S BUILD IT.
+             // LET&apos;S TRANSFORM IT.
           </span>
         </div>
 
@@ -235,11 +238,22 @@ export function Contact() {
               <Field label="// OPERATIVE_NAME" value={name} onChange={setName} placeholder="Your full name" />
               <Field label="// COMMS_CHANNEL" value={email} onChange={setEmail} placeholder="you@domain.com" type="email" />
               <Field label="// PHONE_LINK (OPTIONAL)" value={phone} onChange={setPhone} placeholder="+91 80730 92082" type="tel" />
+              <div>
+                <label className="block font-mono text-[10px] tracking-[0.18em] text-[var(--neon)] mb-2">// INSTITUTION_TYPE</label>
+                <select
+                  value={institutionType}
+                  onChange={(event) => setInstitutionType(event.target.value)}
+                  className="w-full rounded-[3px] px-4 py-[14px] font-mono text-[13px] outline-none"
+                  style={{ background: "var(--bg-primary)", border: "1px solid var(--border-mid)", color: "var(--text-primary)" }}
+                >
+                  {["School", "College", "University", "Coaching Institute", "Training Institute"].map((option) => <option key={option}>{option}</option>)}
+                </select>
+              </div>
               <Field
                 label="// PAYLOAD"
                 value={message}
                 onChange={setMessage}
-                placeholder="Brief mission description — what are we building?"
+                 placeholder="Tell us about your institution and the system you want to improve first."
                 textarea
                 maxLength={1000}
               />

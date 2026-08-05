@@ -36,7 +36,7 @@ export function Hero() {
     <section
       id="top"
       className="relative min-h-screen pt-[110px] pb-20 px-5 md:px-8 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EFF6FF 100%)" }}
+      style={{ background: "var(--bg-primary)" }}
     >
       <HeroFX />
       <div className="relative max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[58fr_42fr] gap-15 lg:gap-[60px] items-center" style={{ zIndex: 1 }}>
@@ -76,7 +76,7 @@ export function Hero() {
               style={{ background: "#2563EB", boxShadow: "0 0 6px #2563EB" }}
             />
             <span className="font-mono text-[10px] tracking-[0.18em] text-[var(--accent)]">
-              // CTX-2026 · TECHNOLOGY COMPANY · INDIA
+              // CTX-2026 · EDUCATION TECHNOLOGY ECOSYSTEM · INDIA
             </span>
           </motion.div>
 
@@ -91,13 +91,13 @@ export function Hero() {
             <span
               className="block font-black"
               style={{
-                color: "#1E3A5F",
+                color: "var(--text-primary)",
                 fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
                 lineHeight: 0.9,
                 letterSpacing: "-0.04em",
               }}
             >
-              <GlitchText text="STOP WORKING." intensity="low" />
+               <GlitchText text="THE OPERATING" intensity="low" />
             </span>
 
             {/* Line 2 — gradient navy→accent */}
@@ -110,7 +110,7 @@ export function Hero() {
               }}
             >
               <GlitchText
-                text="START AUTOMATING."
+                 text="SYSTEM FOR"
                 intensity="medium"
                 useDropShadow
                 className="gradient-text-anim"
@@ -132,7 +132,7 @@ export function Hero() {
                 marginTop: 12,
               }}
             >
-              <GlitchText text="EMPOWERING GROWTH" intensity="low" />
+               <GlitchText text="EDUCATION." intensity="low" />
             </span>
           </motion.h1>
 
@@ -143,7 +143,7 @@ export function Hero() {
             className="font-inter font-light text-[17px] leading-[1.8] text-[var(--text-secondary)] max-w-[520px] mb-10"
           >
             <Typewriter
-              text="India's next-generation technology company — building AI automation, EdTech platforms, and SaaS products that power real businesses forward."
+              text="ONE PARTNER. EVERY SYSTEM YOUR INSTITUTION NEEDS TO RUN, GROW, AND TEACH. Century TechX is building India's largest technology ecosystem exclusively for educational institutions — replacing scattered CRM, marketing, admissions, and analytics vendors with one integrated platform."
               speed={28}
               startDelay={800}
             />
@@ -170,27 +170,27 @@ export function Hero() {
                 e.currentTarget.style.transform = "translateY(0) scale(1)";
               }}
             >
-              ENGAGE MISSION
+              BOOK A DEMO
               <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
             </a>
             <a
-              href="#automations"
+              href="#ecosystem"
               className="inline-flex items-center font-orbitron font-bold text-[12px] tracking-[0.12em] px-8 py-4 rounded-[8px] transition-all duration-200"
               style={{
                 background: "transparent",
-                border: "2px solid #1E3A5F",
-                color: "#1E3A5F",
+                border: "2px solid var(--text-primary)",
+                color: "var(--text-primary)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#1E3A5F";
+                e.currentTarget.style.background = "var(--text-primary)";
                 e.currentTarget.style.color = "#FFFFFF";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "#1E3A5F";
+                e.currentTarget.style.color = "var(--text-primary)";
               }}
             >
-              VIEW INTEL //
+              VIEW THE ECOSYSTEM //
             </a>
             <button
               type="button"
@@ -215,13 +215,13 @@ export function Hero() {
           </motion.div>
 
           {/* Social proof */}
-          <motion.div
-            {...reveal}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-5 font-mono text-[11px] tracking-[0.14em] text-[var(--text-dim)]"
-          >
-            <span className="text-[var(--neon)]">//</span> New startup. Serious tech. Building for founders across India 🇮🇳
-          </motion.div>
+           <motion.div
+             {...reveal}
+             transition={{ duration: 0.6, delay: 0.7 }}
+             className="mt-5 font-mono text-[11px] tracking-[0.14em] text-[var(--text-dim)]"
+           >
+             <span className="text-[var(--neon)]">//</span> Building the future of Indian education technology 🇮🇳
+           </motion.div>
 
           {/* Stats */}
           <motion.div
@@ -234,9 +234,9 @@ export function Hero() {
             }}
           >
             {[
-              { val: <StatCounter target={10} suffix="+" />, label: "ACTIVE PRODUCTS" },
-              { val: <StatCounter target={3} />, label: "DIVISIONS" },
-              { val: <StatCounter target={100} suffix="%" />, label: "IP OWNERSHIP" },
+               { val: <StatCounter target={1} suffix="+" />, label: "ACTIVE INSTITUTIONS" },
+               { val: <StatCounter target={7} />, label: "ECOSYSTEM PHASES" },
+               { val: <StatCounter target={100} suffix="%" />, label: "DATA OWNERSHIP" },
               { val: <StatCounter target={50} suffix="+" />, label: "WORKFLOWS SHIPPED" },
             ].map((s, i) => (
               <div
@@ -285,11 +285,11 @@ export function Hero() {
 
           {/* Metrics */}
           <div className="space-y-3 mt-4">
-            <ProgressBar value={82} label="CPU LOAD" />
-            <ProgressBar value={100} label="ACTIVE MODULES" display="4/4" />
-            <ProgressBar value={71} label="AI WORKFLOWS" />
+             <ProgressBar value={14} label="ACTIVE PRODUCTS" display="1/7" />
+             <ProgressBar value={72} label="INSTITUTIONS ONBOARDING" display="ACTIVE" />
+             <ProgressBar value={86} label="AI AUTOMATIONS LIVE" display="LIVE" />
             <ProgressBar value={99.9} label="UPTIME" display="99.9%" />
-            <ProgressBar value={0} label="THREAT LEVEL" display="ZERO" empty />
+             <ProgressBar value={100} label="PHASE STATUS" display="BRAND-OS LIVE" />
           </div>
 
           {/* Status footer */}

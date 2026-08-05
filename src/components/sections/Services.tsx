@@ -3,11 +3,11 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { HUDCard } from "@/components/hud/HUDCard";
 
 const SERVICES = [
-  { num: "01", icon: "💻", title: "SaaS Product Development", desc: "Full-stack SaaS from concept to deployed product." },
-  { num: "02", icon: "🤖", title: "AI & Automation Workflows", desc: "n8n, LLMs, custom agents — automate what slows you." },
-  { num: "03", icon: "🎓", title: "EdTech Solutions", desc: "Custom exam management and student platforms for institutions." },
-  { num: "04", icon: "⚡", title: "MVP Rapid Build", desc: "Ship a working product in 8–12 weeks. No fluff." },
-  { num: "05", icon: "🎬", title: "AI Video Editing (CutX)", desc: "AI-powered video editing at creator speed and scale." },
+  { num: "01", icon: "🎨", title: "Brand & Marketing Automation", desc: "Posters, videos, content calendars, and campaigns — live today." },
+  { num: "02", icon: "🤖", title: "AI Automation & CRM", desc: "WhatsApp, admissions, email, lead management, and chatbots." },
+  { num: "03", icon: "📝", title: "Exam & Assessment Systems", desc: "Question generation, evaluation, analytics, and dashboards." },
+  { num: "04", icon: "🏛️", title: "Institution ERP", desc: "Fees, attendance, transport, payroll, timetable, and HR." },
+  { num: "05", icon: "📊", title: "Education Intelligence", desc: "Admission trends, benchmarking, and demand forecasting — future phase." },
 ];
 
 export function Services() {
@@ -18,7 +18,7 @@ export function Services() {
       style={{ background: "var(--bg-surface)" }}
     >
       <div className="max-w-[1440px] mx-auto">
-        <SectionHeader eyebrow="// SERVICE PROTOCOLS" title="WHAT WE BUILD" />
+         <SectionHeader eyebrow="// SERVICE PROTOCOLS" title="WHAT WE BUILD FOR INSTITUTIONS" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((s, i) => (

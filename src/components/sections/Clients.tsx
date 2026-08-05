@@ -4,33 +4,33 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 const CLIENTS = [
   {
     code: "CLIENT_01",
-    icon: "🌱",
-    name: "STARTUPS",
-    desc: "First-time founders who need an MVP built fast and affordably, with full IP ownership.",
+    icon: "🏫",
+    name: "SCHOOLS",
+    desc: "Parent communication, fee management, and branding that keeps admissions full.",
   },
   {
     code: "CLIENT_02",
-    icon: "🏫",
-    name: "EDTECH & SCHOOLS",
-    desc: "Institutions needing exam engines, LMS, or ERP solutions for Indian education.",
+    icon: "🎓",
+    name: "COLLEGES & UNIVERSITIES",
+    desc: "Multi-department complexity, scale, and academic operations in one system.",
   },
   {
     code: "CLIENT_03",
-    icon: "🏢",
-    name: "SMBS & ENTERPRISES",
-    desc: "Businesses needing custom SaaS tools, AI automation, or digital transformation.",
+    icon: "📚",
+    name: "COACHING INSTITUTES",
+    desc: "High lead volume, admissions speed, and result-driven marketing.",
   },
   {
     code: "CLIENT_04",
-    icon: "💼",
-    name: "AGENCIES & CREATORS",
-    desc: "Agencies needing white-label SaaS and creators needing AI video and automation tools.",
+    icon: "🛠️",
+    name: "TRAINING INSTITUTES",
+    desc: "Batch management, certification tracking, and enrollment automation.",
   },
 ];
 
 export function Clients() {
   return (
-    <section
+       <section id="institutions"
       className="relative py-24 md:py-32 px-5 md:px-8"
       style={{ background: "var(--bg-surface)" }}
     >
@@ -38,7 +38,7 @@ export function Clients() {
         <SectionHeader
           eyebrow="// TARGET CLIENTS"
           title="WHO WE SERVE"
-          subtitle="From first-time founders to growing enterprises."
+           subtitle="Built for every institution that teaches, trains, and transforms lives."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

@@ -4,30 +4,30 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 const REASONS = [
   {
     code: "TRUST_01",
-    icon: "🔐",
-    title: "100% IP OWNERSHIP",
-    desc: "Every line of code we write is yours. No lock-in, no licensing traps.",
+    icon: "🎯",
+    title: "BUILT EXCLUSIVELY FOR EDUCATION",
+    desc: "We never dilute into unrelated industries. Every product is designed for how institutions actually run.",
     accent: "#00FF88",
   },
   {
     code: "TRUST_02",
-    icon: "⚡",
-    title: "DELIVERY-FIRST CULTURE",
-    desc: "We sign contracts with timelines. If we commit to 10 weeks, we mean 10 weeks.",
+    icon: "🔗",
+    title: "ONE LOGIN, EVERY SYSTEM",
+    desc: "Branding, automation, exams, and operations — no more stitching together five vendors.",
     accent: "#2563EB",
   },
   {
     code: "TRUST_03",
-    icon: "🤝",
-    title: "FOUNDER-TO-FOUNDER THINKING",
-    desc: "We think about your product like it's ours. Because sometimes, it is (Co-Build model).",
+    icon: "🇮🇳",
+    title: "INDIA-FIRST",
+    desc: "GST-ready, WhatsApp-native, built for how Indian institutions actually work.",
     accent: "#1E3A5F",
   },
   {
     code: "TRUST_04",
-    icon: "🇮🇳",
-    title: "BUILT FOR INDIA",
-    desc: "GST-ready, Razorpay-integrated, WhatsApp-native. We build for how India actually works.",
+    icon: "📈",
+    title: "YOUR DATA COMPOUNDS FOR YOU",
+    desc: "The longer you stay in the ecosystem, the smarter your institution's insights get.",
     accent: "#C9A84C",
   },
 ];
@@ -42,7 +42,7 @@ export function WhyTrust() {
         <SectionHeader
           eyebrow="// WHY CENTURY TECHX"
           title="WHY TRUST US?"
-          subtitle="No client logos to flash yet — just principles we ship by."
+           subtitle="A focused ecosystem built around the long-term success of educational institutions."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

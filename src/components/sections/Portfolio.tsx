@@ -5,42 +5,42 @@ import { HUDCard } from "@/components/hud/HUDCard";
 const PROJECTS = [
   {
     code: "PROJ_01",
-    name: "EduCore LMS",
-    desc: "AI-powered exam & student management platform for coaching centres.",
-    tags: ["React", "Node.js", "PostgreSQL", "AI"],
+    name: "Brand-OS",
+    desc: "AI-powered branding and marketing automation for educational institutions.",
+    tags: ["React", "Node.js", "OpenAI", "n8n"],
     accent: "#1E3A5F",
-    flagship: false,
+    flagship: true,
   },
   {
     code: "PROJ_02",
-    name: "FlowBot",
-    desc: "End-to-end n8n automation suite for SMB lead and invoice workflows.",
-    tags: ["n8n", "Python", "Webhooks", "GPT"],
+    name: "EduCore LMS",
+    desc: "AI-powered exam and student management platform for coaching centres.",
+    tags: ["React", "Node.js", "PostgreSQL", "AI"],
     accent: "#00FF88",
     flagship: false,
   },
   {
     code: "PROJ_03",
-    name: "CutX",
-    desc: "AI video editing pipeline for content creators.",
-    tags: ["Python", "FFmpeg", "OpenAI", "LangChain"],
+    name: "AI Automation Suite",
+    desc: "WhatsApp, admissions, CRM, email, and chatbot automation for institutions.",
+    tags: ["○ IN DEVELOPMENT"],
     accent: "#2563EB",
-    flagship: true,
+    flagship: false,
   },
 ];
 
 export function Portfolio() {
   return (
     <section
-      id="portfolio"
+       id="product"
       className="relative py-24 md:py-32 px-5 md:px-8"
       style={{ background: "var(--bg-primary)" }}
     >
       <div className="max-w-[1440px] mx-auto">
         <SectionHeader
           eyebrow="// DEPLOYED PRODUCTS"
-          title="MISSIONS IN THE FIELD"
-          subtitle="A glimpse at the systems we've shipped — owned, operated, and battle-tested."
+           title="LIVE IN THE FIELD"
+           subtitle="Education products available now and the next connected module in development."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

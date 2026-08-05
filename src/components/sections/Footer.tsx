@@ -1,10 +1,10 @@
 import logoUrl from "@/assets/ctx-logo.jpeg";
 
 const QUICK_LINKS = [
-  { label: "Divisions", href: "#divisions" },
-  
-  { label: "Services", href: "#services" },
-  { label: "Stack", href: "#stack" },
+  { label: "Product", href: "#product" },
+  { label: "Ecosystem", href: "#ecosystem" },
+  { label: "For Institutions", href: "#institutions" },
+  { label: "Insights", href: "#automations" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -13,7 +13,7 @@ export function Footer() {
     <footer
       className="relative px-5 md:px-8 pt-16 pb-6"
       style={{
-        background: "#F8F9FA",
+        background: "var(--footer-bg)",
         borderTop: "1px solid rgba(30,58,95,0.10)",
       }}
     >
@@ -31,7 +31,7 @@ export function Footer() {
                 style={{
                   width: 80,
                   height: 80,
-                  background: "#FFFFFF",
+                 background: "var(--bg-elevated)",
                   border: "1px solid rgba(37,99,235,0.5)",
                   boxShadow: "0 0 20px rgba(37,99,235,0.3)",
                 }}
@@ -44,11 +44,11 @@ export function Footer() {
                 />
               </span>
             </a>
-            <div className="font-rajdhani font-semibold text-[#1E3A5F] text-[16px] tracking-[0.08em] mb-2">
+             <div className="font-rajdhani font-semibold text-[var(--text-primary)] text-[16px] tracking-[0.08em] mb-2">
               CENTURY TECHX LLP
             </div>
             <div className="font-mono text-[11px] text-[var(--neon)] tracking-[0.15em] mb-5">
-              Empowering Growth
+               THE OPERATING SYSTEM FOR EDUCATION
             </div>
             <address className="not-italic font-mono text-[10px] leading-[1.7] text-[var(--text-dim)]">
               Plot No. 119, KIADB Industrial Area<br />
@@ -135,7 +135,7 @@ export function Footer() {
             © 2026 CENTURY TECHX LLP · ALL RIGHTS RESERVED
           </span>
           <span className="font-mono text-[9px] tracking-[0.18em] text-[var(--neon)]">
-            BUILD · LAUNCH · AUTOMATE
+             RUN · GROW · TEACH
           </span>
           <span className="inline-flex items-center gap-2 font-mono text-[9px] tracking-[0.18em] text-[var(--text-dim)]">
             ALL SYSTEMS OPERATIONAL
