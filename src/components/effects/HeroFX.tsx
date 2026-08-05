@@ -95,7 +95,7 @@ export function HeroFX() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(30,58,95,0.10) 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, rgba(124,144,255,0.16) 1px, transparent 0)",
           backgroundSize: "28px 28px",
           maskImage:
             "radial-gradient(ellipse at 50% 30%, #000 35%, transparent 75%)",
@@ -106,7 +106,7 @@ export function HeroFX() {
         }}
       />
 
-      {/* Blob 1 — outer wrap = parallax, inner = drift animation */}
+      {/* Subtle depth glow — outer wrap = parallax, inner = drift animation */}
       <div
         ref={blobAWrap}
         className="absolute"
@@ -122,7 +122,7 @@ export function HeroFX() {
           className="w-full h-full rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(37,99,235,0.28) 0%, rgba(37,99,235,0) 65%)",
+               "radial-gradient(circle, rgba(79,107,255,0.16) 0%, rgba(79,107,255,0) 65%)",
             filter: "blur(20px)",
             animation: "blob-drift-a 18s ease-in-out infinite",
             willChange: "transform",
@@ -146,7 +146,7 @@ export function HeroFX() {
           className="w-full h-full rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(30,58,95,0.22) 0%, rgba(30,58,95,0) 65%)",
+               "radial-gradient(circle, rgba(45,212,191,0.10) 0%, rgba(45,212,191,0) 65%)",
             filter: "blur(24px)",
             animation: "blob-drift-b 22s ease-in-out infinite",
             willChange: "transform",
@@ -170,7 +170,7 @@ export function HeroFX() {
           className="w-full h-full rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0) 65%)",
+               "radial-gradient(circle, rgba(79,107,255,0.10) 0%, rgba(79,107,255,0) 65%)",
             filter: "blur(18px)",
             animation: "blob-drift-c 26s ease-in-out infinite",
             willChange: "transform",
