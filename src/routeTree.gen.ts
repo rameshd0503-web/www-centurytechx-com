@@ -9,25 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as EnquiryRouteImport } from './routes/enquiry'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as QaFocusRouteImport } from './routes/qa.focus'
-import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as EnquiryRouteImport } from './routes/enquiry'
 import { Route as AdminInboxRouteImport } from './routes/admin.inbox'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as QaFocusRouteImport } from './routes/qa.focus'
 
-const EnquiryRoute = EnquiryRouteImport.update({
-  id: '/enquiry',
-  path: '/enquiry',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const QaFocusRoute = QaFocusRouteImport.update({
-  id: '/qa/focus',
-  path: '/qa/focus',
+const EnquiryRoute = EnquiryRouteImport.update({
+  id: '/enquiry',
+  path: '/enquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminInboxRoute = AdminInboxRouteImport.update({
+  id: '/admin/inbox',
+  path: '/admin/inbox',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminLoginRoute = AdminLoginRouteImport.update({
@@ -35,9 +35,9 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
   path: '/admin/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminInboxRoute = AdminInboxRouteImport.update({
-  id: '/admin/inbox',
-  path: '/admin/inbox',
+const QaFocusRoute = QaFocusRouteImport.update({
+  id: '/qa/focus',
+  path: '/qa/focus',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -87,13 +87,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/enquiry': {
-      id: '/enquiry'
-      path: '/enquiry'
-      fullPath: '/enquiry'
-      preLoaderRoute: typeof EnquiryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -101,11 +94,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/qa/focus': {
-      id: '/qa/focus'
-      path: '/qa/focus'
-      fullPath: '/qa/focus'
-      preLoaderRoute: typeof QaFocusRouteImport
+    '/enquiry': {
+      id: '/enquiry'
+      path: '/enquiry'
+      fullPath: '/enquiry'
+      preLoaderRoute: typeof EnquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/inbox': {
+      id: '/admin/inbox'
+      path: '/admin/inbox'
+      fullPath: '/admin/inbox'
+      preLoaderRoute: typeof AdminInboxRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/login': {
@@ -115,11 +115,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/inbox': {
-      id: '/admin/inbox'
-      path: '/admin/inbox'
-      fullPath: '/admin/inbox'
-      preLoaderRoute: typeof AdminInboxRouteImport
+    '/qa/focus': {
+      id: '/qa/focus'
+      path: '/qa/focus'
+      fullPath: '/qa/focus'
+      preLoaderRoute: typeof QaFocusRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
