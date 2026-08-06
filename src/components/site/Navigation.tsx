@@ -39,7 +39,7 @@ export function Navigation() {
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
           borderBottom: "1px solid var(--border-dark)",
-          boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.25)" : "none",
+          boxShadow: scrolled ? "0 4px 20px rgba(20,24,31,0.08)" : "none",
         }}
       >
         <div className="h-full max-w-[1440px] mx-auto px-5 md:px-8 flex items-center justify-between">
