@@ -56,51 +56,51 @@
 :root {
   --radius: 14px;
 
-  /* Backgrounds — dark institutional theme */
-  --bg-void: #060910;
-  --bg-primary: #080C16;
-  --bg-surface: #0D1322;     /* alternating section bg */
-  --bg-elevated: #111829;     /* cards */
-  --bg-glass: rgba(8,12,22,0.78);
+  /* Backgrounds — light theme */
+  --bg-void: #FFFFFF;
+  --bg-primary: #FFFFFF;
+  --bg-surface: #FFF7ED;      /* alternating section bg (warm tint) */
+  --bg-elevated: #FFFFFF;     /* cards */
+  --bg-glass: rgba(255,255,255,0.82);
 
-  /* Brand — deep indigo primary, teal secondary
+  /* Brand — orange primary (logo), warm amber secondary.
      Legacy "--navy"/"--neon" names are retained so older components re-theme. */
-  --navy: #EDF1FA;            /* heading color in dark theme */
-  --navy-soft: #C7D2E8;
-  --accent: #4F6BFF;          /* CTAs, links, highlights */
-  --accent-bright: #7C90FF;
-  --accent-soft: rgba(79,107,255,0.12);
-  --teal: #2DD4BF;
-  --teal-soft: rgba(45,212,191,0.12);
+  --navy: #14181F;            /* heading color */
+  --navy-soft: #3F4655;
+  --accent: #F97316;          /* CTAs, links, highlights */
+  --accent-bright: #FB923C;
+  --accent-soft: rgba(249,115,22,0.10);
+  --teal: #D97706;
+  --teal-soft: rgba(217,119,6,0.12);
 
-  --neon: #4F6BFF;
-  --neon-bright: #7C90FF;
-  --neon-dim: #8A96AE;
-  --neon-glow: rgba(79,107,255,0.22);
-  --neon-glow-lg: rgba(79,107,255,0.38);
-  --neon-pale: rgba(79,107,255,0.08);
+  --neon: #F97316;
+  --neon-bright: #FB923C;
+  --neon-dim: #B4794E;
+  --neon-glow: rgba(249,115,22,0.22);
+  --neon-glow-lg: rgba(249,115,22,0.38);
+  --neon-pale: rgba(249,115,22,0.08);
 
-  --cyan: #2DD4BF;
-  --cyan-glow: rgba(45,212,191,0.20);
-  --cyan-pale: rgba(45,212,191,0.08);
+  --cyan: #D97706;
+  --cyan-glow: rgba(217,119,6,0.20);
+  --cyan-pale: rgba(217,119,6,0.08);
 
   /* Red */
-  --red: #F87171;
-  --red-glow: rgba(248,113,113,0.18);
+  --red: #DC2626;
+  --red-glow: rgba(220,38,38,0.16);
 
   /* Text */
-  --text-primary: #E7ECF7;
-  --text-secondary: #9BA7C0;
-  --text-dim: #6B7793;
+  --text-primary: #14181F;
+  --text-secondary: #545C6B;
+  --text-dim: #8A93A3;
 
   /* Borders */
-  --border-dark: rgba(255,255,255,0.06);
-  --border-mid: rgba(255,255,255,0.10);
-  --border-bright: rgba(79,107,255,0.45);
-  --border-neutral: rgba(255,255,255,0.08);
+  --border-dark: rgba(20,24,31,0.08);
+  --border-mid: rgba(20,24,31,0.12);
+  --border-bright: rgba(249,115,22,0.45);
+  --border-neutral: rgba(20,24,31,0.10);
 
   /* Special */
-  --scanline: rgba(255,255,255,0.01);
+  --scanline: rgba(20,24,31,0.01);
   --grain-opacity: 0;
 
   /* shadcn fallbacks */
@@ -137,12 +137,13 @@
   --chart-5: var(--navy-soft);
 
   /* Footer */
-  --footer-bg: #060910;
+  --footer-bg: #FFF7ED;
 
   /* Card shadow */
-  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
-  --shadow-card-hover: 0 12px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-card: 0 1px 2px rgba(20,24,31,0.05), 0 8px 24px rgba(20,24,31,0.06);
+  --shadow-card-hover: 0 14px 40px rgba(249,115,22,0.16), 0 2px 8px rgba(20,24,31,0.08);
 }
+
 
 @layer base {
   * {
