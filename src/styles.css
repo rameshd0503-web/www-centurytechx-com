@@ -237,8 +237,8 @@
 }
 
 @keyframes beta-pulse {
-  0%, 100% { box-shadow: 0 0 0px rgba(37,99,235,0); }
-  50% { box-shadow: 0 0 8px rgba(37,99,235,0.4); }
+  0%, 100% { box-shadow: 0 0 0px rgba(249,115,22,0); }
+  50% { box-shadow: 0 0 8px rgba(249,115,22,0.4); }
 }
 
 @keyframes section-flash-sweep {
@@ -279,9 +279,9 @@
 }
 
 @keyframes pulse-ring {
-  0%   { box-shadow: 0 0 0 0 rgba(37,99,235,0.45); }
-  70%  { box-shadow: 0 0 0 14px rgba(37,99,235,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(249,115,22,0.45); }
+  70%  { box-shadow: 0 0 0 14px rgba(249,115,22,0); }
+  100% { box-shadow: 0 0 0 0 rgba(249,115,22,0); }
 }
 
 @keyframes shine-sweep {
@@ -325,8 +325,8 @@
 .fx-card-glow:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 18px 40px rgba(37,99,235,0.18),
-    0 4px 12px rgba(30,58,95,0.10);
+    0 18px 40px rgba(249,115,22,0.20),
+    0 4px 12px rgba(20,24,31,0.08);
 }
 
 @keyframes float-y {
@@ -386,7 +386,7 @@ summary:focus-visible,
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   box-shadow:
-    0 0 0 3px rgba(37,99,235,0.18);
+    0 0 0 3px rgba(249,115,22,0.20);
   border-radius: 8px;
   transition: outline-offset 120ms ease-out, box-shadow 120ms ease-out;
 }
@@ -394,7 +394,7 @@ summary:focus-visible,
 .ctx-focus-ring:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
-  box-shadow: 0 0 0 4px rgba(37,99,235,0.18);
+  box-shadow: 0 0 0 4px rgba(249,115,22,0.20);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -408,8 +408,8 @@ summary:focus-visible,
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #F0F4FF; }
-::-webkit-scrollbar-thumb { background: #C7D2FE; border-radius: 8px; }
+::-webkit-scrollbar-track { background: #FFF7ED; }
+::-webkit-scrollbar-thumb { background: #FBD3A5; border-radius: 8px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 /* Browser autofill overrides — keep filled text black on white form inputs */
@@ -425,7 +425,7 @@ select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset !important;
   box-shadow: 0 0 0 1000px #FFFFFF inset !important;
   caret-color: #000000 !important;
-  border-color: rgba(37, 99, 235, 0.25) !important;
+  border-color: rgba(249, 115, 22, 0.30) !important;
   transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
 }
 
