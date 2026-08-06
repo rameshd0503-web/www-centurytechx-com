@@ -99,9 +99,9 @@ export function Contact() {
       className="relative py-24 md:py-32 px-5 md:px-8"
       style={{
         background: "var(--bg-surface)",
-        borderTop: "1px solid rgba(37,99,235,0.25)",
-        borderBottom: "1px solid rgba(37,99,235,0.25)",
-        boxShadow: "0 -20px 60px rgba(37,99,235,0.04), 0 20px 60px rgba(37,99,235,0.04)",
+        borderTop: "1px solid rgba(249,115,22,0.25)",
+        borderBottom: "1px solid rgba(249,115,22,0.25)",
+        boxShadow: "0 -20px 60px rgba(249,115,22,0.04), 0 20px 60px rgba(249,115,22,0.04)",
       }}
     >
       <div className="max-w-[1440px] mx-auto">
@@ -133,22 +133,22 @@ export function Contact() {
                 style={{
                   background: "var(--bg-elevated)",
                   border: "1px solid var(--border-dark)",
-                  borderLeft: "3px solid #2563EB",
+                  borderLeft: "3px solid #F97316",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderLeftColor = "#3B82F6";
-                  e.currentTarget.style.boxShadow = "0 8px 32px rgba(37,99,235,0.1)";
+                  e.currentTarget.style.borderLeftColor = "#FB923C";
+                  e.currentTarget.style.boxShadow = "0 8px 32px rgba(249,115,22,0.1)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderLeftColor = "#2563EB";
+                  e.currentTarget.style.borderLeftColor = "#F97316";
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
-                <CornerBrackets size={8} color="#2563EB" />
+                <CornerBrackets size={8} color="#F97316" />
                 <div className="flex items-start gap-4">
                   <div
                     className="w-10 h-10 flex items-center justify-center rounded-[3px] shrink-0"
-                    style={{ background: "rgba(37,99,235,0.1)", border: "1px solid rgba(37,99,235,0.2)" }}
+                    style={{ background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.2)" }}
                   >
                     <c.icon size={18} className="text-[var(--neon)]" />
                   </div>
@@ -177,14 +177,14 @@ export function Contact() {
               style={{
                 background: "var(--bg-elevated)",
                 border: "1px solid var(--border-dark)",
-                borderLeft: "3px solid #2563EB",
+                borderLeft: "3px solid #F97316",
               }}
             >
-              <CornerBrackets size={8} color="#2563EB" />
+              <CornerBrackets size={8} color="#F97316" />
               <div className="flex items-start gap-4">
                 <div
                   className="w-10 h-10 flex items-center justify-center rounded-[3px] shrink-0"
-                  style={{ background: "rgba(37,99,235,0.1)", border: "1px solid rgba(37,99,235,0.2)" }}
+                  style={{ background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.2)" }}
                 >
                   <MapPin size={18} className="text-[var(--neon)]" />
                 </div>
@@ -219,7 +219,7 @@ export function Contact() {
               border: "1px solid var(--border-mid)",
             }}
           >
-            <CornerBrackets size={16} color="#2563EB" />
+            <CornerBrackets size={16} color="#F97316" />
 
             <div className="flex items-center justify-between mb-7 pb-4 border-b border-[var(--border-dark)]">
               <span className="font-mono text-[11px] tracking-[0.18em] text-[var(--neon)]">
@@ -228,7 +228,7 @@ export function Contact() {
               <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] text-[var(--text-secondary)]">
                 <span
                   className="w-[6px] h-[6px] rounded-full"
-                  style={{ background: "#00FF88", boxShadow: "0 0 6px #00FF88", animation: "blink 1.4s steps(2) infinite" }}
+                  style={{ background: "#16A34A", boxShadow: "0 0 6px #16A34A", animation: "blink 1.4s steps(2) infinite" }}
                 />
                 READY
               </span>
@@ -263,19 +263,19 @@ export function Contact() {
                 disabled={status === "loading"}
                 className="w-full font-orbitron font-bold text-[12px] tracking-[0.15em] px-6 rounded-[3px] transition-all duration-200 disabled:opacity-60"
                 style={{
-                  background: status === "success" ? "#00AA44" : "#2563EB",
+                  background: status === "success" ? "#00AA44" : "#F97316",
                   color: "#FFFFFF",
                   padding: "18px",
                 }}
                 onMouseEnter={(e) => {
                   if (status !== "loading" && status !== "success") {
-                    e.currentTarget.style.background = "#3B82F6";
-                    e.currentTarget.style.boxShadow = "0 0 30px rgba(37,99,235,0.4)";
+                    e.currentTarget.style.background = "#FB923C";
+                    e.currentTarget.style.boxShadow = "0 0 30px rgba(249,115,22,0.4)";
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (status !== "success") {
-                    e.currentTarget.style.background = "#2563EB";
+                    e.currentTarget.style.background = "#F97316";
                     e.currentTarget.style.boxShadow = "none";
                   }
                 }}
@@ -305,9 +305,9 @@ export function Contact() {
                   role="status"
                   className="font-mono text-[11px] tracking-[0.05em] px-4 py-3 rounded-[3px]"
                   style={{
-                    background: "rgba(0,255,136,0.06)",
-                    border: "1px solid rgba(0,255,136,0.30)",
-                    color: "#00FF88",
+                    background: "rgba(22,163,74,0.06)",
+                    border: "1px solid rgba(22,163,74,0.30)",
+                    color: "#16A34A",
                   }}
                 >
                   ✓ Message received. We'll respond within 24 hours.
@@ -338,7 +338,7 @@ interface FieldProps {
 function Field({ label, value, onChange, placeholder, type = "text", textarea, maxLength }: FieldProps) {
   const baseStyle = {
     background: "#FFFFFF",
-    border: "1px solid rgba(37,99,235,0.12)",
+    border: "1px solid rgba(249,115,22,0.12)",
     borderRadius: 3,
     color: "#000000",
     caretColor: "#000000",
@@ -371,12 +371,12 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
           maxLength={maxLength}
           style={baseStyle}
           onFocus={(e) => {
-            e.currentTarget.style.borderColor = "#2563EB";
-            e.currentTarget.style.boxShadow = "0 0 0 2px rgba(37,99,235,0.12)";
+            e.currentTarget.style.borderColor = "#F97316";
+            e.currentTarget.style.boxShadow = "0 0 0 2px rgba(249,115,22,0.12)";
             e.currentTarget.style.background = "#FFFFFF";
           }}
           onBlur={(e) => {
-            e.currentTarget.style.borderColor = "rgba(37,99,235,0.12)";
+            e.currentTarget.style.borderColor = "rgba(249,115,22,0.12)";
             e.currentTarget.style.boxShadow = "none";
             e.currentTarget.style.background = "#FFFFFF";
           }}
@@ -389,12 +389,12 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
           placeholder={placeholder}
           style={baseStyle}
           onFocus={(e) => {
-            e.currentTarget.style.borderColor = "#2563EB";
-            e.currentTarget.style.boxShadow = "0 0 0 2px rgba(37,99,235,0.12)";
+            e.currentTarget.style.borderColor = "#F97316";
+            e.currentTarget.style.boxShadow = "0 0 0 2px rgba(249,115,22,0.12)";
             e.currentTarget.style.background = "#FFFFFF";
           }}
           onBlur={(e) => {
-            e.currentTarget.style.borderColor = "rgba(37,99,235,0.12)";
+            e.currentTarget.style.borderColor = "rgba(249,115,22,0.12)";
             e.currentTarget.style.boxShadow = "none";
             e.currentTarget.style.background = "#FFFFFF";
           }}

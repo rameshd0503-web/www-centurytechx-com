@@ -8,7 +8,7 @@ const PROJECTS = [
     name: "Brand-OS",
     desc: "AI-powered branding and marketing automation for educational institutions.",
     tags: ["React", "Node.js", "OpenAI", "n8n"],
-    accent: "#1E3A5F",
+    accent: "#9A3412",
     flagship: true,
   },
   {
@@ -16,7 +16,7 @@ const PROJECTS = [
     name: "EduCore LMS",
     desc: "AI-powered exam and student management platform for coaching centres.",
     tags: ["React", "Node.js", "PostgreSQL", "AI"],
-    accent: "#00FF88",
+    accent: "#16A34A",
     flagship: false,
   },
   {
@@ -24,7 +24,7 @@ const PROJECTS = [
     name: "AI Automation Suite",
     desc: "WhatsApp, admissions, CRM, email, and chatbot automation for institutions.",
     tags: ["○ IN DEVELOPMENT"],
-    accent: "#2563EB",
+    accent: "#F97316",
     flagship: false,
   },
 ];
@@ -59,8 +59,8 @@ export function Portfolio() {
                       className="absolute top-3 right-3 font-mono text-[9px] tracking-[0.18em] px-2 py-1 rounded-[2px]"
                       style={{
                         color: "#FFFFFF",
-                        background: "#2563EB",
-                        boxShadow: "0 0 14px rgba(37,99,235,0.55)",
+                        background: "#F97316",
+                        boxShadow: "0 0 14px rgba(249,115,22,0.55)",
                         fontWeight: 700,
                       }}
                     >

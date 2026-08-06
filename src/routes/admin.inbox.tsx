@@ -58,9 +58,9 @@ interface Submission {
 }
 
 const STATUS_META: Record<SubmissionStatus, { label: string; color: string; bg: string }> = {
-  new: { label: "NEW", color: "#00FF88", bg: "rgba(0,255,136,0.10)" },
-  in_progress: { label: "IN PROGRESS", color: "#2563EB", bg: "rgba(37,99,235,0.10)" },
-  resolved: { label: "RESOLVED", color: "#1E3A5F", bg: "rgba(30,58,95,0.10)" },
+  new: { label: "NEW", color: "#16A34A", bg: "rgba(22,163,74,0.10)" },
+  in_progress: { label: "IN PROGRESS", color: "#F97316", bg: "rgba(249,115,22,0.10)" },
+  resolved: { label: "RESOLVED", color: "#9A3412", bg: "rgba(154,52,18,0.10)" },
   spam: { label: "SPAM", color: "#FF2D55", bg: "rgba(255,45,85,0.10)" },
 };
 
@@ -333,7 +333,7 @@ function AdminInboxPage() {
               <button
                 key={row.id}
                 onClick={() => setSelectedId(row.id)}
-                className="ctx-focus-ring w-full grid gap-3 px-4 py-3 text-left items-center hover:bg-[rgba(37,99,235,0.05)] transition-colors"
+                className="ctx-focus-ring w-full grid gap-3 px-4 py-3 text-left items-center hover:bg-[rgba(249,115,22,0.05)] transition-colors"
                 style={{
                   gridTemplateColumns:
                     source === "enquiries" ? "1.4fr 1.6fr 1.1fr 1fr" : "1.4fr 1.6fr 1fr 1.1fr",

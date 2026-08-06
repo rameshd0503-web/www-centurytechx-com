@@ -13,7 +13,7 @@ interface HUDCardProps {
 }
 
 export function HUDCard({
-  accent = "#2563EB",
+  accent = "#F97316",
   children,
   className = "",
   topBar = 0,

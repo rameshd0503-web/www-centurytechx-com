@@ -196,7 +196,7 @@ export function HeroFX() {
           className="w-full h-full"
           style={{
             background:
-              "conic-gradient(from 0deg, transparent 0deg, rgba(37,99,235,0.08) 25deg, transparent 50deg, transparent 360deg)",
+              "conic-gradient(from 0deg, transparent 0deg, rgba(249,115,22,0.08) 25deg, transparent 50deg, transparent 360deg)",
             animation: "shimmer-rotate 28s linear infinite",
             opacity: 0.6,
             maskImage:

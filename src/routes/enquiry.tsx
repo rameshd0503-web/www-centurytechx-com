@@ -66,7 +66,7 @@ function EnquiryPage() {
 
   const inputStyle: React.CSSProperties = {
     background: "#FFFFFF",
-    border: "1px solid rgba(37,99,235,0.12)",
+    border: "1px solid rgba(249,115,22,0.12)",
     borderRadius: 3,
     color: "#000000",
     caretColor: "#000000",
@@ -95,7 +95,7 @@ function EnquiryPage() {
           className="relative rounded-[4px] p-8 md:p-10 mt-8"
           style={{ background: "var(--bg-elevated)", border: "1px solid var(--border-mid)" }}
         >
-          <CornerBrackets size={16} color="#2563EB" />
+          <CornerBrackets size={16} color="#F97316" />
 
           <div className="flex items-center justify-between mb-7 pb-4 border-b border-[var(--border-dark)]">
             <span className="font-mono text-[11px] tracking-[0.18em] text-[var(--neon)]">
@@ -104,7 +104,7 @@ function EnquiryPage() {
             <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] text-[var(--text-secondary)]">
               <span
                 className="w-[6px] h-[6px] rounded-full"
-                style={{ background: "#00FF88", boxShadow: "0 0 6px #00FF88" }}
+                style={{ background: "#16A34A", boxShadow: "0 0 6px #16A34A" }}
               />
               READY
             </span>
@@ -160,7 +160,7 @@ function EnquiryPage() {
               type="submit"
               disabled={status === "loading"}
               className="w-full font-orbitron font-bold text-[12px] tracking-[0.15em] px-6 rounded-[3px] transition-all duration-200 disabled:opacity-60"
-              style={{ background: "#2563EB", color: "#FFFFFF", padding: "18px" }}
+              style={{ background: "#F97316", color: "#FFFFFF", padding: "18px" }}
             >
               {status === "loading" ? "TRANSMITTING //" : "SUBMIT ENQUIRY //"}
             </button>
