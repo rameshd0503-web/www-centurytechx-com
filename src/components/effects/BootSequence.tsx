@@ -65,13 +65,13 @@ export function BootSequence() {
             </div>
             <div
               className="w-full h-[3px] rounded-[1px] overflow-hidden"
-              style={{ background: "rgba(37,99,235,0.15)" }}
+              style={{ background: "rgba(249,115,22,0.15)" }}
             >
               <div
                 className="h-full"
                 style={{
-                  background: "#2563EB",
-                  boxShadow: "0 0 10px rgba(37,99,235,0.8)",
+                  background: "#F97316",
+                  boxShadow: "0 0 10px rgba(249,115,22,0.8)",
                   width: stage === "loading" ? "0%" : "100%",
                   animation: stage === "loading" ? "boot-progress-fill 500ms linear forwards" : undefined,
                 }}
@@ -85,8 +85,8 @@ export function BootSequence() {
           <div
             className="font-mono text-[13px] tracking-[0.18em] mt-2"
             style={{
-              color: "#00FF88",
-              textShadow: "0 0 10px rgba(0,255,136,0.6)",
+              color: "#16A34A",
+              textShadow: "0 0 10px rgba(22,163,74,0.6)",
               animation: "boot-flash 0.16s steps(2) 3",
             }}
           >

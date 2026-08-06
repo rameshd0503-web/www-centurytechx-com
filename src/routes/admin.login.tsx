@@ -152,8 +152,8 @@ function LabeledField({
         placeholder={placeholder}
         className="ctx-focus-ring w-full font-mono text-[13px]"
         style={{
-          background: "rgba(37,99,235,0.03)",
-          border: "1px solid rgba(37,99,235,0.18)",
+          background: "rgba(249,115,22,0.03)",
+          border: "1px solid rgba(249,115,22,0.18)",
           color: "var(--text-primary)",
           padding: "12px 14px",
           borderRadius: 3,

@@ -23,10 +23,10 @@ export function CircuitBackground() {
       <svg ref={ref} className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="ctx-circuit" width="64" height="64" patternUnits="userSpaceOnUse">
-            <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(30,58,95,0.04)" strokeWidth="1" />
-            <circle className="node" cx="0" cy="0" r="3" fill="rgba(37,99,235,0.10)" />
-            <circle className="node" cx="64" cy="0" r="3" fill="rgba(37,99,235,0.10)" />
-            <circle className="node" cx="0" cy="64" r="3" fill="rgba(37,99,235,0.10)" />
+            <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(154,52,18,0.04)" strokeWidth="1" />
+            <circle className="node" cx="0" cy="0" r="3" fill="rgba(249,115,22,0.10)" />
+            <circle className="node" cx="64" cy="0" r="3" fill="rgba(249,115,22,0.10)" />
+            <circle className="node" cx="0" cy="64" r="3" fill="rgba(249,115,22,0.10)" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#ctx-circuit)" />

@@ -15,7 +15,7 @@ const WORKFLOWS = [
       "Parent portal credentials provisioned",
     ],
     impact: "Onboard hundreds of students without administrative bottlenecks.",
-    accent: "#2563EB",
+    accent: "#F97316",
   },
   {
     code: "FLOW_02",
@@ -29,7 +29,7 @@ const WORKFLOWS = [
       "Counselor assigned with follow-up task",
     ],
     impact: "Every enquiry receives a fast, consistent admissions response.",
-    accent: "#1E3A5F",
+    accent: "#9A3412",
   },
   {
     code: "FLOW_03",
@@ -71,7 +71,7 @@ const WORKFLOWS = [
       "Accounts and student record updated",
     ],
     impact: "Reduce follow-ups and keep fee records accurate automatically.",
-    accent: "#00FF88",
+    accent: "#16A34A",
   },
   {
     code: "FLOW_06",
@@ -85,7 +85,7 @@ const WORKFLOWS = [
       "Teacher dashboard updated",
     ],
     impact: "Roadmap workflow for faster, clearer result communication.",
-    accent: "#2563EB",
+    accent: "#F97316",
   },
 ];
 

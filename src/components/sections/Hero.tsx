@@ -67,13 +67,13 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="inline-flex items-center gap-2 px-3 py-[6px] rounded-full mb-7"
             style={{
-              border: "1px solid rgba(37,99,235,0.25)",
-              background: "rgba(37,99,235,0.06)",
+              border: "1px solid rgba(249,115,22,0.25)",
+              background: "rgba(249,115,22,0.06)",
             }}
           >
             <span
               className="inline-block w-[6px] h-[6px] rounded-full"
-              style={{ background: "#2563EB", boxShadow: "0 0 6px #2563EB" }}
+              style={{ background: "#F97316", boxShadow: "0 0 6px #F97316" }}
             />
             <span className="font-mono text-[10px] tracking-[0.18em] text-[var(--accent)]">
               // CTX-2026 · EDUCATION TECHNOLOGY ECOSYSTEM · INDIA
@@ -124,7 +124,7 @@ export function Hero() {
             <span
               className="block font-bold"
               style={{
-                color: "#2563EB",
+                color: "#F97316",
                 fontFamily: "var(--font-orbitron)",
                 fontWeight: 700,
                 fontSize: "clamp(1rem, 2.5vw, 1.6rem)",
@@ -158,15 +158,15 @@ export function Hero() {
             <a
               href="#contact"
               className="fx-shine group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
-              style={{ background: "#2563EB", boxShadow: "0 6px 18px rgba(37,99,235,0.25)" }}
+              style={{ background: "#F97316", boxShadow: "0 6px 18px rgba(249,115,22,0.25)" }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#3B82F6";
-                e.currentTarget.style.boxShadow = "0 10px 28px rgba(37,99,235,0.35)";
+                e.currentTarget.style.background = "#FB923C";
+                e.currentTarget.style.boxShadow = "0 10px 28px rgba(249,115,22,0.35)";
                 e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#2563EB";
-                e.currentTarget.style.boxShadow = "0 6px 18px rgba(37,99,235,0.25)";
+                e.currentTarget.style.background = "#F97316";
+                e.currentTarget.style.boxShadow = "0 6px 18px rgba(249,115,22,0.25)";
                 e.currentTarget.style.transform = "translateY(0) scale(1)";
               }}
             >
@@ -243,7 +243,7 @@ export function Hero() {
                 key={i}
                 className="relative px-6 py-6 md:px-8"
                 style={{
-                  borderRight: i < 3 ? "1px solid rgba(37,99,235,0.15)" : "none",
+                  borderRight: i < 3 ? "1px solid rgba(249,115,22,0.15)" : "none",
                 }}
               >
                 <div className="font-orbitron font-black text-[var(--neon)]" style={{ fontSize: "2.4rem", lineHeight: 1 }}>
@@ -254,7 +254,7 @@ export function Hero() {
                 </div>
               </div>
             ))}
-            <CornerBrackets size={10} color="#2563EB" />
+            <CornerBrackets size={10} color="#F97316" />
           </motion.div>
         </div>
 
@@ -266,11 +266,11 @@ export function Hero() {
           className="fx-float relative rounded-[12px] p-8"
           style={{
             background: "var(--bg-elevated)",
-            border: "1px solid rgba(37,99,235,0.20)",
-            boxShadow: "0 20px 50px rgba(30,58,95,0.10), 0 4px 12px rgba(30,58,95,0.06)",
+            border: "1px solid rgba(249,115,22,0.20)",
+            boxShadow: "0 20px 50px rgba(154,52,18,0.10), 0 4px 12px rgba(154,52,18,0.06)",
           }}
         >
-          <CornerBrackets size={16} color="#2563EB" />
+          <CornerBrackets size={16} color="#F97316" />
 
           {/* Header */}
           <div className="flex items-center justify-between pb-3 mb-5 border-b border-[var(--border-dark)]">
@@ -296,7 +296,7 @@ export function Hero() {
           <div className="mt-6 pt-4 border-t border-[var(--border-dark)] flex items-center gap-2">
             <span
               className="inline-block w-[6px] h-3 bg-[var(--neon)]"
-              style={{ animation: "blink 1.2s steps(2) infinite", boxShadow: "0 0 8px #2563EB" }}
+              style={{ animation: "blink 1.2s steps(2) infinite", boxShadow: "0 0 8px #F97316" }}
             />
             <span className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
               ALL SYSTEMS OPERATIONAL //

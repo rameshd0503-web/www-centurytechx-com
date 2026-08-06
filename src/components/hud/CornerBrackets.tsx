@@ -10,7 +10,7 @@ interface CornerBracketsProps {
 
 export function CornerBrackets({
   size = 14,
-  color = "#2563EB",
+  color = "#F97316",
   thickness = 2,
   inset = 0,
   className = "",

@@ -55,8 +55,8 @@ export function Clients() {
                 border: "1px solid var(--border-dark)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "rgba(37,99,235,0.4)";
-                e.currentTarget.style.boxShadow = "0 12px 40px rgba(37,99,235,0.1)";
+                e.currentTarget.style.borderColor = "rgba(249,115,22,0.4)";
+                e.currentTarget.style.boxShadow = "0 12px 40px rgba(249,115,22,0.1)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = "var(--border-dark)";
@@ -66,8 +66,8 @@ export function Clients() {
               <span
                 className="inline-block font-mono text-[9px] tracking-[0.18em] text-[var(--neon)] px-2 py-1 rounded-[2px] mb-5"
                 style={{
-                  background: "rgba(37,99,235,0.08)",
-                  border: "1px solid rgba(37,99,235,0.15)",
+                  background: "rgba(249,115,22,0.08)",
+                  border: "1px solid rgba(249,115,22,0.15)",
                 }}
               >
                 {c.code}

@@ -17,35 +17,35 @@ export function CircuitTree() {
       ref={ref}
       viewBox="0 0 320 180"
       className="w-full"
-      style={{ height: 180, filter: "drop-shadow(0 0 6px rgba(37,99,235,0.4))" }}
+      style={{ height: 180, filter: "drop-shadow(0 0 6px rgba(249,115,22,0.4))" }}
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
         <linearGradient id="branch-grad" x1="0" x2="1">
-          <stop offset="0" stopColor="#2563EB" stopOpacity="0.3" />
-          <stop offset="0.5" stopColor="#2563EB" stopOpacity="0.7" />
-          <stop offset="1" stopColor="#2563EB" stopOpacity="0.3" />
+          <stop offset="0" stopColor="#F97316" stopOpacity="0.3" />
+          <stop offset="0.5" stopColor="#F97316" stopOpacity="0.7" />
+          <stop offset="1" stopColor="#F97316" stopOpacity="0.3" />
         </linearGradient>
       </defs>
 
       {/* Main vertical trunk */}
-      <line x1="160" y1="160" x2="160" y2="90" stroke="#2563EB" strokeOpacity="0.6" strokeWidth="1.5" />
+      <line x1="160" y1="160" x2="160" y2="90" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
       {/* Horizontal split */}
-      <line x1="60" y1="90" x2="260" y2="90" stroke="#2563EB" strokeOpacity="0.6" strokeWidth="1.5" />
+      <line x1="60" y1="90" x2="260" y2="90" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
       {/* Branches up */}
-      <line x1="60" y1="90" x2="60" y2="50" stroke="#2563EB" strokeOpacity="0.6" strokeWidth="1.5" />
-      <line x1="160" y1="90" x2="160" y2="30" stroke="#2563EB" strokeOpacity="0.6" strokeWidth="1.5" />
-      <line x1="260" y1="90" x2="260" y2="50" stroke="#2563EB" strokeOpacity="0.6" strokeWidth="1.5" />
+      <line x1="60" y1="90" x2="60" y2="50" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
+      <line x1="160" y1="90" x2="160" y2="30" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
+      <line x1="260" y1="90" x2="260" y2="50" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
       {/* Sub branches */}
-      <line x1="40" y1="50" x2="80" y2="50" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="40" y1="50" x2="40" y2="25" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="80" y1="50" x2="80" y2="25" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="240" y1="50" x2="280" y2="50" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="240" y1="50" x2="240" y2="25" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="280" y1="50" x2="280" y2="25" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="140" y1="30" x2="180" y2="30" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="140" y1="30" x2="140" y2="10" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="180" y1="30" x2="180" y2="10" stroke="#2563EB" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="40" y1="50" x2="80" y2="50" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="40" y1="50" x2="40" y2="25" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="80" y1="50" x2="80" y2="25" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="240" y1="50" x2="280" y2="50" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="240" y1="50" x2="240" y2="25" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="280" y1="50" x2="280" y2="25" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="140" y1="30" x2="180" y2="30" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="140" y1="30" x2="140" y2="10" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      <line x1="180" y1="30" x2="180" y2="10" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
 
       {/* Nodes */}
       {[
@@ -69,18 +69,18 @@ export function CircuitTree() {
           cx={cx}
           cy={cy}
           r={r}
-          fill="#2563EB"
+          fill="#F97316"
         />
       ))}
 
       {/* Traveling data dots along trunk */}
-      <circle r="3" fill="#3B82F6" style={{ filter: "drop-shadow(0 0 4px #2563EB)" }}>
+      <circle r="3" fill="#FB923C" style={{ filter: "drop-shadow(0 0 4px #F97316)" }}>
         <animateMotion dur="2.5s" repeatCount="indefinite" path="M 160 160 L 160 90 L 60 90 L 60 50" />
       </circle>
-      <circle r="3" fill="#3B82F6" style={{ filter: "drop-shadow(0 0 4px #2563EB)" }}>
+      <circle r="3" fill="#FB923C" style={{ filter: "drop-shadow(0 0 4px #F97316)" }}>
         <animateMotion dur="2.5s" begin="0.8s" repeatCount="indefinite" path="M 160 160 L 160 90 L 260 90 L 260 50" />
       </circle>
-      <circle r="3" fill="#3B82F6" style={{ filter: "drop-shadow(0 0 4px #2563EB)" }}>
+      <circle r="3" fill="#FB923C" style={{ filter: "drop-shadow(0 0 4px #F97316)" }}>
         <animateMotion dur="2.5s" begin="1.6s" repeatCount="indefinite" path="M 160 160 L 160 30" />
       </circle>
     </svg>

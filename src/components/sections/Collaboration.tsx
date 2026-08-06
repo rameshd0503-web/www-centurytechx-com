@@ -14,7 +14,7 @@ const COLLAB = [
       "Approval-ready content workflows",
       "Fast onboarding and support",
     ],
-    accent: "#2563EB",
+    accent: "#F97316",
   },
   {
     icon: "🤝",
@@ -27,7 +27,7 @@ const COLLAB = [
       "Priority implementation support",
       "No fragmented vendor stack",
     ],
-    accent: "#1E3A5F",
+    accent: "#9A3412",
   },
   {
     icon: "⚡",

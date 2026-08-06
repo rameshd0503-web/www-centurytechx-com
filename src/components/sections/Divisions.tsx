@@ -9,7 +9,7 @@ const DIVISIONS = [
     title: "BRAND-OS",
     products: "AI branding & marketing automation",
     desc: "AI poster and video generation, content writing, and campaign planning. Every institution needs branding — we start where value is immediate.",
-    accent: "#2563EB",
+    accent: "#F97316",
   },
   {
     badge: "PHASE-02 · ROADMAP",
@@ -17,7 +17,7 @@ const DIVISIONS = [
     title: "AI AUTOMATION SUITE",
     products: "WhatsApp · Admissions · CRM · Chatbots",
     desc: "Admissions, email, WhatsApp, CRM, and chatbot automations that deepen the relationship once trust is built.",
-    accent: "#1E3A5F",
+    accent: "#9A3412",
   },
   {
     badge: "PHASE-03 · ROADMAP",
@@ -25,7 +25,7 @@ const DIVISIONS = [
     title: "EXAM-OS",
     products: "Assessments · Evaluation · Analytics",
     desc: "Question paper generation, evaluation, analytics, parent reports, and teacher dashboards in one assessment system.",
-    accent: "#3B82F6",
+    accent: "#FB923C",
   },
 ];
 
@@ -41,7 +41,7 @@ export function Divisions() {
         aria-hidden
         className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
       >
-        <line x1="0" y1="100%" x2="100%" y2="0" stroke="rgba(37,99,235,0.06)" strokeDasharray="4 8" />
+        <line x1="0" y1="100%" x2="100%" y2="0" stroke="rgba(249,115,22,0.06)" strokeDasharray="4 8" />
       </svg>
 
       <div className="relative max-w-[1440px] mx-auto">
