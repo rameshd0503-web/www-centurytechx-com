@@ -46,18 +46,19 @@ function Index() {
       <Navigation />
       <main>
         <Hero />
-        <Divisions />
-        <Services />
-        <Collaboration />
-        <Automations />
-        <WorkflowsN8n />
-        <Portfolio />
-        <Clients />
-        <WhyTrust />
-        <Stack />
-        <Contact />
+        <Reveal><Divisions /></Reveal>
+        <Reveal><Services /></Reveal>
+        <Reveal><Collaboration /></Reveal>
+        <Reveal><Automations /></Reveal>
+        <Reveal><WorkflowsN8n /></Reveal>
+        <Reveal><Portfolio /></Reveal>
+        <Reveal><Clients /></Reveal>
+        <Reveal><WhyTrust /></Reveal>
+        <Reveal><Stack /></Reveal>
+        <Reveal><Contact /></Reveal>
       </main>
       <Footer />
     </div>
   );
 }
+
