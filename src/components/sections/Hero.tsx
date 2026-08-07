@@ -9,6 +9,11 @@ import { CornerBrackets } from "@/components/hud/CornerBrackets";
 import { HeroFX } from "@/components/effects/HeroFX";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
+const line = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
+
 const reveal = {
   initial: { opacity: 0, y: 40, filter: "blur(4px)" },
   animate: { opacity: 1, y: 0, filter: "blur(0px)" },
@@ -82,13 +87,15 @@ export function Hero() {
 
           {/* Headline */}
           <motion.h1
-            {...reveal}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-orbitron mb-7 flicker-on"
+            initial="hidden"
+            animate="show"
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
+            className="font-orbitron mb-7"
             style={{ lineHeight: 0.92, letterSpacing: "-0.04em" }}
           >
             {/* Line 1 */}
-            <span
+            <motion.span
+              variants={line}
               className="block font-black"
               style={{
                 color: "var(--text-primary)",
@@ -98,10 +105,11 @@ export function Hero() {
               }}
             >
                <GlitchText text="THE OPERATING" intensity="low" />
-            </span>
+            </motion.span>
 
             {/* Line 2 — gradient navy→accent */}
-            <span
+            <motion.span
+              variants={line}
               className="block font-black"
               style={{
                 fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
@@ -118,10 +126,11 @@ export function Hero() {
                   fontWeight: 900,
                 }}
               />
-            </span>
+            </motion.span>
 
             {/* Line 3 — accent blue */}
-            <span
+            <motion.span
+              variants={line}
               className="block font-bold"
               style={{
                 color: "#F97316",
@@ -133,7 +142,7 @@ export function Hero() {
               }}
             >
                <GlitchText text="EDUCATION." intensity="low" />
-            </span>
+            </motion.span>
           </motion.h1>
 
           {/* Typed sub */}
