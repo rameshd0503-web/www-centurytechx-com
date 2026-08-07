@@ -292,6 +292,102 @@
 /* Reusable VFX classes */
 .fx-pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
 
+/* ---- Motion pass: tech-console polish ---- */
+
+@keyframes fx-dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.45); opacity: 0.55; }
+}
+.fx-dot-pulse {
+  animation: fx-dot-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: center;
+}
+
+@keyframes fx-border-scan {
+  0%   { transform: translateX(-130%); }
+  60%, 100% { transform: translateX(130%); }
+}
+.fx-border-scan {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.fx-border-scan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 35%,
+    rgba(249, 115, 22, 0.28) 50%,
+    transparent 65%
+  );
+  animation: fx-border-scan 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 0;
+}
+
+@keyframes fx-breathe {
+  0%, 100% { box-shadow: 0 4px 12px rgba(249,115,22,0.25), 0 0 0 0 rgba(249,115,22,0.0); }
+  50%      { box-shadow: 0 4px 12px rgba(249,115,22,0.25), 0 0 0 5px rgba(249,115,22,0.14); }
+}
+.fx-breathe { animation: fx-breathe 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.fx-press { transition: transform 140ms cubic-bezier(0.4, 0, 0.2, 1); }
+.fx-press:active { transform: scale(0.97); }
+
+/* Circuit "power-on" line draw */
+@keyframes fx-draw {
+  to { stroke-dashoffset: 0; }
+}
+.fx-draw-line {
+  stroke-dasharray: var(--dash, 240);
+  stroke-dashoffset: var(--dash, 240);
+  animation: fx-draw 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--draw-delay, 0s);
+}
+@keyframes fx-node-in {
+  from { opacity: 0; transform: scale(0.4); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.fx-node-in {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fx-node-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--node-delay, 0s);
+}
+
+/* Consistent icon micro-scale inside hoverable cards */
+.fx-icon {
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.group:hover .fx-icon { transform: scale(1.08); }
+
+/* Success pulse for form submit */
+@keyframes fx-success-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.45); }
+  70%  { box-shadow: 0 0 0 16px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+.fx-success-pulse { animation: fx-success-pulse 900ms cubic-bezier(0.4, 0, 0.2, 1) 2; }
+
+@keyframes fx-check-draw {
+  to { stroke-dashoffset: 0; }
+}
+.fx-check path {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: fx-check-draw 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Smooth focus transition on form controls */
+input, textarea, select {
+  transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
 .fx-shine {
   position: relative;
   overflow: hidden;
