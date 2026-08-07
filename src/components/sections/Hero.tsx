@@ -50,7 +50,7 @@ export function Hero() {
           >
             <span className="flex items-center gap-2">
               <span
-                className="inline-block w-[8px] h-[8px] rounded-full fx-pulse-ring"
+                className="inline-block w-[8px] h-[8px] rounded-full fx-pulse-ring fx-dot-pulse"
                 style={{ background: "#22C55E" }}
               />
               SYS.ONLINE
@@ -65,7 +65,7 @@ export function Hero() {
           <motion.div
             {...reveal}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3 py-[6px] rounded-full mb-7"
+            className="fx-border-scan inline-flex items-center gap-2 px-3 py-[6px] rounded-full mb-7"
             style={{
               border: "1px solid rgba(249,115,22,0.25)",
               background: "rgba(249,115,22,0.06)",
@@ -157,7 +157,7 @@ export function Hero() {
           >
             <a
               href="#contact"
-              className="fx-shine group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
+              className="fx-shine fx-press group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
               style={{ background: "#F97316", boxShadow: "0 6px 18px rgba(249,115,22,0.25)" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "#FB923C";
@@ -195,7 +195,7 @@ export function Hero() {
             <button
               type="button"
               onClick={() => setBookOpen(true)}
-              className="fx-shine group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
+              className="fx-shine fx-press group inline-flex items-center gap-2 font-orbitron font-bold text-[12px] tracking-[0.12em] text-white px-8 py-4 rounded-[8px] transition-all duration-200"
               style={{
                 background: "linear-gradient(135deg, #22C55E 0%, #16A34A 100%)",
                 boxShadow: "0 6px 18px rgba(34,197,94,0.30)",
