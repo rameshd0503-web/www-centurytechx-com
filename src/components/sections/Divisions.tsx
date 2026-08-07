@@ -58,7 +58,7 @@ export function Divisions() {
               initial={{ opacity: 0, y: 40, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
               <HUDCard accent={d.accent} topBar={3} className="h-full">
                 {/* scanline sweep */}
@@ -85,12 +85,18 @@ export function Divisions() {
                         border: `1px solid ${d.accent}30`,
                       }}
                     >
+                      {d.badge.includes("LIVE") && (
+                        <span
+                          className="inline-block w-[6px] h-[6px] rounded-full mr-2 align-middle fx-dot-pulse"
+                          style={{ background: "#16A34A", boxShadow: "0 0 6px rgba(22,163,74,0.8)" }}
+                        />
+                      )}
                       {d.badge}
                     </span>
                   </div>
 
                   <div
-                    className="w-12 h-12 flex items-center justify-center rounded-[4px] mb-6 text-2xl"
+                    className="fx-icon w-12 h-12 flex items-center justify-center rounded-[4px] mb-6 text-2xl"
                     style={{ background: `${d.accent}1A`, border: `1px solid ${d.accent}30` }}
                   >
                     {d.icon}

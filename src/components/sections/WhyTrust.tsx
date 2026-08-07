@@ -53,7 +53,7 @@ export function WhyTrust() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-[4px] p-7 transition-all duration-300 hover:-translate-y-[6px]"
+              className="group relative rounded-[4px] p-7 transition-all duration-300 hover:-translate-y-[6px]"
               style={{
                 background: "var(--bg-elevated)",
                 border: "1px solid var(--border-dark)",
@@ -77,7 +77,7 @@ export function WhyTrust() {
               >
                 {r.code}
               </span>
-              <div className="text-3xl mb-4">{r.icon}</div>
+              <div className="fx-icon text-3xl mb-4 inline-block">{r.icon}</div>
               <h3 className="font-orbitron font-bold text-[14px] text-[var(--text-primary)] mb-3 leading-tight">
                 {r.title}
               </h3>

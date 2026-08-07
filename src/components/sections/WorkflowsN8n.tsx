@@ -131,7 +131,7 @@ export function WorkflowsN8n() {
               >
                 <div className="flex items-start gap-3">
                   <div
-                    className="flex items-center justify-center w-12 h-12 rounded-[10px] text-2xl shrink-0"
+                    className="fx-icon flex items-center justify-center w-12 h-12 rounded-[10px] text-2xl shrink-0"
                     style={{ background: `linear-gradient(135deg, ${t.from}, ${t.to})`, boxShadow: `0 6px 16px ${t.ring}` }}
                   >
                     <span>{w.icon}</span>

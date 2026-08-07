@@ -27,14 +27,14 @@ export function Services() {
               initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: (i % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.45, delay: (i % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className={i === 3 ? "lg:col-start-1 lg:col-end-2 xl:col-start-1" : ""}
             >
               <HUDCard accent="#F97316" bracketSize={10} className="h-full">
                 <div className="p-8 px-7 relative">
                   <div className="flex items-start justify-between mb-5">
                     <div
-                      className="w-11 h-11 flex items-center justify-center rounded-[4px] text-xl"
+                      className="fx-icon w-11 h-11 flex items-center justify-center rounded-[4px] text-xl"
                       style={{
                         background: "var(--bg-surface)",
                         border: "1px solid var(--border-mid)",
