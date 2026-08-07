@@ -261,7 +261,9 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full font-orbitron font-bold text-[12px] tracking-[0.15em] px-6 rounded-[3px] transition-all duration-200 disabled:opacity-60"
+                className={`w-full font-orbitron font-bold text-[12px] tracking-[0.15em] px-6 rounded-[3px] transition-all duration-200 disabled:opacity-60 fx-press ${
+                  status === "success" ? "fx-success-pulse" : ""
+                }`}
                 style={{
                   background: status === "success" ? "#00AA44" : "#F97316",
                   color: "#FFFFFF",
@@ -281,7 +283,7 @@ export function Contact() {
                 }}
               >
                 {status === "loading" && "TRANSMITTING //"}
-                {status === "success" && "✓ TRANSMITTED //"}
+                {status === "success" && "TRANSMITTED //"}
                 {status === "error" && "RETRY TRANSMISSION //"}
                 {status === "idle" && "TRANSMIT MESSAGE //"}
               </button>
@@ -310,7 +312,12 @@ export function Contact() {
                     color: "#16A34A",
                   }}
                 >
-                  ✓ Message received. We'll respond within 24 hours.
+                  <span className="inline-flex items-center gap-2">
+                    <svg className="fx-check" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path d="M4 12.5 L9.5 18 L20 6" stroke="#16A34A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Message received. We&apos;ll respond within 24 hours.
+                  </span>
                 </div>
               )}
 
