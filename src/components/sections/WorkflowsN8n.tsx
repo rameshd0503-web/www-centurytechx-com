@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { StatCounter } from "@/components/hud/StatCounter";
 
 type Theme = "blue" | "green" | "purple" | "orange" | "teal" | "pink";
 
@@ -35,10 +36,10 @@ const WORKFLOWS: Workflow[] = [
 ];
 
 const STATS = [
-  { icon: "⚡", value: "500+", label: "Hours Saved Per Client" },
-  { icon: "🔄", value: "50+",  label: "Workflows Delivered" },
-  { icon: "🤖", value: "20+",  label: "Apps Integrated" },
-  { icon: "⭐", value: "100%", label: "Client Satisfaction" },
+  { icon: "⚡", target: 500, suffix: "+", label: "Hours Saved Per Client" },
+  { icon: "🔄", target: 50,  suffix: "+", label: "Workflows Delivered" },
+  { icon: "🤖", target: 20,  suffix: "+", label: "Apps Integrated" },
+  { icon: "⭐", target: 100, suffix: "%", label: "Client Satisfaction" },
 ];
 
 function FlowDiagram({ steps, theme }: { steps: string[]; theme: Theme }) {
@@ -107,7 +108,9 @@ export function WorkflowsN8n() {
             <div key={i} className="px-5 py-6 text-center"
               style={{ borderRight: i < 3 ? "1px solid rgba(249,115,22,0.12)" : "none" }}>
               <div className="text-2xl mb-1">{s.icon}</div>
-              <div className="font-orbitron font-black text-[#F97316]" style={{ fontSize: "1.6rem", lineHeight: 1 }}>{s.value}</div>
+              <div className="font-orbitron font-black text-[#F97316]" style={{ fontSize: "1.6rem", lineHeight: 1 }}>
+                <StatCounter target={s.target} suffix={s.suffix} />
+              </div>
               <div className="mt-2 font-mono text-[9px] tracking-[0.2em] text-[#64748B]">{s.label}</div>
             </div>
           ))}
