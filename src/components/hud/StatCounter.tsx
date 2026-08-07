@@ -14,7 +14,7 @@ export function StatCounter({
   target,
   suffix = "",
   prefix = "",
-  duration = 2000,
+  duration = 1200,
   className = "",
   decimals = 0,
   literal,

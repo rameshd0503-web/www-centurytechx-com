@@ -1,15 +1,57 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const LINES: Array<[number, number, number, number, number]> = [
+  // x1, y1, x2, y2, strokeWidth
+  [160, 160, 160, 90, 1.5],
+  [60, 90, 260, 90, 1.5],
+  [60, 90, 60, 50, 1.5],
+  [160, 90, 160, 30, 1.5],
+  [260, 90, 260, 50, 1.5],
+  [40, 50, 80, 50, 1],
+  [40, 50, 40, 25, 1],
+  [80, 50, 80, 25, 1],
+  [240, 50, 280, 50, 1],
+  [240, 50, 240, 25, 1],
+  [280, 50, 280, 25, 1],
+  [140, 30, 180, 30, 1],
+  [140, 30, 140, 10, 1],
+  [180, 30, 180, 10, 1],
+];
+
+const NODES: Array<[number, number, number]> = [
+  [160, 160, 4],
+  [160, 90, 3.5],
+  [60, 90, 3],
+  [260, 90, 3],
+  [60, 50, 2.5],
+  [260, 50, 2.5],
+  [160, 30, 2.5],
+  [40, 25, 2],
+  [80, 25, 2],
+  [240, 25, 2],
+  [280, 25, 2],
+  [140, 10, 2],
+  [180, 10, 2],
+];
+
+const DRAW_STEP = 0.09; // seconds between each line
+const NODE_START = LINES.length * DRAW_STEP + 0.2;
 
 export function CircuitTree() {
   const ref = useRef<SVGSVGElement>(null);
+  const [drawn, setDrawn] = useState(false);
 
+  // Once the circuit has "powered on", let the nodes pulse gently.
   useEffect(() => {
-    const svg = ref.current;
-    if (!svg) return;
-    const dots = svg.querySelectorAll<SVGCircleElement>("circle.pulse-node");
-    dots.forEach((d, i) => {
-      d.style.animation = `neon-pulse ${1.5 + (i % 3) * 0.5}s ease-in-out ${i * 0.2}s infinite`;
-    });
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setDrawn(true);
+      return;
+    }
+    const t = window.setTimeout(() => setDrawn(true), (NODE_START + NODES.length * 0.05 + 0.4) * 1000);
+    return () => window.clearTimeout(t);
   }, []);
 
   return (
@@ -28,61 +70,62 @@ export function CircuitTree() {
         </linearGradient>
       </defs>
 
-      {/* Main vertical trunk */}
-      <line x1="160" y1="160" x2="160" y2="90" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
-      {/* Horizontal split */}
-      <line x1="60" y1="90" x2="260" y2="90" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
-      {/* Branches up */}
-      <line x1="60" y1="90" x2="60" y2="50" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
-      <line x1="160" y1="90" x2="160" y2="30" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
-      <line x1="260" y1="90" x2="260" y2="50" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1.5" />
-      {/* Sub branches */}
-      <line x1="40" y1="50" x2="80" y2="50" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="40" y1="50" x2="40" y2="25" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="80" y1="50" x2="80" y2="25" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="240" y1="50" x2="280" y2="50" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="240" y1="50" x2="240" y2="25" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="280" y1="50" x2="280" y2="25" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="140" y1="30" x2="180" y2="30" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="140" y1="30" x2="140" y2="10" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
-      <line x1="180" y1="30" x2="180" y2="10" stroke="#F97316" strokeOpacity="0.5" strokeWidth="1" />
+      {/* Circuit lines — drawn in sequence like a board powering on */}
+      {LINES.map(([x1, y1, x2, y2, w], i) => {
+        const len = Math.hypot(x2 - x1, y2 - y1);
+        return (
+          <line
+            key={i}
+            x1={x1}
+            y1={y1}
+            x2={x2}
+            y2={y2}
+            stroke="#F97316"
+            strokeOpacity={w > 1 ? 0.6 : 0.5}
+            strokeWidth={w}
+            className="fx-draw-line"
+            style={
+              {
+                "--dash": len,
+                "--draw-delay": `${i * DRAW_STEP}s`,
+              } as React.CSSProperties
+            }
+          />
+        );
+      })}
 
-      {/* Nodes */}
-      {[
-        [160, 160, 4],
-        [160, 90, 3.5],
-        [60, 90, 3],
-        [260, 90, 3],
-        [60, 50, 2.5],
-        [260, 50, 2.5],
-        [160, 30, 2.5],
-        [40, 25, 2],
-        [80, 25, 2],
-        [240, 25, 2],
-        [280, 25, 2],
-        [140, 10, 2],
-        [180, 10, 2],
-      ].map(([cx, cy, r], i) => (
+      {/* Nodes — pop in after their branch is drawn, then pulse gently */}
+      {NODES.map(([cx, cy, r], i) => (
         <circle
           key={i}
-          className="pulse-node"
           cx={cx}
           cy={cy}
           r={r}
           fill="#F97316"
+          className="fx-node-in"
+          style={
+            {
+              "--node-delay": `${NODE_START + i * 0.05}s`,
+              animation: drawn
+                ? `neon-pulse ${1.5 + (i % 3) * 0.5}s ease-in-out ${i * 0.2}s infinite`
+                : undefined,
+              opacity: drawn ? 1 : undefined,
+            } as React.CSSProperties
+          }
         />
       ))}
 
       {/* Traveling data dots along trunk */}
-      <circle r="3" fill="#FB923C" style={{ filter: "drop-shadow(0 0 4px #F97316)" }}>
-        <animateMotion dur="2.5s" repeatCount="indefinite" path="M 160 160 L 160 90 L 60 90 L 60 50" />
-      </circle>
-      <circle r="3" fill="#FB923C" style={{ filter: "drop-shadow(0 0 4px #F97316)" }}>
-        <animateMotion dur="2.5s" begin="0.8s" repeatCount="indefinite" path="M 160 160 L 160 90 L 260 90 L 260 50" />
-      </circle>
-      <circle r="3" fill="#FB923C" style={{ filter: "drop-shadow(0 0 4px #F97316)" }}>
-        <animateMotion dur="2.5s" begin="1.6s" repeatCount="indefinite" path="M 160 160 L 160 30" />
-      </circle>
+      {drawn && (
+        <>
+          <circle r="3" fill="#FB923C" style={{ filter: "drop-shadow(0 0 4px #F97316)" }}>
+            <animateMotion dur="2.5s" repeatCount="indefinite" path="M 160 160 L 160 90 L 60 90 L 60 50" />
+          </circle>
+          <circle r="3" fill="#FB923C" style={{ filter: "drop-shadow(0 0 4px #F97316)" }}>
+            <animateMotion dur="2.5s" begin="0.8s" repeatCount="indefinite" path="M 160 160 L 160 90 L 260 90 L 260 50" />
+          </circle>
+        </>
+      )}
     </svg>
   );
 }

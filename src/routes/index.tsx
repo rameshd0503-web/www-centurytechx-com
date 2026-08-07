@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navigation } from "@/components/site/Navigation";
+import { Reveal } from "@/components/motion/Reveal";
 import { Hero } from "@/components/sections/Hero";
 import { Divisions } from "@/components/sections/Divisions";
 import { Services } from "@/components/sections/Services";
@@ -46,18 +47,19 @@ function Index() {
       <Navigation />
       <main>
         <Hero />
-        <Divisions />
-        <Services />
-        <Collaboration />
-        <Automations />
-        <WorkflowsN8n />
-        <Portfolio />
-        <Clients />
-        <WhyTrust />
-        <Stack />
-        <Contact />
+        <Reveal><Divisions /></Reveal>
+        <Reveal><Services /></Reveal>
+        <Reveal><Collaboration /></Reveal>
+        <Reveal><Automations /></Reveal>
+        <Reveal><WorkflowsN8n /></Reveal>
+        <Reveal><Portfolio /></Reveal>
+        <Reveal><Clients /></Reveal>
+        <Reveal><WhyTrust /></Reveal>
+        <Reveal><Stack /></Reveal>
+        <Reveal><Contact /></Reveal>
       </main>
       <Footer />
     </div>
   );
 }
+

@@ -90,7 +90,7 @@ export function Navigation() {
           {/* CTA */}
           <a
             href="#contact"
-            className="fx-shine hidden md:inline-flex items-center font-orbitron font-bold text-[11px] tracking-[0.15em] text-white px-5 py-[10px] rounded-[8px] transition-all duration-200"
+            className="fx-shine fx-breathe fx-press hidden md:inline-flex items-center font-orbitron font-bold text-[11px] tracking-[0.15em] text-white px-5 py-[10px] rounded-[8px] transition-all duration-200"
             style={{ background: "#F97316", boxShadow: "0 4px 12px rgba(249,115,22,0.25)" }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "#FB923C";

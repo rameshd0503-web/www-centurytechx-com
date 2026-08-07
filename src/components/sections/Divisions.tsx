@@ -58,7 +58,7 @@ export function Divisions() {
               initial={{ opacity: 0, y: 40, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
               <HUDCard accent={d.accent} topBar={3} className="h-full">
                 {/* scanline sweep */}
@@ -85,12 +85,18 @@ export function Divisions() {
                         border: `1px solid ${d.accent}30`,
                       }}
                     >
+                      {d.badge.includes("LIVE") && (
+                        <span
+                          className="inline-block w-[6px] h-[6px] rounded-full mr-2 align-middle fx-dot-pulse"
+                          style={{ background: "#16A34A", boxShadow: "0 0 6px rgba(22,163,74,0.8)" }}
+                        />
+                      )}
                       {d.badge}
                     </span>
                   </div>
 
                   <div
-                    className="w-12 h-12 flex items-center justify-center rounded-[4px] mb-6 text-2xl"
+                    className="fx-icon w-12 h-12 flex items-center justify-center rounded-[4px] mb-6 text-2xl"
                     style={{ background: `${d.accent}1A`, border: `1px solid ${d.accent}30` }}
                   >
                     {d.icon}
@@ -125,7 +131,21 @@ export function Divisions() {
           <div className="font-mono text-[10px] tracking-[0.2em] text-[var(--neon)] mb-4">// FULL 7-PHASE ECOSYSTEM</div>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {["● BRAND-OS · LIVE NOW", "○ AI AUTOMATION · ROADMAP", "○ EXAM-OS · ROADMAP", "○ INSTITUTION ERP · ROADMAP", "○ STUDENT NETWORK · ROADMAP", "○ MARKETPLACE · ROADMAP", "○ EDUCATION INTELLIGENCE · ROADMAP"].map((phase) => (
-              <div key={phase} className="font-mono text-[10px] leading-[1.6] text-[var(--text-secondary)]">{phase}</div>
+              <div
+                key={phase}
+                className="font-mono text-[10px] leading-[1.6] text-[var(--text-secondary)] flex items-center gap-2 transition-opacity duration-300 hover:opacity-100"
+                style={{ opacity: phase.startsWith("\u25cf") ? 1 : 0.6 }}
+              >
+                <span
+                  className={`inline-block w-[6px] h-[6px] rounded-full shrink-0 ${phase.startsWith("\u25cf") ? "fx-dot-pulse" : ""}`}
+                  style={
+                    phase.startsWith("\u25cf")
+                      ? { background: "#16A34A", boxShadow: "0 0 6px rgba(22,163,74,0.8)" }
+                      : { background: "transparent", border: "1px solid var(--text-dim)" }
+                  }
+                />
+                {phase.replace(/^[\u25cf\u25cb]\s*/, "")}
+              </div>
             ))}
           </div>
         </div>
