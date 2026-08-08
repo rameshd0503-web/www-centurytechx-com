@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { SectionHeader } from "@/components/site/SectionHeader";
@@ -239,8 +239,10 @@ export function Contact() {
               <Field label="// COMMS_CHANNEL" value={email} onChange={setEmail} placeholder="you@domain.com" type="email" />
               <Field label="// PHONE_LINK (OPTIONAL)" value={phone} onChange={setPhone} placeholder="+91 80730 92082" type="tel" />
               <div>
-                <label className="block font-mono text-[10px] tracking-[0.18em] text-[var(--neon)] mb-2">// INSTITUTION_TYPE</label>
+                <label htmlFor="contact-institution-type" className="block font-mono text-[10px] tracking-[0.18em] text-[var(--neon)] mb-2">// INSTITUTION_TYPE</label>
                 <select
+                  id="contact-institution-type"
+                  name="institutionType"
                   value={institutionType}
                   onChange={(event) => setInstitutionType(event.target.value)}
                   className="w-full rounded-[3px] px-4 py-[14px] font-mono text-[13px] outline-none"
@@ -249,6 +251,7 @@ export function Contact() {
                   {["School", "College", "University", "Coaching Institute", "Training Institute"].map((option) => <option key={option}>{option}</option>)}
                 </select>
               </div>
+
               <Field
                 label="// PAYLOAD"
                 value={message}
@@ -343,6 +346,7 @@ interface FieldProps {
 }
 
 function Field({ label, value, onChange, placeholder, type = "text", textarea, maxLength }: FieldProps) {
+  const fieldId = useId();
   const baseStyle = {
     background: "#FFFFFF",
     border: "1px solid rgba(249,115,22,0.12)",
@@ -360,7 +364,7 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <label className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
+        <label htmlFor={fieldId} className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
           {label}
         </label>
         {textarea && maxLength && (
@@ -371,6 +375,8 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
       </div>
       {textarea ? (
         <textarea
+          id={fieldId}
+
           value={value}
           onChange={(e) => onChange(e.target.value.slice(0, maxLength ?? 1000))}
           placeholder={placeholder}
@@ -390,6 +396,7 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
         />
       ) : (
         <input
+          id={fieldId}
           type={type}
           value={value}
           onChange={(e) => onChange(e.target.value)}
