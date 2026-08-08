@@ -11,11 +11,16 @@ export const Route = createFileRoute("/enquiry")({
   head: () => ({
     meta: [
       { title: "Submit an Enquiry — Century TechX" },
-      { name: "description", content: "Send us your project enquiry. We respond within 24 hours with a tailored plan." },
+      { name: "description", content: "Send Century TechX your institution's project enquiry. We respond within 24 hours with a tailored education technology plan." },
       { property: "og:title", content: "Submit an Enquiry — Century TechX" },
-      { property: "og:description", content: "Send us your project enquiry. We respond within 24 hours." },
+      { property: "og:description", content: "Send Century TechX your institution's project enquiry. We respond within 24 hours with a tailored plan." },
+      { property: "og:url", content: "https://centurytechx.com/enquiry" },
+      { name: "twitter:title", content: "Submit an Enquiry — Century TechX" },
+      { name: "twitter:description", content: "Send Century TechX your institution's project enquiry. We respond within 24 hours." },
     ],
+    links: [{ rel: "canonical", href: "https://centurytechx.com/enquiry" }],
   }),
+
   component: EnquiryPage,
 });
 
