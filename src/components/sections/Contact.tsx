@@ -346,6 +346,7 @@ interface FieldProps {
 }
 
 function Field({ label, value, onChange, placeholder, type = "text", textarea, maxLength }: FieldProps) {
+  const fieldId = useId();
   const baseStyle = {
     background: "#FFFFFF",
     border: "1px solid rgba(249,115,22,0.12)",
@@ -363,7 +364,7 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <label className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
+        <label htmlFor={fieldId} className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
           {label}
         </label>
         {textarea && maxLength && (
@@ -374,6 +375,8 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
       </div>
       {textarea ? (
         <textarea
+          id={fieldId}
+
           value={value}
           onChange={(e) => onChange(e.target.value.slice(0, maxLength ?? 1000))}
           placeholder={placeholder}
