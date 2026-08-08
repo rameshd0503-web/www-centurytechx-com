@@ -396,6 +396,7 @@ function Field({ label, value, onChange, placeholder, type = "text", textarea, m
         />
       ) : (
         <input
+          id={fieldId}
           type={type}
           value={value}
           onChange={(e) => onChange(e.target.value)}
