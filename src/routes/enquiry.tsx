@@ -117,10 +117,12 @@ function EnquiryPage() {
 
           <div className="space-y-5">
             <div>
-              <label className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)] block mb-2">
+              <label htmlFor="enquiry-name" className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)] block mb-2">
                 // OPERATIVE_NAME
               </label>
               <input
+                id="enquiry-name"
+                name="name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -130,10 +132,12 @@ function EnquiryPage() {
             </div>
 
             <div>
-              <label className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)] block mb-2">
+              <label htmlFor="enquiry-email" className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)] block mb-2">
                 // COMMS_CHANNEL
               </label>
               <input
+                id="enquiry-email"
+                name="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -144,7 +148,7 @@ function EnquiryPage() {
 
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
+                <label htmlFor="enquiry-message" className="font-mono text-[10px] tracking-[0.18em] text-[var(--neon)]">
                   // PAYLOAD
                 </label>
                 <span className="font-mono text-[9px] text-[var(--text-dim)]">
@@ -152,6 +156,8 @@ function EnquiryPage() {
                 </span>
               </div>
               <textarea
+                id="enquiry-message"
+                name="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value.slice(0, 2000))}
                 placeholder="Describe your project, timeline, and goals..."
@@ -160,6 +166,7 @@ function EnquiryPage() {
                 style={inputStyle}
               />
             </div>
+
 
             <button
               type="submit"
