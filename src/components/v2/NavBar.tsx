@@ -45,7 +45,7 @@ export function NavBar() {
           </a>
 
           <div className="hidden lg:flex items-center gap-8">
-            <a href="#solutions" className={link}>Product</a>
+            <a href="#top" className={link}>Product</a>
             <a href="#roadmap" className={link}>Ecosystem</a>
             <div
               className="relative"
