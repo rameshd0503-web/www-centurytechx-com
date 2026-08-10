@@ -53,9 +53,7 @@ export function Headline({
       style={{ lineHeight: 1.05 }}
     >
       {parts[0]}
-      <em className="not-italic italic text-[var(--accent)]" style={{ fontStyle: "italic" }}>
-        {accentWord}
-      </em>
+      <em className="italic text-[var(--accent)]">{accentWord}</em>
       {parts.slice(1).join(accentWord)}
     </Tag>
   );
