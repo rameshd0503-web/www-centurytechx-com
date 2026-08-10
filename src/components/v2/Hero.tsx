@@ -115,7 +115,7 @@ export function Hero() {
                       ? "0 26px 60px rgba(20,24,31,0.28)"
                       : "0 10px 30px rgba(20,24,31,0.10)",
                     zIndex: isActive ? 30 : 10 - Math.abs(offset),
-                    transform: `translate(-50%, -50%) translateX(${offset * 92}px) translateY(${
+                    transform: `translate(-50%, -50%) translateX(${offset * 112}px) translateY(${
                       isActive ? -18 : Math.abs(offset) * 16
                     }px) rotate(${isActive ? 0 : offset * 7}deg) scale(${isActive ? 1.06 : 1})`,
                     transition: "transform 300ms cubic-bezier(0.16,1,0.3,1), box-shadow 300ms ease, background 300ms ease",
