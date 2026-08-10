@@ -47,10 +47,10 @@ const columns = [
 ];
 
 const socials = [
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Twitter, href: "https://twitter.com", label: "X" },
-  { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  { path: BRAND.linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { path: BRAND.instagram, href: "https://instagram.com", label: "Instagram" },
+  { path: BRAND.x, href: "https://twitter.com", label: "X" },
+  { path: BRAND.youtube, href: "https://youtube.com", label: "YouTube" },
 ];
 
 export function SiteFooter() {
