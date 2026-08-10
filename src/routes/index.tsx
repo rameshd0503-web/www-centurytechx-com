@@ -38,21 +38,18 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
-      <Navigation />
+      <NavBar />
       <main>
         <Hero />
-        <Reveal><Divisions /></Reveal>
-        <Reveal><Services /></Reveal>
-        <Reveal><Collaboration /></Reveal>
-        <Reveal><Automations /></Reveal>
-        <Reveal><WorkflowsN8n /></Reveal>
-        <Reveal><Portfolio /></Reveal>
-        <Reveal><Clients /></Reveal>
-        <Reveal><WhyTrust /></Reveal>
-        <Reveal><Stack /></Reveal>
-        <Reveal><Contact /></Reveal>
+        <Problem />
+        <Roadmap />
+        <WhoWeServe />
+        <WhyOnePartner />
+        <Insights />
+        <DemoContact />
       </main>
-      <Footer />
+      <SiteFooter />
+      <FloatingActions />
     </div>
   );
 }
