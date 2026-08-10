@@ -103,6 +103,11 @@
   --scanline: rgba(20,24,31,0.01);
   --grain-opacity: 0;
 
+  /* v2 design system */
+  --card-dark: #14181F;
+  --shadow-card: 0 10px 30px rgba(20,24,31,0.08);
+  --accent-shadow: rgba(249,115,22,0.30);
+
   /* shadcn fallbacks */
   --card: var(--bg-elevated);
   --card-foreground: var(--text-primary);
