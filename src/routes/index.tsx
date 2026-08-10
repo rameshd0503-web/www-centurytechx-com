@@ -1,18 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navigation } from "@/components/site/Navigation";
-import { Reveal } from "@/components/motion/Reveal";
-import { Hero } from "@/components/sections/Hero";
-import { Divisions } from "@/components/sections/Divisions";
-import { Services } from "@/components/sections/Services";
-import { Collaboration } from "@/components/sections/Collaboration";
-import { Automations } from "@/components/sections/Automations";
-import { WorkflowsN8n } from "@/components/sections/WorkflowsN8n";
-import { Portfolio } from "@/components/sections/Portfolio";
-import { Clients } from "@/components/sections/Clients";
-import { WhyTrust } from "@/components/sections/WhyTrust";
-import { Stack } from "@/components/sections/Stack";
-import { Contact } from "@/components/sections/Contact";
-import { Footer } from "@/components/sections/Footer";
+import { NavBar } from "@/components/v2/NavBar";
+import { Hero } from "@/components/v2/Hero";
+import { Problem, WhoWeServe, WhyOnePartner } from "@/components/v2/Sections";
+import { Roadmap } from "@/components/v2/Roadmap";
+import { Insights } from "@/components/v2/Insights";
+import { DemoContact } from "@/components/v2/DemoContact";
+import { SiteFooter } from "@/components/v2/SiteFooter";
+import { FloatingActions } from "@/components/v2/FloatingActions";
 
 export const Route = createFileRoute("/")({
   head: () => {
@@ -44,21 +38,18 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
-      <Navigation />
+      <NavBar />
       <main>
         <Hero />
-        <Reveal><Divisions /></Reveal>
-        <Reveal><Services /></Reveal>
-        <Reveal><Collaboration /></Reveal>
-        <Reveal><Automations /></Reveal>
-        <Reveal><WorkflowsN8n /></Reveal>
-        <Reveal><Portfolio /></Reveal>
-        <Reveal><Clients /></Reveal>
-        <Reveal><WhyTrust /></Reveal>
-        <Reveal><Stack /></Reveal>
-        <Reveal><Contact /></Reveal>
+        <Problem />
+        <Roadmap />
+        <WhoWeServe />
+        <WhyOnePartner />
+        <Insights />
+        <DemoContact />
       </main>
-      <Footer />
+      <SiteFooter />
+      <FloatingActions />
     </div>
   );
 }
