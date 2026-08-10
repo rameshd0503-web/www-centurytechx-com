@@ -84,7 +84,7 @@ export function SiteFooter() {
                     color: "var(--text-secondary)",
                   }}
                 >
-                  <s.icon size={15} />
+                  <Icon path={s.path} />
                 </a>
               ))}
             </div>
