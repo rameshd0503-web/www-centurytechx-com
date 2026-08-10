@@ -537,3 +537,18 @@ textarea:autofill {
   color: #000000 !important;
   caret-color: #000000 !important;
 }
+
+/* ── v2: floating CTA idle bounce ─────────────────────────── */
+@keyframes fx-idle-bounce-kf {
+  0%, 88%, 100% { transform: translateY(0); }
+  92% { transform: translateY(-5px); }
+  96% { transform: translateY(-2px); }
+}
+.fx-idle-bounce { animation: fx-idle-bounce-kf 5s ease-in-out infinite; }
+
+.deck-card:focus-visible { box-shadow: 0 0 0 3px var(--accent-soft), 0 20px 44px rgba(20,24,31,0.2) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-idle-bounce { animation: none; }
+  .deck-card { transition: none !important; }
+}
