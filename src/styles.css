@@ -546,9 +546,16 @@ textarea:autofill {
 }
 .fx-idle-bounce { animation: fx-idle-bounce-kf 5s ease-in-out infinite; }
 
+@keyframes fx-demo-glow-kf {
+  0%, 70%, 100% { box-shadow: 0 12px 30px rgba(232,148,15,0.38), 0 0 0 0 rgba(249,115,22,0.45); }
+  85%           { box-shadow: 0 12px 30px rgba(232,148,15,0.38), 0 0 0 10px rgba(249,115,22,0); }
+}
+.fx-demo-glow { animation: fx-demo-glow-kf 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
 .deck-card:focus-visible { box-shadow: 0 0 0 3px var(--accent-soft), 0 20px 44px rgba(20,24,31,0.2) !important; }
 
 @media (prefers-reduced-motion: reduce) {
-  .fx-idle-bounce { animation: none; }
+  .fx-idle-bounce, .fx-demo-glow { animation: none; }
   .deck-card { transition: none !important; }
 }
+
