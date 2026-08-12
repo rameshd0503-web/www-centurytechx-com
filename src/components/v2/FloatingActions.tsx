@@ -15,12 +15,13 @@ export function FloatingActions() {
     <>
       <a
         href="#contact"
-        className="fx-idle-bounce fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-[13.5px] font-semibold text-white transition-transform duration-200 active:scale-95"
+        className="fx-idle-bounce fx-demo-glow fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-[13.5px] font-semibold text-white transition-transform duration-200 active:scale-90"
         style={{ background: "var(--accent)", boxShadow: "0 12px 30px rgba(232,148,15,0.38)" }}
       >
         <CalendarClock size={17} />
         Book a Demo
       </a>
+
 
       <button
         aria-label="Scroll to top"
